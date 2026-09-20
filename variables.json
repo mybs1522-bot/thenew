@@ -1,0 +1,10 @@
+{
+    "productId":  "gid://shopify/Product/9311794757770",
+    "variants":  [
+                     {
+                         "price":  "17.00",
+                         "id":  "gid://shopify/ProductVariant/50249412149386",
+                         "inventoryPolicy":  "CONTINUE"
+                     }
+                 ]
+}

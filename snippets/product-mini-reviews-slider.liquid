@@ -1,6 +1,61 @@
 <div class="mini-reviews-slider-container" id="miniReviewsSlider">
   <div class="mini-slider-track-wrap" id="miniSliderTrackWrap">
-    <div class="mini-slider-track" id="miniSliderTrack">
+    <div class="mini-slider-track" id="miniSliderTrack">{% if product.handle == 'kitchen-design-book' %}
+      <!-- Kitchen Review 1 -->
+      <div class="mini-review-slide active" data-index="0">
+        <div class="mini-review-card">
+          <div class="mini-card-top">
+            <span class="mini-card-stars">?????</span>
+            <span class="mini-role-pill role-homeowner">Home Owner</span>
+          </div>
+          <p class="mini-card-quote">"The workflow triangle diagram saved us from a huge cabinet placement mistake in our kitchen renovation. Clear, practical dimensions."</p>
+          <div class="mini-card-author">
+            <span class="mini-author-name">David L.</span>
+            <span class="mini-author-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#059669"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Verified Buyer
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kitchen Review 2 -->
+      <div class="mini-review-slide" data-index="1">
+        <div class="mini-review-card">
+          <div class="mini-card-top">
+            <span class="mini-card-stars">?????</span>
+            <span class="mini-role-pill role-designer">Interior Designer</span>
+          </div>
+          <p class="mini-card-quote">"The kitchen work triangle and appliance setback drawings are spot-on. Invaluable companion during conceptual design stages."</p>
+          <div class="mini-card-author">
+            <span class="mini-author-name">Sophie B.</span>
+            <span class="mini-author-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#059669"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Verified Buyer
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kitchen Review 3 -->
+      <div class="mini-review-slide" data-index="2">
+        <div class="mini-review-card">
+          <div class="mini-card-top">
+            <span class="mini-card-stars">?????</span>
+            <span class="mini-role-pill role-architect">Architect</span>
+          </div>
+          <p class="mini-card-quote">"Explaining counter heights and circulation space to first-time clients used to take forever. Now I just show them these hand-drawn kitchen sketches."</p>
+          <div class="mini-card-author">
+            <span class="mini-author-name">Elena R.</span>
+            <span class="mini-author-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#059669"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Verified Buyer
+            </span>
+          </div>
+        </div>
+      </div>
+{% else %}
+
 
       <!-- 1 -->
       <div class="mini-review-slide active" data-index="0">
@@ -434,7 +489,8 @@
         </div>
       </div>
 
-    </div>
+    
+{% endif %}</div>
   </div>
 
   <div class="mini-slider-nav-bottom">
@@ -775,3 +831,4 @@
   }
 })();
 </script>
+

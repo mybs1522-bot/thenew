@@ -1,1 +1,1 @@
-query { products(first: 50) { edges { node { id title variants(first: 10) { edges { node { id title inventoryPolicy inventoryItem { tracked } inventoryQuantity } } } } } } }
+query { products(first:1, query: "handle:kitchen-design-book") { edges { node { id title images(first: 10) { edges { node { id url } } } } } } }

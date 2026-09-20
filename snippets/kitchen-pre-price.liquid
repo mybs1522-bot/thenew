@@ -67,38 +67,43 @@
     display: inline-block;
   }
   
-  /* High Performing Sales Pitch */
-  .kd-pitch-wrapper {
+  /* Premium FAQ Layout */
+  .kd-faq-wrapper {
     margin-bottom: 16px;
-    color: #1f2937;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .kd-faq-item {
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .kd-faq-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .kd-faq-q {
     font-size: 0.95rem;
-    line-height: 1.4;
-  }
-  .kd-pitch-title {
-    font-size: 1.15rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-    color: #111827;
-    line-height: 1.3;
-  }
-  .kd-pitch-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 8px;
-  }
-  .kd-pitch-item {
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
     display: flex;
     align-items: flex-start;
     gap: 8px;
+    line-height: 1.3;
   }
-  .kd-pitch-icon {
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .kd-pitch-solution {
-    font-weight: 700;
+  .kd-faq-q span {
     color: #ea580c;
+  }
+  .kd-faq-a {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.5;
+    padding-left: 20px;
   }
 </style>
 
@@ -126,27 +131,20 @@
     </div>
   </div>
 
-  <div class="kd-pitch-wrapper">
-    <h4 class="kd-pitch-title">Stop guessing. Start building with confidence.</h4>
+  <div class="kd-faq-wrapper">
+    <div class="kd-faq-item">
+      <div class="kd-faq-q"><span>Q.</span> I have zero technical knowledge. Is this for me?</div>
+      <div class="kd-faq-a">Absolutely. Hand-drawn, idiot-proof diagrams make standard clearances and layouts easy for anyone to understand.</div>
+    </div>
     
-    <div class="kd-pitch-grid">
-      <div class="kd-pitch-item">
-        <span class="kd-pitch-icon">❌</span>
-        <span><strong>Problem:</strong> Designers charge ₹1L+, but you still want to be 100% sure of the exact do's and don'ts yourself.<br>
-        <span class="kd-pitch-solution">✅ Solution:</span> Your personal master-guide to cross-check architects and prevent costly mistakes.</span>
-      </div>
-      
-      <div class="kd-pitch-item">
-        <span class="kd-pitch-icon">❌</span>
-        <span><strong>Problem:</strong> Zero technical knowledge about standard clearances and spacing?<br>
-        <span class="kd-pitch-solution">✅ Solution:</span> Hand-drawn, idiot-proof diagrams that can teach a kid what is right and wrong.</span>
-      </div>
-      
-      <div class="kd-pitch-item">
-        <span class="kd-pitch-icon">❌</span>
-        <span><strong>Problem:</strong> Wasting hours on Pinterest but still lacking exact, actionable blueprints.<br>
-        <span class="kd-pitch-solution">✅ Solution:</span> 165+ pages of highly specific, proven dimensions you can hand straight to your carpenter.</span>
-      </div>
+    <div class="kd-faq-item">
+      <div class="kd-faq-q"><span>Q.</span> I hired a designer. Do I still need this?</div>
+      <div class="kd-faq-a">Yes. Designers charge ,000+, but this is your master-guide to cross-check their work and prevent costly mistakes.</div>
+    </div>
+    
+    <div class="kd-faq-item">
+      <div class="kd-faq-q"><span>Q.</span> How is this different from Pinterest?</div>
+      <div class="kd-faq-a">Pinterest gives ideas; we give exact blueprints. Get 165+ pages of proven dimensions to hand straight to your carpenter.</div>
     </div>
   </div>
 

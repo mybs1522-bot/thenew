@@ -654,27 +654,7 @@ shopify-payment-terms {
   border-radius: 12px !important;
 }
 
-/* Hide dynamic checkout button and installments completely */
-.checkout--dynamic,
-[data-dynamic-button],
-.shopify-payment-button,
-.shopify-payment-button__button,
-shopify-accelerated-checkout,
-.product__shoppay-installments,
-.hide-non-dollar-btn,
-body.non-dollar-currency .checkout--dynamic,
-body.non-dollar-currency [data-dynamic-button],
-body.non-dollar-currency .shopify-payment-button,
-body.non-dollar-currency .product__shoppay-installments {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  pointer-events: none !important;
-  opacity: 0 !important;
-}
+
 
 @media (max-width: 480px) {
   .product__atc {
@@ -1190,19 +1170,7 @@ h1.product__title {
   }
 }
 
-/* Remove More payment options */
-.shopify-payment-button__more-options,
-[data-testid="MorePaymentOptionsButton"],
-shopify-accelerated-checkout .shopify-payment-button__more-options,
-.shopify-payment-button .shopify-payment-button__more-options,
-.shopify-payment-button__skeleton.shopify-payment-button__more-options {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  pointer-events: none !important;
-}
+
 
 /* Hardcopy Delivery dynamic visibility */
 body:not(.is-hardcopy-selected) [data-hardcopy-delivery-item="true"],

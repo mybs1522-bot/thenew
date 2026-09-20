@@ -34,50 +34,15 @@
             </div>
             {% render 'add-to-cart-button', type: 'secondary', price: product.price, text: 'Buy Now', is_buy_now: true %}
         </div>
-        {% comment %} Dynamic checkout removed - only Buy Now button is displayed {% endcomment %}
+        <div class="checkout--dynamic">
+            {{ form | payment_button }}
+        </div>
     {% else %}
         {% render 'sold-out-button', disabled: 'disabled' %}
     {%endif%}
 </div>
 
 <style>
-/* Remove/hide dynamic checkout button (Buy it now / Shop Pay / PayPal) and installments completely */
-.checkout--dynamic,
-[data-dynamic-button],
-.shopify-payment-button,
-.shopify-payment-button__button,
-shopify-accelerated-checkout,
-.product__shoppay-installments,
-.hide-non-dollar-btn,
-body.non-dollar-currency .checkout--dynamic,
-body.non-dollar-currency [data-dynamic-button],
-body.non-dollar-currency .shopify-payment-button,
-body.non-dollar-currency .product__shoppay-installments {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  pointer-events: none !important;
-  opacity: 0 !important;
-}
-
-/* Remove More Payment Options */
-.shopify-payment-button__more-options,
-[data-testid="MorePaymentOptionsButton"],
-shopify-accelerated-checkout .shopify-payment-button__more-options,
-.shopify-payment-button .shopify-payment-button__more-options,
-.shopify-payment-button__skeleton.shopify-payment-button__more-options {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  pointer-events: none !important;
-  opacity: 0 !important;
-}
 
 /* Pay in installments directly under Buy with Shop */
 .product__shoppay-installments {

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
  *
@@ -97,7 +97,7 @@
         "galleryStyle": "default",
         "galleryPosition": "left",
         "autoZoom": true,
-        "autoChange": true,
+        "autoChange": false,
         "galleryImageFit": "contain",
         "galleryImageGap": 16,
         "productNavigation": true,

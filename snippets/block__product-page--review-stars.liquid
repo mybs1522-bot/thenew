@@ -1,4 +1,4 @@
-<div class="product__review-stars {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
+﻿<div class="product__review-stars {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
   {% assign rating_count = "2,324" %}
   {% assign score = "4.9" %}
   {% case product.handle %}
@@ -23,11 +23,11 @@
   {% endcase %}
   <div class="book-editorial-rating-wrapper" onclick="scrollToProductReviews(event);" style="cursor: pointer;" title="Read {{ rating_count }} verified reviews">
     <div class="rating-stars-gold">
-      <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-half">★</span>
+      <span>â˜…</span><span>â˜…</span><span>â˜…</span><span>â˜…</span><span class="star-half">â˜…</span>
     </div>
     <span class="rating-score-bold">{{ score }}</span>
     <span class="rating-count-text">({{ rating_count }}&nbsp;ratings)</span>
-    <span class="rating-dot-separator">•</span>
+    <span class="rating-dot-separator">â€¢</span>
     <span class="rating-bestseller-badge">Verified Readers</span>
   </div>
 
@@ -177,8 +177,8 @@
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
     border: 1.5px solid #e2e8f0;
     background: #ffffff;
-    animation: topBookZoomRipple 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    animation-delay: var(--ripple-delay, 0s);
+    
+    
     will-change: transform, box-shadow;
     transition: border-color 0.2s ease, transform 0.2s ease;
   }
@@ -211,23 +211,7 @@
     transition: color 0.2s ease;
   }
 
-  @keyframes topBookZoomRipple {
-    0%, 100% {
-      transform: scale(1) translateY(0);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-      border-color: #e2e8f0;
-    }
-    20% {
-      transform: scale(1.12) translateY(-5px);
-      box-shadow: 0 10px 20px rgba(234, 88, 12, 0.28), 0 3px 6px rgba(0, 0, 0, 0.1);
-      border-color: #ea580c;
-    }
-    40% {
-      transform: scale(1) translateY(0);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-      border-color: #e2e8f0;
-    }
-  }
+  
 
   .top-rating-book-item:hover .top-rating-book-cover {
     animation-play-state: paused;
@@ -246,3 +230,5 @@
 </style>
 
 {% render 'kitchen-pre-price' %}
+
+

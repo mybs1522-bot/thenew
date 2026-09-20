@@ -1,4 +1,4 @@
-{% if product.handle == 'kitchen-design-book' %}
+﻿{% if product.handle == 'kitchen-design-book' %}
 <style>
   /* Sneak Peek Marquee for Kitchen Design Book */
   .kd-marquee-container {
@@ -67,43 +67,51 @@
     display: inline-block;
   }
   
-  /* Premium FAQ Layout */
-  .kd-faq-wrapper {
+  /* Premium Pitch Layout */
+  .kd-new-pitch-wrapper {
     margin-bottom: 16px;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   }
-  .kd-faq-item {
-    padding-bottom: 14px;
-    margin-bottom: 14px;
-    border-bottom: 1px solid #f1f5f9;
+  .kd-pitch-main-headline {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.3;
+    margin-bottom: 12px;
   }
-  .kd-faq-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
+  .kd-pitch-author-text {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 12px;
+    line-height: 1.5;
   }
-  .kd-faq-q {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 6px;
+  .kd-pitch-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+  }
+  .kd-pitch-list li {
     display: flex;
     align-items: flex-start;
     gap: 8px;
-    line-height: 1.3;
+    font-size: 0.9rem;
+    color: #1f2937;
+    margin-bottom: 8px;
+    line-height: 1.4;
   }
-  .kd-faq-q span {
+  .kd-pitch-list li span {
+    flex-shrink: 0;
+  }
+  .kd-pitch-cta {
+    font-size: 0.95rem;
+    font-weight: 700;
     color: #ea580c;
-  }
-  .kd-faq-a {
-    font-size: 0.85rem;
-    color: #475569;
-    line-height: 1.5;
-    padding-left: 20px;
+    text-align: center;
+    line-height: 1.4;
   }
 </style>
 
@@ -131,20 +139,24 @@
     </div>
   </div>
 
-  <div class="kd-faq-wrapper">
-    <div class="kd-faq-item">
-      <div class="kd-faq-q"><span>Q.</span> I have zero technical knowledge. Is this for me?</div>
-      <div class="kd-faq-a">Absolutely. Hand-drawn, idiot-proof diagrams make standard clearances and layouts easy for anyone to understand.</div>
-    </div>
+  <div class="kd-new-pitch-wrapper">
+    <h4 class="kd-pitch-main-headline">Design Your Dream Kitchen Without Costly Mistakes! 🍽️</h4>
     
-    <div class="kd-faq-item">
-      <div class="kd-faq-q"><span>Q.</span> I hired a designer. Do I still need this?</div>
-      <div class="kd-faq-a">Yes. Designers charge ,000+, but this is your master-guide to cross-check their work and prevent costly mistakes.</div>
+    <div class="kd-pitch-author-text">
+      <strong>Created by Ar Shamaya, NYC Kitchen Designer with 20+ Years of Experience.</strong><br>
+      Discover the WHY behind every kitchen design decision through 1,000+ colorful, easy-to-follow illustrations.
     </div>
-    
-    <div class="kd-faq-item">
-      <div class="kd-faq-q"><span>Q.</span> How is this different from Pinterest?</div>
-      <div class="kd-faq-a">Pinterest gives ideas; we give exact blueprints. Get 165+ pages of proven dimensions to hand straight to your carpenter.</div>
+
+    <ul class="kd-pitch-list">
+      <li><span>✅</span> Master Kitchen Layouts, Dimensions &amp; Storage</li>
+      <li><span>✅</span> Learn Professional Design Tips &amp; Real Examples</li>
+      <li><span>✅</span> Avoid Expensive Kitchen Design Mistakes</li>
+      <li><span>✅</span> Understand Materials, Workflows &amp; Functionality</li>
+      <li><span>✅</span> Imperial + Metric Measurements | Free Future Updates</li>
+    </ul>
+
+    <div class="kd-pitch-cta">
+      Stop Guessing. Start Designing Your Dream Kitchen Like a Pro!
     </div>
   </div>
 

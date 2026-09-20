@@ -1,16 +1,1 @@
-mutation productVariantsBulkUpdate($productId: ID!, $variants: [ProductVariantsBulkInput!]!) {
-  productVariantsBulkUpdate(productId: $productId, variants: $variants) {
-    product {
-      id
-    }
-    productVariants {
-      id
-      price
-      inventoryPolicy
-    }
-    userErrors {
-      field
-      message
-    }
-  }
-}
+mutation productCreateMedia($media: [CreateMediaInput!]!, $productId: ID!) { productCreateMedia(media: $media, productId: $productId) { media { id } userErrors { field message } } }

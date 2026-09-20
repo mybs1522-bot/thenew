@@ -1,10 +1,1 @@
-{
-    "productId":  "gid://shopify/Product/9311794757770",
-    "variants":  [
-                     {
-                         "price":  "17.00",
-                         "id":  "gid://shopify/ProductVariant/50249412149386",
-                         "inventoryPolicy":  "CONTINUE"
-                     }
-                 ]
-}
+{"productId": "gid://shopify/Product/9311794757770", "media": [{"mediaContentType": "IMAGE", "originalSource": "https://raw.githubusercontent.com/mybs1522-bot/thenew/main/assets/kitchen-books.jpg"}, {"mediaContentType": "IMAGE", "originalSource": "https://raw.githubusercontent.com/mybs1522-bot/thenew/main/assets/kitchen-people-1.jpg"}, {"mediaContentType": "IMAGE", "originalSource": "https://raw.githubusercontent.com/mybs1522-bot/thenew/main/assets/kitchen-people-2.jpg"}, {"mediaContentType": "IMAGE", "originalSource": "https://raw.githubusercontent.com/mybs1522-bot/thenew/main/assets/kitchen-people-3.jpg"}]}

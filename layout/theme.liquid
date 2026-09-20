@@ -167,5 +167,44 @@
 888   d88P Y88..88P Y88..88P      X88 Y88b. Y8b.     888     888     888  888 Y8b.     888  888  888 Y8b.     
 8888888P"   "Y88P"   "Y88P"   88888P'  "Y888 "Y8888  888     888     888  888  "Y8888  888  888  888  "Y8888  
 -->
+  <!-- E-Book Quantity Enforcer -->
+  <script>
+  (function() {
+    function enforceDigitalQuantityLimit() {
+      fetch('/cart.js')
+        .then(function(res) { return res.json(); })
+        .then(function(cart) {
+          var updates = {};
+          var needsUpdate = false;
+          cart.items.forEach(function(item) {
+            if (item.requires_shipping === false && item.quantity > 1) {
+              updates[item.key] = 1;
+              needsUpdate = true;
+            }
+          });
+          if (needsUpdate) {
+            fetch('/cart/update.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ updates: updates })
+            }).then(function() {
+              if (window.BoosterTheme && window.BoosterTheme.cart) {
+                 BoosterTheme.cart.getCart(); 
+                 if (window.location.pathname.indexOf('/cart') !== -1) {
+                   window.location.reload();
+                 }
+              } else {
+                 window.location.reload();
+              }
+            });
+          }
+        });
+    }
+    document.addEventListener('DOMContentLoaded', enforceDigitalQuantityLimit);
+    document.addEventListener('booster:cart:update', function() {
+      setTimeout(enforceDigitalQuantityLimit, 300);
+    });
+  })();
+  </script>
   </body>
 </html>

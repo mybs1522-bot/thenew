@@ -34,11 +34,15 @@
 
             {%- for discount in item.discounts -%}{{- discount.title -}}{%- endfor -%}
           </span>
+          {% if item.variant.requires_shipping == false %}
+            <div style="font-size: 0.9em; padding: 5px 0; color: #71717a; font-weight: 600;">1 (Digital limit)</div>
+          {% else %}
           <div class="quantity--input">
             <button class="quantity--input__button quantity--input__incr" onclick="BoosterTheme.cart.quantityHandler(event, false)">-</button><!--
             --><input class="quantity--input__input" value={{item.quantity}} data-qty-input data-qty-int-input data-variant-id={{item.key}} onchange="BoosterTheme.cart.updateQuantity(event)" type="number" min="0" {% if item.variant.inventory_policy != "continue" %}max="{{ item.variant.inventory_quantity}}"{% endif%}><!--
             --><button class="quantity--input__button quantity--input__decr" onclick="BoosterTheme.cart.quantityHandler(event, true)">+</button>
           </div>
+          {% endif %}
         </div>
         <span class="minicart__trash" onclick="BoosterTheme.cart.removeFromCart(this, '{{item.variant_id}}')">{% render 'get-icon', icon: 'trash' %}</span>
       </div>

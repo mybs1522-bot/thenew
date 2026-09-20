@@ -1,1 +1,1 @@
-{ product(id: "gid://shopify/Product/9311794757770") { handle } }
+query { products(first: 50) { edges { node { id title variants(first: 10) { edges { node { id title inventoryPolicy inventoryItem { tracked } inventoryQuantity } } } } } } }

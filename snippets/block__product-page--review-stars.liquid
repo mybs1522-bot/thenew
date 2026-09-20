@@ -32,6 +32,7 @@
   </div>
 
   <!-- 6 Books Showcase with Zoom Ripple Animation -->
+  {% unless product.handle == 'kitchen-design-book' %}
   <div class="top-rating-books-ripple-wrap">
     <div class="top-rating-books-track">
       <div class="top-rating-book-item" style="--ripple-delay: 0s;" onclick="scrollToCurriculum(0)">
@@ -78,6 +79,7 @@
       </div>
     </div>
   </div>
+  {% endunless %}
 </div>
 
 <script>

@@ -3,6 +3,8 @@
         {% when 'description' %}
             {% if product.handle == '6-books-for-interior-exterior-design' %}
                 {% render 'landing-page-6books', product: product %}
+            {% elsif product.handle == '5-courses-interior-exterior-design-ai' %}
+                {% render 'course-5bundle-about', product: product %}
             {% else %}
                 {% render 'book-about-editorial', product: product %}
             {% endif %}

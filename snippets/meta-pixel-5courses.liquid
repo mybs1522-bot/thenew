@@ -1,0 +1,113 @@
+<!-- Isolated Meta Pixel for 5 Courses Offer -->
+<!-- Target Product: 5-courses-interior-exterior-design-ai (ID: 9319186694282, Variant: 50269007347850) -->
+<!-- Suppresses sitewide pixel 2085433195424016 on this page and routes exclusively to 955923376982045 -->
+<script>
+(function() {
+  var BLOCKED_PIXEL_ID = '2085433195424016';
+  var NEW_PIXEL_ID = '955923376982045';
+  var TARGET_VARIANT_ID = '50269007347850';
+
+  // 1. Install fbq interceptor before Trekkie loads
+  var _queue = [];
+  var customFbq = function() {
+    var args = Array.prototype.slice.call(arguments);
+
+    // Drop initialization of the sitewide pixel
+    if (args[0] === 'init' && String(args[1]) === BLOCKED_PIXEL_ID) {
+      return;
+    }
+
+    // Drop any direct calls targeting the sitewide pixel
+    if ((args[0] === 'trackSingle' || args[0] === 'trackSingleCustom') && String(args[1]) === BLOCKED_PIXEL_ID) {
+      return;
+    }
+
+    // Drop generic PageView events (do not send site-wide PageView to new dataset)
+    if ((args[0] === 'track' || args[0] === 'trackSingle') && (args[1] === 'PageView' || args[2] === 'PageView')) {
+      return;
+    }
+
+    // Route generic track calls exclusively to the NEW pixel via trackSingle
+    if (args[0] === 'track' || args[0] === 'trackCustom') {
+      var eventType = args[0] === 'track' ? 'trackSingle' : 'trackSingleCustom';
+      var eventName = args[1];
+      var eventData = args[2] || {};
+      var eventOpts = args[3] || {};
+
+      if (customFbq.callMethod) {
+        customFbq.callMethod.apply(customFbq, [eventType, NEW_PIXEL_ID, eventName, eventData, eventOpts]);
+      } else {
+        _queue.push([eventType, NEW_PIXEL_ID, eventName, eventData, eventOpts]);
+      }
+      return;
+    }
+
+    // Pass everything else to Meta's engine
+    if (customFbq.callMethod) {
+      customFbq.callMethod.apply(customFbq, args);
+    } else {
+      _queue.push(args);
+    }
+  };
+
+  customFbq.queue = _queue;
+  customFbq.loaded = true;
+  customFbq.version = '2.0';
+  window.fbq = customFbq;
+  if (!window._fbq) window._fbq = customFbq;
+
+  // 2. Load Meta Pixel fbevents.js if not already present
+  if (!document.querySelector('script[src*="fbevents.js"]')) {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    var first = document.getElementsByTagName('script')[0];
+    if (first && first.parentNode) {
+      first.parentNode.insertBefore(s, first);
+    } else {
+      document.head.appendChild(s);
+    }
+  }
+
+  // 3. Initialize ONLY the new dataset
+  fbq('set', 'autoConfig', false, NEW_PIXEL_ID);
+  fbq('init', NEW_PIXEL_ID);
+
+  // 4. Fire ViewContent for 5 Courses
+  fbq('trackSingle', NEW_PIXEL_ID, 'ViewContent', {
+    content_ids: [TARGET_VARIANT_ID],
+    content_type: 'product',
+    content_name: '5 Courses for Interior/Exterior Design + AI',
+    value: 49.00,
+    currency: 'USD'
+  });
+
+  // 5. Track AddToCart on purchase / checkout actions
+  document.addEventListener('DOMContentLoaded', function() {
+    function fireATC() {
+      fbq('trackSingle', NEW_PIXEL_ID, 'AddToCart', {
+        content_ids: [TARGET_VARIANT_ID],
+        content_type: 'product',
+        contents: [{
+          id: TARGET_VARIANT_ID,
+          quantity: 1,
+          item_price: 49.00
+        }],
+        value: 49.00,
+        currency: 'USD'
+      });
+    }
+
+    // Attach to buy / ATC buttons
+    document.querySelectorAll('[data-buy-button], .button--primary, .button--addToCart, .button--buy-now, .c5b-enroll-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        fireATC();
+      });
+    });
+  });
+})();
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=955923376982045&ev=ViewContent&noscript=1&cd[content_ids]=50269007347850&cd[content_type]=product&cd[value]=49.00&cd[currency]=USD" />
+</noscript>

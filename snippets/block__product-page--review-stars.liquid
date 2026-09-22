@@ -1,4 +1,4 @@
-﻿<div class="product__review-stars {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
+<div class="product__review-stars {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
   {% assign rating_count = "2,324" %}
   {% assign score = "4.9" %}
   {% case product.handle %}
@@ -20,6 +20,9 @@
     {% when '6-books-for-interior-exterior-design' %}
       {% assign rating_count = "2,324" %}
       {% assign score = "4.9" %}
+    {% when '5-courses-interior-exterior-design-ai' %}
+      {% assign rating_count = "1,840" %}
+      {% assign score = "4.9" %}
   {% endcase %}
   <div class="book-editorial-rating-wrapper" onclick="scrollToProductReviews(event);" style="cursor: pointer;" title="Read {{ rating_count }} verified reviews">
     <div class="rating-stars-gold">
@@ -28,11 +31,52 @@
     <span class="rating-score-bold">{{ score }}</span>
     <span class="rating-count-text">({{ rating_count }}&nbsp;ratings)</span>
     <span class="rating-dot-separator">&#8226;</span>
-    <span class="rating-bestseller-badge">Verified Readers</span>
+    <span class="rating-bestseller-badge">{% if product.handle == '5-courses-interior-exterior-design-ai' %}Verified Students{% else %}Verified Readers{% endif %}</span>
   </div>
 
+  {% if product.handle == '5-courses-interior-exterior-design-ai' %}
+  <!-- 5 Courses Showcase with Ripple Animation -->
+  <div class="top-rating-books-ripple-wrap">
+    <div class="top-rating-books-track">
+      <div class="top-rating-book-item" style="--ripple-delay: 0s;">
+        <div class="top-rating-book-cover">
+          <img src="https://lh3.googleusercontent.com/d/1fV5bz4JDugh8HxLMJ0fXu5K5sDj3qlSR" alt="AutoCAD Mastery" loading="lazy" width="70" height="98" />
+        </div>
+        <span class="top-rating-book-name">AutoCAD</span>
+        <span class="top-rating-book-pages">2D Blueprints</span>
+      </div>
+      <div class="top-rating-book-item" style="--ripple-delay: 0.25s;">
+        <div class="top-rating-book-cover">
+          <img src="https://lh3.googleusercontent.com/d/1wl6by5AO5MiPeoYsZ8F6Zi5AJahoeTQo" alt="SketchUp Pro" loading="lazy" width="70" height="98" />
+        </div>
+        <span class="top-rating-book-name">SketchUp</span>
+        <span class="top-rating-book-pages">3D Modeling</span>
+      </div>
+      <div class="top-rating-book-item" style="--ripple-delay: 0.5s;">
+        <div class="top-rating-book-cover">
+          <img src="https://lh3.googleusercontent.com/d/1aHEt_z78tYD_0Cn66DiduAnhwn-o8El8" alt="V-Ray Photorealism" loading="lazy" width="70" height="98" />
+        </div>
+        <span class="top-rating-book-name">V-Ray</span>
+        <span class="top-rating-book-pages">Photorealism</span>
+      </div>
+      <div class="top-rating-book-item" style="--ripple-delay: 0.75s;">
+        <div class="top-rating-book-cover">
+          <img src="https://lh3.googleusercontent.com/d/1vbV4j6K9sgzbbZ7qlRdgqPTXWiHBPLsr" alt="D5 Render AI" loading="lazy" width="70" height="98" />
+        </div>
+        <span class="top-rating-book-name">D5 Render</span>
+        <span class="top-rating-book-pages">Real-Time AI</span>
+      </div>
+      <div class="top-rating-book-item" style="--ripple-delay: 1.0s;">
+        <div class="top-rating-book-cover">
+          <img src="https://lh3.googleusercontent.com/d/1s-HzZVKpc9F92mLW2gMOPk0kVrKAqUIS" alt="AI in Architecture" loading="lazy" width="70" height="98" />
+        </div>
+        <span class="top-rating-book-name">AI Design</span>
+        <span class="top-rating-book-pages">Generative</span>
+      </div>
+    </div>
+  </div>
+  {% elsif product.handle != 'kitchen-design-book' %}
   <!-- 6 Books Showcase with Zoom Ripple Animation -->
-  {% unless product.handle == 'kitchen-design-book' %}
   <div class="top-rating-books-ripple-wrap">
     <div class="top-rating-books-track">
       <div class="top-rating-book-item" style="--ripple-delay: 0s;" onclick="scrollToCurriculum(0)">
@@ -79,7 +123,7 @@
       </div>
     </div>
   </div>
-  {% endunless %}
+  {% endif %}
 </div>
 
 <script>

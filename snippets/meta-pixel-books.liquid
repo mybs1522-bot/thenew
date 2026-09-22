@@ -1,0 +1,48 @@
+<!-- Meta Pixel for Books & General Store -->
+<!-- Pixel ID: 2085433195424016 -->
+<!-- Active on all store pages and book products; strictly excluded on 5-Courses -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '2085433195424016');
+fbq('track', 'PageView');
+
+{% if template contains 'product' and product.handle != '5-courses-interior-exterior-design-ai' %}
+  fbq('track', 'ViewContent', {
+    content_name: {{ product.title | json }},
+    content_ids: [{{ product.selected_or_first_available_variant.id | json }}],
+    content_type: 'product',
+    value: {{ product.price | money_without_currency | remove: ',' | json }},
+    currency: {{ cart.currency.iso_code | json }}
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    function fireBooksATC() {
+      fbq('track', 'AddToCart', {
+        content_name: {{ product.title | json }},
+        content_ids: [{{ product.selected_or_first_available_variant.id | json }}],
+        content_type: 'product',
+        value: {{ product.price | money_without_currency | remove: ',' | json }},
+        currency: {{ cart.currency.iso_code | json }}
+      });
+    }
+
+    document.querySelectorAll('[data-buy-button], .button--primary, .button--addToCart, .button--buy-now').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        fireBooksATC();
+      });
+    });
+  });
+{% endif %}
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=2085433195424016&ev=PageView&noscript=1" />
+</noscript>

@@ -33,6 +33,8 @@
 
     {% if product.handle == '5-courses-interior-exterior-design-ai' %}
       {% render 'meta-pixel-5courses' %}
+    {% else %}
+      {% render 'meta-pixel-books' %}
     {% endif %}
 
     {{ content_for_header }}

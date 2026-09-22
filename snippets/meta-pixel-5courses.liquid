@@ -1,29 +1,54 @@
 <!-- Isolated Meta Pixel for 5 Courses Offer -->
 <!-- Target Product: 5-courses-interior-exterior-design-ai (ID: 9319186694282, Variant: 50269007347850) -->
-<!-- Suppresses sitewide pixel 2085433195424016 on this page and routes exclusively to 955923376982045 -->
+<!-- Completely suppresses sitewide pixel 2085433195424016 on this page and activates ONLY 955923376982045 -->
 <script>
 (function() {
   var BLOCKED_PIXEL_ID = '2085433195424016';
   var NEW_PIXEL_ID = '955923376982045';
   var TARGET_VARIANT_ID = '50269007347850';
 
-  // 1. Install fbq interceptor before Trekkie loads
+  // --- 1. NETWORK & BEACON INTERCEPTOR (Prevents any beacon for 2085433195424016) ---
+  if (window.navigator && window.navigator.sendBeacon) {
+    var origSendBeacon = window.navigator.sendBeacon;
+    window.navigator.sendBeacon = function(url, data) {
+      if (typeof url === 'string' && url.indexOf('facebook.com/tr') !== -1 && url.indexOf(BLOCKED_PIXEL_ID) !== -1) {
+        return true;
+      }
+      return origSendBeacon.apply(this, arguments);
+    };
+  }
+
+  if (window.fetch) {
+    var origFetch = window.fetch;
+    window.fetch = function(input, init) {
+      var url = typeof input === 'string' ? input : (input && input.url ? input.url : '');
+      if (url.indexOf('facebook.com/tr') !== -1 && url.indexOf(BLOCKED_PIXEL_ID) !== -1) {
+        return Promise.resolve(new Response('{}', { status: 200 }));
+      }
+      return origFetch.apply(this, arguments);
+    };
+  }
+
+  // --- 2. FBQ METHOD INTERCEPTOR ---
   var _queue = [];
   var customFbq = function() {
     var args = Array.prototype.slice.call(arguments);
 
-    // Drop initialization of the sitewide pixel
+    // Block any initialization of the sitewide pixel
     if (args[0] === 'init' && String(args[1]) === BLOCKED_PIXEL_ID) {
       return;
     }
 
-    // Drop any direct calls targeting the sitewide pixel
+    // Block any trackSingle targeting the sitewide pixel
     if ((args[0] === 'trackSingle' || args[0] === 'trackSingleCustom') && String(args[1]) === BLOCKED_PIXEL_ID) {
       return;
     }
 
-    // Drop generic PageView events (do not send site-wide PageView to new dataset)
-    if ((args[0] === 'track' || args[0] === 'trackSingle') && (args[1] === 'PageView' || args[2] === 'PageView')) {
+    // Suppress generic PageView (do not send site-wide PageView to new dataset)
+    if (args[0] === 'track' && args[1] === 'PageView') {
+      return;
+    }
+    if (args[0] === 'trackSingle' && args[2] === 'PageView') {
       return;
     }
 
@@ -42,7 +67,7 @@
       return;
     }
 
-    // Pass everything else to Meta's engine
+    // Pass everything else to Meta's runtime
     if (customFbq.callMethod) {
       customFbq.callMethod.apply(customFbq, args);
     } else {
@@ -56,7 +81,7 @@
   window.fbq = customFbq;
   if (!window._fbq) window._fbq = customFbq;
 
-  // 2. Load Meta Pixel fbevents.js if not already present
+  // --- 3. LOAD META PIXEL RUNTIME ---
   if (!document.querySelector('script[src*="fbevents.js"]')) {
     var s = document.createElement('script');
     s.async = true;
@@ -69,12 +94,12 @@
     }
   }
 
-  // 3. Initialize ONLY the new dataset
-  fbq('set', 'autoConfig', false, NEW_PIXEL_ID);
-  fbq('init', NEW_PIXEL_ID);
+  // --- 4. INITIALIZE ONLY THE NEW DATASET ---
+  customFbq('set', 'autoConfig', false, NEW_PIXEL_ID);
+  customFbq('init', NEW_PIXEL_ID);
 
-  // 4. Fire ViewContent for 5 Courses
-  fbq('trackSingle', NEW_PIXEL_ID, 'ViewContent', {
+  // --- 5. EMIT VIEWCONTENT EXCLUSIVELY ON 955923376982045 ---
+  customFbq('trackSingle', NEW_PIXEL_ID, 'ViewContent', {
     content_ids: [TARGET_VARIANT_ID],
     content_type: 'product',
     content_name: '5 Courses for Interior/Exterior Design + AI',
@@ -82,10 +107,10 @@
     currency: 'USD'
   });
 
-  // 5. Track AddToCart on purchase / checkout actions
+  // --- 6. ATTACH ADDTOCART LISTENER ---
   document.addEventListener('DOMContentLoaded', function() {
-    function fireATC() {
-      fbq('trackSingle', NEW_PIXEL_ID, 'AddToCart', {
+    function fire5CoursesATC() {
+      customFbq('trackSingle', NEW_PIXEL_ID, 'AddToCart', {
         content_ids: [TARGET_VARIANT_ID],
         content_type: 'product',
         contents: [{
@@ -98,10 +123,9 @@
       });
     }
 
-    // Attach to buy / ATC buttons
     document.querySelectorAll('[data-buy-button], .button--primary, .button--addToCart, .button--buy-now, .c5b-enroll-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        fireATC();
+        fire5CoursesATC();
       });
     });
   });

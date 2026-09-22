@@ -344,6 +344,21 @@
   .course-showcase-item:hover .course-showcase-pages {
     color: #ea580c !important;
   }
+
+  {% if product.handle == '5-courses-interior-exterior-design-ai' %}
+  @media (max-width: 768px) {
+    .course-showcase-wrap {
+      margin-top: 4px !important;
+      margin-bottom: 2px !important;
+    }
+    .course-showcase-track {
+      padding-bottom: 2px !important;
+    }
+    .product__review-stars {
+      margin-bottom: 2px !important;
+    }
+  }
+  {% endif %}
 </style>
 
 {% render 'kitchen-pre-price' %}

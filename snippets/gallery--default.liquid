@@ -25,31 +25,57 @@
                 </p>
             </div>
         {% endif %}
-        {% for image in product.images %}
-            <div data-variants="|{% for var in image.variants %}{{var.options| join: '#' | escape}}|{% endfor %}" class="slide--product {% if isAutoZoom %}zoom{% endif %}" data-bstr-slide>
-                <img height="{{image.height}}" width="{{image.width}}" loading="lazy"  class="lazyload {% if isAutoZoom %}image-zoom{% endif %}" alt="{{image.alt | escape}}" src="{{ image.src | img_url: '1280x' }}" data-zoom="{{ image | img_url: '1024x1024', scale: 2 }}">
+        {% if product.handle == '5-courses-interior-exterior-design-ai' %}
+            {% comment %} Hero Video in place of first product image {% endcomment %}
+            <div class="slide--product slide--product-video" data-bstr-slide>
+                <video 
+                    id="course-hero-video"
+                    class="course-hero-video-player"
+                    playsinline
+                    webkit-playsinline
+                    controls
+                    autoplay
+                    muted
+                    loop
+                    preload="auto"
+                    poster="{{ 'hero-video-poster.jpg' | asset_url }}"
+                >
+                    <source src="{{ 'course-hero-video.mp4' | asset_url }}" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
             </div>
-        {% endfor %}
-        {% for media in product.media %}
-            {% case media.media_type %}
-                {% when 'image' %}
-                    {% continue %}
-                {% when 'external_video' %}
-                    <div class="external__holder slide--product" data-bstr-slide data-media-holder="{{media.id}}" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100}}%;">
-                        {% capture med %}{{ media | external_video_tag: class: 'gallery__external lazyload' }}{% endcapture %}
-                        {{med | replace_first: 'src', 'data-src'}}
-                    </div>
-                {% when 'video' %}
-                    <div class="video__holder slide--product" data-bstr-slide data-media-holder="{{media.id}}">
-                        {% capture med %}{{ media | video_tag: class: 'gallery__video lazyload' }}{% endcapture %}
-                        {{med | replace_first: 'src', 'data-src' | replace_first: 'poster=', 'controls=true poster='}}
-                    </div>
-                {% when 'model' %}
-                    <div class="video__holder model__holder slide--product" data-bstr-slide data-media-holder="{{media.id}}">
-                        {{ media | model_viewer_tag }}
-                    </div>
-            {% endcase %}
-        {% endfor %}
+            {% for image in product.images offset: 1 %}
+                <div data-variants="|{% for var in image.variants %}{{var.options| join: '#' | escape}}|{% endfor %}" class="slide--product {% if isAutoZoom %}zoom{% endif %}" data-bstr-slide>
+                    <img height="{{image.height}}" width="{{image.width}}" loading="lazy" class="lazyload {% if isAutoZoom %}image-zoom{% endif %}" alt="{{image.alt | escape}}" src="{{ image.src | img_url: '1280x' }}" data-zoom="{{ image | img_url: '1024x1024', scale: 2 }}">
+                </div>
+            {% endfor %}
+        {% else %}
+            {% for image in product.images %}
+                <div data-variants="|{% for var in image.variants %}{{var.options| join: '#' | escape}}|{% endfor %}" class="slide--product {% if isAutoZoom %}zoom{% endif %}" data-bstr-slide>
+                    <img height="{{image.height}}" width="{{image.width}}" loading="lazy"  class="lazyload {% if isAutoZoom %}image-zoom{% endif %}" alt="{{image.alt | escape}}" src="{{ image.src | img_url: '1280x' }}" data-zoom="{{ image | img_url: '1024x1024', scale: 2 }}">
+                </div>
+            {% endfor %}
+            {% for media in product.media %}
+                {% case media.media_type %}
+                    {% when 'image' %}
+                        {% continue %}
+                    {% when 'external_video' %}
+                        <div class="external__holder slide--product" data-bstr-slide data-media-holder="{{media.id}}" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100}}%;">
+                            {% capture med %}{{ media | external_video_tag: class: 'gallery__external lazyload' }}{% endcapture %}
+                            {{med | replace_first: 'src', 'data-src'}}
+                        </div>
+                    {% when 'video' %}
+                        <div class="video__holder slide--product" data-bstr-slide data-media-holder="{{media.id}}">
+                            {% capture med %}{{ media | video_tag: class: 'gallery__video lazyload' }}{% endcapture %}
+                            {{med | replace_first: 'src', 'data-src' | replace_first: 'poster=', 'controls=true poster='}}
+                        </div>
+                    {% when 'model' %}
+                        <div class="video__holder model__holder slide--product" data-bstr-slide data-media-holder="{{media.id}}">
+                            {{ media | model_viewer_tag }}
+                        </div>
+                {% endcase %}
+            {% endfor %}
+        {% endif %}
     </div>
   </div>
 
@@ -58,38 +84,59 @@
         <button data-thumbnail_slide="-" class="thumbnail--slide thumbnail--slide-up hide-mobile" aria-label="Previous"><i class="uil uil-angle-up"></i></button>
     {% endif %}
     <div class="gallery__thumbnails hidden-scroll">
-        {% for image in product.images %}
-            <span class="gallery__thumbnail {% if forloop.first %}bstrSlider__thumb--active{%endif%}" data-media-type="image" data-bstr-slider-for="{{section.id}}" data-bstr-slider-thumb="{{forloop.index0}}"
-            {% if section.settings.autoChange %}data-bstr-slider-thumb-hover{% endif %}
-                >
-                <img height="{{image.height}}" width="{{image.width}}" src="{{image.src|img_url: '200x'}}" alt="Thumbnail for {{image.alt}}">
+        {% if product.handle == '5-courses-interior-exterior-design-ai' %}
+            <span class="gallery__thumbnail bstrSlider__thumb--active video-thumb-badge-wrap" data-media-type="video" data-bstr-slider-for="{{section.id}}" data-bstr-slider-thumb="0"
+            {% if section.settings.autoChange %}data-bstr-slider-thumb-hover{% endif %}>
+                <span class="thumb-video-inner">
+                    <img height="200" width="200" src="{{ 'hero-video-poster.jpg' | asset_url }}" alt="Watch Course Video Preview">
+                    <span class="video-play-badge">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="11" fill="#ea580c" stroke="#ffffff" stroke-width="1.5"/>
+                            <polygon points="10,7.5 17,12 10,16.5" fill="#ffffff"/>
+                        </svg>
+                    </span>
+                </span>
             </span>
-            {% assign currentIndex = forloop.index0 | plus: 1 %}
-        {% endfor %}
-        {% for media in product.media %}
-            {% case media.media_type %}
-                {% when 'image' %}
-                    {% continue %}
-                {% when 'external_video' %}
-                    <span data-media-type="{{media.id}}" class="gallery__thumbnail" data-bstr-slider-for="{{section.id}}" data-bstr-slider-thumb="{{currentIndex}}"
-                    {% if section.settings.autoChange %}data-bstr-slider-thumb-hover{% endif %}>
-                        {% render 'image', size: '200x', src: media, alt: media.alt %}
-                    </span>
-                    {% assign currentIndex = currentIndex | plus: 1 %}
-                {% when 'video' %}
-                    <span data-media-type="{{media.id}}" class="gallery__thumbnail" data-bstr-slider-for="{{section.id}}" data-bstr-slider-thumb="{{currentIndex}}"
-                    {% if section.settings.autoChange %}data-bstr-slider-thumb-hover{% endif %}>
-                        {% render 'image', size: '200x', src: media, alt: media.alt %}
-                    </span>
-                    {% assign currentIndex = currentIndex | plus: 1 %}
-                {% when 'model' %}
-                    <span data-media-type="{{media.id}}" class="gallery__thumbnail" data-bstr-slider-for="{{section.id}}" data-bstr-slider-thumb="{{currentIndex}}"
-                    {% if section.settings.autoChange %}data-bstr-slider-thumb-hover{% endif %}>
-                        {% render 'image', size: '200x', src: media, alt: media.alt %}
-                    </span>
-                    {% assign currentIndex = currentIndex | plus: 1 %}
-            {% endcase %}
-        {% endfor %}
+            {% for image in product.images offset: 1 %}
+                <span class="gallery__thumbnail" data-media-type="image" data-bstr-slider-for="{{section.id}}" data-bstr-slider-thumb="{{forloop.index}}"
+                {% if section.settings.autoChange %}data-bstr-slider-thumb-hover{% endif %}>
+                    <img height="{{image.height}}" width="{{image.width}}" src="{{image.src|img_url: '200x'}}" alt="Thumbnail for {{image.alt}}">
+                </span>
+            {% endfor %}
+        {% else %}
+            {% for image in product.images %}
+                <span class="gallery__thumbnail {% if forloop.first %}bstrSlider__thumb--active{%endif%}" data-media-type="image" data-bstr-slider-for="{{section.id}}" data-bstr-slider-thumb="{{forloop.index0}}"
+                {% if section.settings.autoChange %}data-bstr-slider-thumb-hover{% endif %}
+                    >
+                    <img height="{{image.height}}" width="{{image.width}}" src="{{image.src|img_url: '200x'}}" alt="Thumbnail for {{image.alt}}">
+                </span>
+                {% assign currentIndex = forloop.index0 | plus: 1 %}
+            {% endfor %}
+            {% for media in product.media %}
+                {% case media.media_type %}
+                    {% when 'image' %}
+                        {% continue %}
+                    {% when 'external_video' %}
+                        <span data-media-type="{{media.id}}" class="gallery__thumbnail" data-bstr-slider-for="{{section.id}}" data-bstr-slider-thumb="{{currentIndex}}"
+                        {% if section.settings.autoChange %}data-bstr-slider-thumb-hover{% endif %}>
+                            {% render 'image', size: '200x', src: media, alt: media.alt %}
+                        </span>
+                        {% assign currentIndex = currentIndex | plus: 1 %}
+                    {% when 'video' %}
+                        <span data-media-type="{{media.id}}" class="gallery__thumbnail" data-bstr-slider-for="{{section.id}}" data-bstr-slider-thumb="{{currentIndex}}"
+                        {% if section.settings.autoChange %}data-bstr-slider-thumb-hover{% endif %}>
+                            {% render 'image', size: '200x', src: media, alt: media.alt %}
+                        </span>
+                        {% assign currentIndex = currentIndex | plus: 1 %}
+                    {% when 'model' %}
+                        <span data-media-type="{{media.id}}" class="gallery__thumbnail" data-bstr-slider-for="{{section.id}}" data-bstr-slider-thumb="{{currentIndex}}"
+                        {% if section.settings.autoChange %}data-bstr-slider-thumb-hover{% endif %}>
+                            {% render 'image', size: '200x', src: media, alt: media.alt %}
+                        </span>
+                        {% assign currentIndex = currentIndex | plus: 1 %}
+                {% endcase %}
+            {% endfor %}
+        {% endif %}
     </div>
     {% if product.images.size > 5 %}
         <button data-thumbnail_slide="+" class="thumbnail--slide thumbnail--slide-down hide-mobile" aria-label="Next"><i class="uil uil-angle-down"></i></button>
@@ -157,10 +204,18 @@
                 const activeSlide = slides[index];
                 if (!activeSlide) return;
 
+                const vid = activeSlide.querySelector('video');
                 const img = activeSlide.querySelector('img');
                 let imgHeight = 0;
 
-                if (img && img.naturalWidth && img.naturalHeight) {
+                if (vid) {
+                    const currentW = activeSlide.offsetWidth || slider.offsetWidth || (window.innerWidth - 100);
+                    if (vid.videoHeight && vid.videoWidth) {
+                        imgHeight = Math.round((vid.videoHeight / vid.videoWidth) * currentW);
+                    } else {
+                        imgHeight = Math.round((9 / 16) * currentW);
+                    }
+                } else if (img && img.naturalWidth && img.naturalHeight) {
                     const currentW = activeSlide.offsetWidth || slider.offsetWidth || (window.innerWidth - 100);
                     imgHeight = Math.round((img.naturalHeight / img.naturalWidth) * currentW);
                 } else if (img && img.offsetHeight > 50) {
@@ -264,11 +319,82 @@
                     img.addEventListener('load', () => updateGalleryHeight(null, false));
                 }
             });
+
+            const heroVid = document.getElementById('course-hero-video');
+            if (heroVid) {
+                heroVid.addEventListener('loadedmetadata', () => updateGalleryHeight(null, false));
+                document.querySelectorAll('.gallery__thumbnail').forEach((thumb) => {
+                    thumb.addEventListener('click', () => {
+                        const idx = parseInt(thumb.getAttribute('data-bstr-slider-thumb') || 0);
+                        if (idx === 0) {
+                            heroVid.play().catch(() => {});
+                        } else {
+                            heroVid.pause();
+                        }
+                    });
+                });
+            }
         })(jQuery);
     });
 </script>
   
   <style>
+    /* Hero Video Slide & Thumbnail Styling */
+    .slide--product-video {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      background: #000000;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    .course-hero-video-player {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 520px;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+      background: #000000;
+    }
+    .thumb-video-inner {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      overflow: hidden;
+    }
+    .thumb-video-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .video-play-badge {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.38);
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+    .video-play-badge svg {
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.6));
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .gallery__thumbnail:hover .video-play-badge svg,
+    .gallery__thumbnail.bstrSlider__thumb--active .video-play-badge svg {
+      transform: scale(1.15);
+    }
+    .gallery__thumbnail.bstrSlider__thumb--active .video-play-badge {
+      background: rgba(0, 0, 0, 0.15);
+    }
+
     .gallery__thumbnails {
       max-height: calc((80px + 0.25rem) * 5);
     }

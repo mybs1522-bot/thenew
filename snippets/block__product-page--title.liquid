@@ -5,6 +5,21 @@
 }
 </style>
 {%- endif -%}
+{%- if product.handle == '5-courses-interior-exterior-design-ai' -%}
+<div class="product-luxury-eyebrow">
+  <span class="eyebrow-pill">
+    <span class="eyebrow-dot"></span>
+    Bestseller in 26 Countries | 3D &amp; AI Design
+  </span>
+</div>
+<h1 
+class="h-reset product__title product__title--{{block.id}} 
+font__family--{{-block.settings.fontFamily}} font__size--{{-block.settings.fontSize}} 
+ {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
+    <span class="product__title-prefix">5 Courses For</span>
+    <span class="product__title-highlight">Interior &amp; Exterior Design + AI</span>
+</h1>
+{%- else -%}
 <div class="product-luxury-eyebrow">
   <span class="eyebrow-pill">
     <span class="eyebrow-dot"></span>
@@ -15,13 +30,17 @@
 class="h-reset product__title product__title--{{block.id}} 
 font__family--{{-block.settings.fontFamily}} font__size--{{-block.settings.fontSize}} 
  {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
-  {%- if product.title contains 'Interior' and product.title contains 'Exterior' -%}
+  {%- if product.title contains 'Interior' and product.title contains 'Exterior' and product.title contains 'Books' -%}
+    <span class="product__title-prefix">6 Books For</span>
+    <span class="product__title-highlight">Interior &amp; Exterior Design</span>
+  {%- elsif product.title contains 'Interior' and product.title contains 'Exterior' and product.handle contains '6-books' -%}
     <span class="product__title-prefix">6 Books For</span>
     <span class="product__title-highlight">Interior &amp; Exterior Design</span>
   {%- else -%}
     {{ product.title }}
   {%- endif -%}
 </h1>
+{%- endif -%}
 
 <style>
   .product__title,
@@ -80,4 +99,18 @@ font__family--{{-block.settings.fontFamily}} font__size--{{-block.settings.fontS
       white-space: nowrap !important;
     }
   }
+  {%- if product.handle == '5-courses-interior-exterior-design-ai' -%}
+  .product__title-highlight {
+    font-size: 38px !important;
+    white-space: normal !important;
+  }
+  @media (max-width: 768px) {
+    .product__title-highlight {
+      font-size: clamp(20px, 6.2vw, 28px) !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+      line-height: 1.18 !important;
+    }
+  }
+  {%- endif -%}
 </style>

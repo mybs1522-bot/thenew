@@ -1248,6 +1248,7 @@ body.is-digital-selected [id^="delivery__"] {
 (function() {
   function syncHardcopyDelivery() {
     try {
+      if (window.location.pathname.indexOf('5-courses') !== -1) return;
       var isHardcopy = false;
 
       // 1. Check active swatch cards

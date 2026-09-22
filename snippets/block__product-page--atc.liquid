@@ -139,6 +139,26 @@
 
 {% render 'product-mini-reviews-slider' %}
 
+{% if product.handle == '5-courses-interior-exterior-design-ai' or product.id == 9319186694282 %}
+<div class="product-luxury-trust-bar">
+    <div class="luxury-trust-item">
+        <svg class="luxury-trust-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+        <div class="luxury-trust-heading">Software Links Included</div>
+        <div class="luxury-trust-sub">Instant download + setup guides</div>
+    </div>
+    <div class="luxury-trust-item">
+        <svg class="luxury-trust-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+        </svg>
+        <div class="luxury-trust-heading">7-Day No question refund</div>
+        <div class="luxury-trust-sub">100% Money-back guarantee</div>
+    </div>
+</div>
+{% else %}
 <div class="product-luxury-trust-bar">
     <div class="luxury-trust-item">
         <svg class="luxury-trust-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -165,6 +185,7 @@
         <div class="luxury-trust-sub luxury-trust-refund-sub">Physical Copy Refund Policy</div>
     </div>
 </div>
+{% endif %}
 
 
 {% if block.settings.stickyATC == "scroll" %}

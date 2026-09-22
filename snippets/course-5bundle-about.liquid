@@ -1,0 +1,920 @@
+{% comment %}
+  5 Courses for Interior/Exterior Design + AI - High-Converting About & Landing Component
+  AutoCAD, SketchUp, V-Ray, D5 Render, and AI in Interior & Architecture Design
+{% endcomment %}
+
+<div id="course-5bundle-about" class="c5b-root">
+  <style>
+    #course-5bundle-about {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.6;
+      padding: 10px 0 50px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    #course-5bundle-about * {
+      box-sizing: border-box;
+    }
+
+    /* Eyebrow & Badges */
+    .c5b-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ea580c;
+      background: #fff7ed;
+      border: 1px solid #ffedd5;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+
+    .c5b-hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .c5b-title {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #09090b;
+      margin: 0 0 16px;
+    }
+
+    .c5b-subtitle {
+      font-size: 18px;
+      color: #475569;
+      max-width: 780px;
+      margin: 0 auto 28px;
+      line-height: 1.55;
+    }
+
+    .c5b-pipeline-img-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+      border: 1px solid #e2e8f0;
+      background: #0f172a;
+      margin: 0 auto 36px;
+    }
+
+    .c5b-pipeline-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 4-Stat Pillars */
+    .c5b-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .c5b-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .c5b-title {
+        font-size: 26px;
+      }
+      .c5b-subtitle {
+        font-size: 15px;
+      }
+    }
+
+    .c5b-stat-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 20px 16px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .c5b-stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      border-color: #fdba74;
+    }
+
+    .c5b-stat-num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #ea580c;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .c5b-stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    /* Section Headings */
+    .c5b-section-hdr {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .c5b-section-hdr h3 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 8px 0 10px;
+    }
+
+    .c5b-section-hdr p {
+      font-size: 15px;
+      color: #64748b;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Courses Accordion / Grid */
+    .c5b-courses-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .c5b-course-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .c5b-course-card:hover {
+      border-color: #ea580c;
+      box-shadow: 0 12px 30px rgba(234, 88, 12, 0.08);
+    }
+
+    @media (max-width: 820px) {
+      .c5b-course-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .c5b-course-media {
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+    }
+
+    .c5b-course-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .c5b-course-body {
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (max-width: 640px) {
+      .c5b-course-body {
+        padding: 20px;
+      }
+    }
+
+    .c5b-course-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .c5b-software-pill {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .pill-sketchup { background: #dbeafe; color: #1d4ed8; }
+    .pill-vray { background: #ede9fe; color: #6d28d9; }
+    .pill-d5 { background: #fae8ff; color: #a21caf; }
+    .pill-autocad { background: #fee2e2; color: #b91c1c; }
+    .pill-ai { background: #ffedd5; color: #c2410c; }
+
+    .c5b-student-count {
+      font-size: 12px;
+      font-weight: 700;
+      color: #059669;
+      background: #ecfdf5;
+      padding: 3px 8px;
+      border-radius: 9999px;
+    }
+
+    .c5b-course-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 10px;
+    }
+
+    .c5b-course-desc {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .c5b-points-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .c5b-points-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.45;
+    }
+
+    .c5b-points-list svg {
+      width: 16px;
+      height: 16px;
+      color: #ea580c;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .c5b-workflow-tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: #ea580c;
+      background: #fff7ed;
+      border-left: 3px solid #ea580c;
+      padding: 8px 12px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Transformation Story / Before After */
+    .c5b-transformation-box {
+      background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+      border-radius: 24px;
+      padding: 40px;
+      color: #ffffff;
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 640px) {
+      .c5b-transformation-box {
+        padding: 24px 20px;
+      }
+    }
+
+    .c5b-trans-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .c5b-trans-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .c5b-trans-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .c5b-trans-badge-red {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .c5b-trans-badge-green {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .c5b-trans-title {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .c5b-trans-desc {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* Renders Gallery */
+    .c5b-gallery-section {
+      margin-bottom: 50px;
+    }
+
+    .c5b-renders-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .c5b-renders-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .c5b-renders-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .c5b-render-item {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      position: relative;
+      aspect-ratio: 4/3;
+      background: #0f172a;
+    }
+
+    .c5b-render-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .c5b-render-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Value Stack Card */
+    .c5b-value-stack {
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 36px;
+      margin-bottom: 50px;
+    }
+
+    .c5b-stack-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 14px;
+    }
+
+    .c5b-stack-item:last-child {
+      border-bottom: none;
+    }
+
+    .c5b-stack-name {
+      font-weight: 700;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .c5b-stack-val {
+      font-weight: 800;
+      color: #ea580c;
+    }
+
+    .c5b-total-box {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 2px dashed #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .c5b-total-price {
+      font-size: 32px;
+      font-weight: 900;
+      color: #0f172a;
+    }
+
+    .c5b-total-orig {
+      font-size: 18px;
+      color: #94a3b8;
+      text-decoration: line-through;
+      margin-left: 8px;
+      font-weight: 600;
+    }
+
+    .c5b-enroll-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ea580c;
+      color: #ffffff !important;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(234, 88, 12, 0.35);
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .c5b-enroll-btn:hover {
+      background: #c2410c;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(234, 88, 12, 0.45);
+    }
+
+    /* FAQ Accordion */
+    .c5b-faq-box {
+      margin-bottom: 40px;
+    }
+
+    .c5b-faq-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .c5b-faq-q {
+      padding: 18px 20px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #1e293b;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+      user-select: none;
+    }
+
+    .c5b-faq-q:hover {
+      color: #ea580c;
+    }
+
+    .c5b-faq-a {
+      padding: 0 20px 18px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .c5b-faq-item.active .c5b-faq-a {
+      display: block;
+    }
+
+    .c5b-faq-item.active .c5b-faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .c5b-faq-icon {
+      transition: transform 0.2s ease;
+      color: #64748b;
+    }
+  </style>
+
+  <!-- Hero & Pipeline Overview -->
+  <div class="c5b-hero">
+    <div class="c5b-badge">⚡ Master the End-to-End Architectural Pipeline</div>
+    <h2 class="c5b-title">5 Masterclasses: 2D Drafting, 3D Modeling, Realism &amp; AI</h2>
+    <p class="c5b-subtitle">
+      Stop wasting weeks trying to connect disconnected software. Master <strong>AutoCAD</strong>, <strong>SketchUp Pro</strong>, <strong>V-Ray</strong>, <strong>D5 Render AI</strong>, and <strong>Generative AI</strong> in one seamless, professional workflow.
+    </p>
+
+    <!-- Pipeline Showcase Image -->
+    <div class="c5b-pipeline-img-wrap">
+      <img src="{{ 'plan-to-render-pipeline.png' | asset_url }}" alt="2D Plan to 3D Model to Photorealistic Render Pipeline" loading="lazy">
+    </div>
+
+    <!-- 4 Stats Pillars -->
+    <div class="c5b-stats-grid">
+      <div class="c5b-stat-card">
+        <div class="c5b-stat-num">5</div>
+        <div class="c5b-stat-label">Industry-Standard Courses</div>
+      </div>
+      <div class="c5b-stat-card">
+        <div class="c5b-stat-num">10,000+</div>
+        <div class="c5b-stat-label">Textures &amp; 3D Models</div>
+      </div>
+      <div class="c5b-stat-card">
+        <div class="c5b-stat-num">24/7</div>
+        <div class="c5b-stat-label">Expert Team Support</div>
+      </div>
+      <div class="c5b-stat-card">
+        <div class="c5b-stat-num">100%</div>
+        <div class="c5b-stat-label">Money-Back Guarantee</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The 5 Courses Curriculum -->
+  <div class="c5b-section-hdr">
+    <span class="c5b-badge">Curriculum Breakdown</span>
+    <h3>Inside the 5 Master Courses</h3>
+    <p>Every tool selected to give you an unfair advantage in freelance design, architecture studios, and client presentations.</p>
+  </div>
+
+  <div class="c5b-courses-list">
+    <!-- Course 1: SketchUp Pro -->
+    <div class="c5b-course-card">
+      <div class="c5b-course-media">
+        <img src="https://lh3.googleusercontent.com/d/1wl6by5AO5MiPeoYsZ8F6Zi5AJahoeTQo" alt="SketchUp Pro Course" loading="lazy">
+      </div>
+      <div class="c5b-course-body">
+        <div class="c5b-course-top">
+          <span class="c5b-software-pill pill-sketchup">Course 01 • SketchUp Pro</span>
+          <span class="c5b-student-count">55k+ Students</span>
+        </div>
+        <h4 class="c5b-course-title">SketchUp Pro: 3D Spatial &amp; Interior Modeling</h4>
+        <p class="c5b-desc">Build complete 3D interiors and building structures from scratch. Learn wall construction, door &amp; window framing, custom cabinetry, and precision spatial modeling.</p>
+        <ul class="c5b-points-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Turn 2D floor plans into full 3D homes, custom kitchens &amp; master baths</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Craft custom millwork: baseboards, crown molding, wardrobes &amp; media units</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Organize models with clean tags &amp; layers ready for V-Ray and D5 export</span>
+          </li>
+        </ul>
+        <div class="c5b-workflow-tag">Workflow Impact: Model an entire client space in hours instead of days.</div>
+      </div>
+    </div>
+
+    <!-- Course 2: V-Ray Photorealism -->
+    <div class="c5b-course-card">
+      <div class="c5b-course-media">
+        <img src="https://lh3.googleusercontent.com/d/1aHEt_z78tYD_0Cn66DiduAnhwn-o8El8" alt="V-Ray Photorealism" loading="lazy">
+      </div>
+      <div class="c5b-course-body">
+        <div class="c5b-course-top">
+          <span class="c5b-software-pill pill-vray">Course 02 • V-Ray</span>
+          <span class="c5b-student-count">48k+ Students</span>
+        </div>
+        <h4 class="c5b-course-title">V-Ray: Studio &amp; Photorealistic Rendering</h4>
+        <p class="c5b-desc">Transform raw SketchUp geometry into magazine-grade photographs. Master realistic daylighting, artificial mood lighting, reflections, and PBR textures that sell $5,000+ projects.</p>
+        <ul class="c5b-points-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Master Sun &amp; Sky systems, HDRIs, recessed spotlights &amp; accent LED strips</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Create photoreal materials: wood grain, veined marble, brushed brass &amp; sheer curtains</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Camera optics: Depth of field, lens focal lengths, exposure &amp; color grading</span>
+          </li>
+        </ul>
+        <div class="c5b-workflow-tag">Workflow Impact: Produce portfolio shots that command premium design fees.</div>
+      </div>
+    </div>
+
+    <!-- Course 3: D5 Render AI -->
+    <div class="c5b-course-card">
+      <div class="c5b-course-media">
+        <img src="https://lh3.googleusercontent.com/d/1vbV4j6K9sgzbbZ7qlRdgqPTXWiHBPLsr" alt="D5 Render AI" loading="lazy">
+      </div>
+      <div class="c5b-course-body">
+        <div class="c5b-course-top">
+          <span class="c5b-software-pill pill-d5">Course 03 • D5 Render AI</span>
+          <span class="c5b-student-count">19k+ Students</span>
+        </div>
+        <h4 class="c5b-course-title">D5 Render AI: Real-Time Ray Tracing &amp; Walkthroughs</h4>
+        <p class="c5b-desc">Experience real-time GPU rendering with integrated AI tools. See lighting and materials react in real time. Generate ultra-high-definition 4K renderings and cinematic fly-through videos in minutes.</p>
+        <ul class="c5b-points-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Real-time viewport feedback: Make live adjustments right in front of clients</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>AI scene enhancements: Atmospheric fog, realistic sky generators &amp; smart vegetation</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Animate camera movements for cinematic 60fps walkthrough presentations</span>
+          </li>
+        </ul>
+        <div class="c5b-workflow-tag">Workflow Impact: Close deals during meetings by showing live, real-time iterations.</div>
+      </div>
+    </div>
+
+    <!-- Course 4: AutoCAD Mastery -->
+    <div class="c5b-course-card">
+      <div class="c5b-course-media">
+        <img src="https://lh3.googleusercontent.com/d/1fV5bz4JDugh8HxLMJ0fXu5K5sDj3qlSR" alt="AutoCAD Mastery" loading="lazy">
+      </div>
+      <div class="c5b-course-body">
+        <div class="c5b-course-top">
+          <span class="c5b-software-pill pill-autocad">Course 04 • AutoCAD</span>
+          <span class="c5b-student-count">42k+ Students</span>
+        </div>
+        <h4 class="c5b-course-title">AutoCAD Mastery: 2D Drafting &amp; Construction Blueprints</h4>
+        <p class="c5b-desc">Learn how to create millimeter-accurate architectural plans, furniture layouts, elevations, and structural schematics that contractors can actually build from on site.</p>
+        <ul class="c5b-points-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Draft detailed floor plans, door swings, wall schedules &amp; electrical symbols</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Set up professional layer standards, line weights, annotation scales &amp; title blocks</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Speed shortcuts and production hacks to finish drawings 10x faster</span>
+          </li>
+        </ul>
+        <div class="c5b-workflow-tag">Workflow Impact: Produce error-free construction drawings that eliminate on-site mistakes.</div>
+      </div>
+    </div>
+
+    <!-- Course 5: AI in Architecture & Design -->
+    <div class="c5b-course-card">
+      <div class="c5b-course-media">
+        <img src="https://lh3.googleusercontent.com/d/1s-HzZVKpc9F92mLW2gMOPk0kVrKAqUIS" alt="AI in Interior and Architecture Design" loading="lazy">
+      </div>
+      <div class="c5b-course-body">
+        <div class="c5b-course-top">
+          <span class="c5b-software-pill pill-ai">Course 05 • Generative AI</span>
+          <span class="c5b-student-count">60k+ Students</span>
+        </div>
+        <h4 class="c5b-course-title">AI in Interior &amp; Architecture Design</h4>
+        <p class="c5b-desc">Harness Midjourney and Stable Diffusion to generate 100 design concepts in 60 seconds. Turn rough napkins and hand sketches into realistic building concepts and client mood boards.</p>
+        <ul class="c5b-points-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Architectural prompt formulas: specify camera angles, lighting conditions &amp; materials</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Image-to-Image &amp; ControlNet: Convert hand sketches into photorealistic renders</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Generate instant mood boards to lock in client style preferences in the first call</span>
+          </li>
+        </ul>
+        <div class="c5b-workflow-tag">Workflow Impact: Never face a creative block again. Ideate at 100x speed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Gallery Showcase -->
+  <div class="c5b-gallery-section">
+    <div class="c5b-section-hdr">
+      <span class="c5b-badge">Portfolio Showcase</span>
+      <h3>Work Created With This Exact Pipeline</h3>
+      <p>Here is what students and design studios produce after completing these 5 courses.</p>
+    </div>
+
+    <div class="c5b-renders-grid">
+      <div class="c5b-render-item">
+        <img src="{{ 'course-render-1.jpg' | asset_url }}" alt="Student Render Showcase 1" loading="lazy">
+      </div>
+      <div class="c5b-render-item">
+        <img src="{{ 'course-render-2.jpg' | asset_url }}" alt="Student Render Showcase 2" loading="lazy">
+      </div>
+      <div class="c5b-render-item">
+        <img src="{{ 'course-render-3.jpg' | asset_url }}" alt="Student Render Showcase 3" loading="lazy">
+      </div>
+      <div class="c5b-render-item">
+        <img src="{{ 'course-render-4.jpg' | asset_url }}" alt="Student Render Showcase 4" loading="lazy">
+      </div>
+      <div class="c5b-render-item">
+        <img src="{{ 'course-render-5.jpg' | asset_url }}" alt="Student Render Showcase 5" loading="lazy">
+      </div>
+      <div class="c5b-render-item">
+        <img src="{{ 'course-render-6.jpg' | asset_url }}" alt="Student Render Showcase 6" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- Transformation Comparison -->
+  <div class="c5b-transformation-box">
+    <div style="text-align: center;">
+      <span class="c5b-trans-badge-green" style="font-size: 12px; padding: 6px 14px;">The Complete Shift</span>
+      <h3 style="font-size: 28px; font-weight: 900; margin: 10px 0 14px;">Why Freelancers &amp; Studios Switch to This Pipeline</h3>
+      <p style="color: #94a3b8; max-width: 650px; margin: 0 auto;">Mastering these 5 tools transforms not just your designs, but your earning power.</p>
+    </div>
+
+    <div class="c5b-trans-grid">
+      <div class="c5b-trans-card">
+        <span class="c5b-trans-badge-red">Without This Workflow</span>
+        <h4 class="c5b-trans-title">Stuck in Revisions &amp; Low Fees</h4>
+        <p class="c5b-trans-desc">
+          • Days wasted on a single perspective with flat, unconvincing lighting<br>
+          • Inability to show live options during client meetings<br>
+          • Cluttered CAD blueprints causing site execution arguments<br>
+          • Falling behind as competing designers use AI to ideate 10x faster<br>
+          • Trapped charging $150–$300 for weeks of grueling work
+        </p>
+      </div>
+
+      <div class="c5b-trans-card">
+        <span class="c5b-trans-badge-green">With the 5-Course System</span>
+        <h4 class="c5b-trans-title">In-Demand Visualization Authority</h4>
+        <p class="c5b-trans-desc">
+          • Model any room in SketchUp, draft in AutoCAD, and render in V-Ray<br>
+          • Present real-time changes in D5 Render AI while clients watch<br>
+          • Ideate 50 client styles in minutes using Midjourney &amp; Stable Diffusion<br>
+          • Backed by 10,000+ textures, 2,000+ 3D models &amp; 24/7 team support<br>
+          • Confidently quote $2,000–$5,000+ per room with an elite portfolio
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Value Stack & Enrollment -->
+  <div class="c5b-value-stack">
+    <div style="text-align: center; margin-bottom: 24px;">
+      <span class="c5b-badge">Everything Included</span>
+      <h3 style="font-size: 24px; font-weight: 900; color: #0f172a; margin: 8px 0 4px;">Complete Bundle Package</h3>
+      <p style="font-size: 14px; color: #64748b;">Instant Lifetime Access • No Subscriptions • One-Time Payment</p>
+    </div>
+
+    <div class="c5b-stack-item">
+      <span class="c5b-stack-name">✅ AutoCAD Mastery — Complete 2D Drafting &amp; Blueprints</span>
+      <span class="c5b-stack-val">$49 Value</span>
+    </div>
+    <div class="c5b-stack-item">
+      <span class="c5b-stack-name">✅ SketchUp Pro — 3D Modeling &amp; Spatial Planning Course</span>
+      <span class="c5b-stack-val">$49 Value</span>
+    </div>
+    <div class="c5b-stack-item">
+      <span class="c5b-stack-name">✅ V-Ray Photorealism — Studio Lighting &amp; Materials</span>
+      <span class="c5b-stack-val">$49 Value</span>
+    </div>
+    <div class="c5b-stack-item">
+      <span class="c5b-stack-name">✅ D5 Render AI — Real-Time Ray Tracing &amp; Walkthroughs</span>
+      <span class="c5b-stack-val">$49 Value</span>
+    </div>
+    <div class="c5b-stack-item">
+      <span class="c5b-stack-name">✅ AI in Architecture &amp; Design — Generative Midjourney &amp; Stable Diffusion</span>
+      <span class="c5b-stack-val">$49 Value</span>
+    </div>
+    <div class="c5b-stack-item">
+      <span class="c5b-stack-name">🎁 BONUS 1: 10,000+ Seamless PBR Textures (Wood, Marble, Fabric, Stone)</span>
+      <span class="c5b-stack-val">$99 Value</span>
+    </div>
+    <div class="c5b-stack-item">
+      <span class="c5b-stack-name">🎁 BONUS 2: 2,000+ Drag-and-Drop 3D Furniture &amp; Fixture Assets</span>
+      <span class="c5b-stack-val">$120 Value</span>
+    </div>
+    <div class="c5b-stack-item">
+      <span class="c5b-stack-name">🎁 BONUS 3: Software Installation Hub &amp; Setup Guides</span>
+      <span class="c5b-stack-val">$50 Value</span>
+    </div>
+    <div class="c5b-stack-item">
+      <span class="c5b-stack-name">🎁 BONUS 4: 24/7 Team Access &amp; Portfolio Feedback Support</span>
+      <span class="c5b-stack-val">$100 Value</span>
+    </div>
+    <div class="c5b-stack-item">
+      <span class="c5b-stack-name">🎁 BONUS 5: 5 Accredited Digital Diplomas (Ready for LinkedIn &amp; Resume)</span>
+      <span class="c5b-stack-val">$100 Value</span>
+    </div>
+
+    <div class="c5b-total-box">
+      <div>
+        <div style="font-size: 13px; font-weight: 700; color: #64748b; text-transform: uppercase;">Total Value: $714+</div>
+        <div>
+          <span class="c5b-total-price">$49</span>
+          <span class="c5b-total-orig">$199</span>
+          <span style="background: #ffedd5; color: #ea580c; font-size: 12px; font-weight: 800; padding: 3px 8px; border-radius: 9999px; margin-left: 8px;">75% OFF</span>
+        </div>
+      </div>
+      <div>
+        <button type="button" class="c5b-enroll-btn" onclick="var b = document.querySelector('[data-buy-button=\'{{ product.id }}\']') || document.querySelector('.button--buy-now') || document.querySelector('.button--addToCart'); if(b) { b.click(); } else { window.scrollTo({ top: 0, behavior: 'smooth' }); }">
+          <span>Get Instant Lifetime Access Now</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Accordion -->
+  <div class="c5b-faq-box">
+    <div class="c5b-section-hdr">
+      <span class="c5b-badge">Have Questions?</span>
+      <h3>Frequently Asked Questions</h3>
+    </div>
+
+    <div class="c5b-faq-item active">
+      <div class="c5b-faq-q" onclick="this.parentElement.classList.toggle('active')">
+        <span>What exactly do I get for $49?</span>
+        <span class="c5b-faq-icon">▼</span>
+      </div>
+      <div class="c5b-faq-a">
+        You get full lifetime access to all 5 complete video masterclasses: AutoCAD Mastery, SketchUp Pro, V-Ray Photorealism, D5 Render AI, and AI in Architecture. Plus over 10,000+ textures, 2,000+ 3D models, software links &amp; installation guides, 24/7 team support via chat, and 5 accredited digital diplomas upon completion. No recurring fees or subscriptions.
+      </div>
+    </div>
+
+    <div class="c5b-faq-item">
+      <div class="c5b-faq-q" onclick="this.parentElement.classList.toggle('active')">
+        <span>I am a beginner with no technical background. Can I follow along?</span>
+        <span class="c5b-faq-icon">▼</span>
+      </div>
+      <div class="c5b-faq-a">
+        Yes, 100%! Every course starts from complete scratch: opening the software interface for the first time, learning basic navigation, and building up to professional studio projects step-by-step. If you get stuck at any point, our support team is available 24/7 to guide you directly.
+      </div>
+    </div>
+
+    <div class="c5b-faq-item">
+      <div class="c5b-faq-q" onclick="this.parentElement.classList.toggle('active')">
+        <span>Do I need to purchase expensive software licenses?</span>
+        <span class="c5b-faq-icon">▼</span>
+      </div>
+      <div class="c5b-faq-a">
+        No. Inside our Software Installation Hub, we provide official links and tutorials on accessing student, educational, or free community versions of SketchUp, V-Ray, D5 Render, and AutoCAD so you don't spend unnecessary money.
+      </div>
+    </div>
+
+    <div class="c5b-faq-item">
+      <div class="c5b-faq-q" onclick="this.parentElement.classList.toggle('active')">
+        <span>How long do I have access to the materials?</span>
+        <span class="c5b-faq-icon">▼</span>
+      </div>
+      <div class="c5b-faq-a">
+        You have unlimited lifetime access! Study at your own pace whenever and wherever you want. You will also receive all future course updates and new asset additions free of charge.
+      </div>
+    </div>
+
+    <div class="c5b-faq-item">
+      <div class="c5b-faq-q" onclick="this.parentElement.classList.toggle('active')">
+        <span>What if I am not satisfied with the bundle?</span>
+        <span class="c5b-faq-icon">▼</span>
+      </div>
+      <div class="c5b-faq-a">
+        We offer a 100% money-back guarantee within 7 days. If you go through the courses and decide it wasn't worth tenfold the investment, just reach out to us and we'll issue a full refund immediately — no questions asked.
+      </div>
+    </div>
+  </div>
+</div>

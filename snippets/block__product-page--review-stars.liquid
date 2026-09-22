@@ -35,43 +35,43 @@
   </div>
 
   {% if product.handle == '5-courses-interior-exterior-design-ai' %}
-  <!-- 5 Courses Showcase with Ripple Animation -->
-  <div class="top-rating-books-ripple-wrap">
-    <div class="top-rating-books-track">
-      <div class="top-rating-book-item" style="--ripple-delay: 0s;">
-        <div class="top-rating-book-cover">
-          <img src="https://lh3.googleusercontent.com/d/1fV5bz4JDugh8HxLMJ0fXu5K5sDj3qlSR" alt="AutoCAD Mastery" loading="lazy" width="70" height="98" />
+  <!-- 5 Courses Showcase with Square Thumbnails & Center-Aligned Text -->
+  <div class="top-rating-books-ripple-wrap course-showcase-wrap">
+    <div class="top-rating-books-track course-showcase-track">
+      <div class="top-rating-book-item course-showcase-item" style="--ripple-delay: 0s;">
+        <div class="top-rating-book-cover course-showcase-cover">
+          <img src="https://lh3.googleusercontent.com/d/1fV5bz4JDugh8HxLMJ0fXu5K5sDj3qlSR" alt="AutoCAD Mastery" loading="lazy" width="70" height="70" />
         </div>
-        <span class="top-rating-book-name">AutoCAD</span>
-        <span class="top-rating-book-pages">2D Blueprints</span>
+        <span class="top-rating-book-name course-showcase-name">AutoCAD</span>
+        <span class="top-rating-book-pages course-showcase-pages">2D Blueprints</span>
       </div>
-      <div class="top-rating-book-item" style="--ripple-delay: 0.25s;">
-        <div class="top-rating-book-cover">
-          <img src="https://lh3.googleusercontent.com/d/1wl6by5AO5MiPeoYsZ8F6Zi5AJahoeTQo" alt="SketchUp Pro" loading="lazy" width="70" height="98" />
+      <div class="top-rating-book-item course-showcase-item" style="--ripple-delay: 0.25s;">
+        <div class="top-rating-book-cover course-showcase-cover">
+          <img src="https://lh3.googleusercontent.com/d/1wl6by5AO5MiPeoYsZ8F6Zi5AJahoeTQo" alt="SketchUp Pro" loading="lazy" width="70" height="70" />
         </div>
-        <span class="top-rating-book-name">SketchUp</span>
-        <span class="top-rating-book-pages">3D Modeling</span>
+        <span class="top-rating-book-name course-showcase-name">SketchUp</span>
+        <span class="top-rating-book-pages course-showcase-pages">3D Modeling</span>
       </div>
-      <div class="top-rating-book-item" style="--ripple-delay: 0.5s;">
-        <div class="top-rating-book-cover">
-          <img src="https://lh3.googleusercontent.com/d/1aHEt_z78tYD_0Cn66DiduAnhwn-o8El8" alt="V-Ray Photorealism" loading="lazy" width="70" height="98" />
+      <div class="top-rating-book-item course-showcase-item" style="--ripple-delay: 0.5s;">
+        <div class="top-rating-book-cover course-showcase-cover">
+          <img src="https://lh3.googleusercontent.com/d/1aHEt_z78tYD_0Cn66DiduAnhwn-o8El8" alt="V-Ray Photorealism" loading="lazy" width="70" height="70" />
         </div>
-        <span class="top-rating-book-name">V-Ray</span>
-        <span class="top-rating-book-pages">Photorealism</span>
+        <span class="top-rating-book-name course-showcase-name">V-Ray</span>
+        <span class="top-rating-book-pages course-showcase-pages">Photorealism</span>
       </div>
-      <div class="top-rating-book-item" style="--ripple-delay: 0.75s;">
-        <div class="top-rating-book-cover">
-          <img src="https://lh3.googleusercontent.com/d/1vbV4j6K9sgzbbZ7qlRdgqPTXWiHBPLsr" alt="D5 Render AI" loading="lazy" width="70" height="98" />
+      <div class="top-rating-book-item course-showcase-item" style="--ripple-delay: 0.75s;">
+        <div class="top-rating-book-cover course-showcase-cover">
+          <img src="https://lh3.googleusercontent.com/d/1vbV4j6K9sgzbbZ7qlRdgqPTXWiHBPLsr" alt="D5 Render AI" loading="lazy" width="70" height="70" />
         </div>
-        <span class="top-rating-book-name">D5 Render</span>
-        <span class="top-rating-book-pages">Real-Time AI</span>
+        <span class="top-rating-book-name course-showcase-name">D5 Render</span>
+        <span class="top-rating-book-pages course-showcase-pages">Real-Time AI</span>
       </div>
-      <div class="top-rating-book-item" style="--ripple-delay: 1.0s;">
-        <div class="top-rating-book-cover">
-          <img src="https://lh3.googleusercontent.com/d/1s-HzZVKpc9F92mLW2gMOPk0kVrKAqUIS" alt="AI in Architecture" loading="lazy" width="70" height="98" />
+      <div class="top-rating-book-item course-showcase-item" style="--ripple-delay: 1.0s;">
+        <div class="top-rating-book-cover course-showcase-cover">
+          <img src="https://lh3.googleusercontent.com/d/1s-HzZVKpc9F92mLW2gMOPk0kVrKAqUIS" alt="AI in Architecture" loading="lazy" width="70" height="70" />
         </div>
-        <span class="top-rating-book-name">AI Design</span>
-        <span class="top-rating-book-pages">Generative</span>
+        <span class="top-rating-book-name course-showcase-name">AI Design</span>
+        <span class="top-rating-book-pages course-showcase-pages">Generative</span>
       </div>
     </div>
   </div>
@@ -270,6 +270,79 @@
 
   .top-rating-book-item:hover .top-rating-book-pages {
     color: #ea580c;
+  }
+
+  /* 5 Courses Square Thumbnails & Center-Aligned Text */
+  .course-showcase-track {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: clamp(8px, 2.2vw, 14px) !important;
+    padding: 6px 2px 8px 2px !important;
+  }
+  .course-showcase-item {
+    flex: 0 0 clamp(56px, 15vw, 68px) !important;
+    width: clamp(56px, 15vw, 68px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    box-sizing: border-box !important;
+  }
+  .course-showcase-cover {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08) !important;
+    border: 1.5px solid #e2e8f0 !important;
+    background: #ffffff !important;
+    margin-bottom: 5px !important;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+  .course-showcase-cover img {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .course-showcase-name {
+    display: block !important;
+    width: 100% !important;
+    font-size: clamp(9.5px, 2.1vw, 11px) !important;
+    font-weight: 700 !important;
+    color: #334155 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.01em !important;
+    transition: color 0.2s ease !important;
+  }
+  .course-showcase-pages {
+    display: block !important;
+    width: 100% !important;
+    font-size: clamp(8px, 1.8vw, 9.5px) !important;
+    font-weight: 600 !important;
+    color: #64748b !important;
+    margin: 2px auto 0 auto !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    transition: color 0.2s ease !important;
+  }
+  .course-showcase-item:hover .course-showcase-cover {
+    transform: translateY(-4px) scale(1.08) !important;
+    box-shadow: 0 10px 20px rgba(234, 88, 12, 0.28) !important;
+    border-color: #ea580c !important;
+  }
+  .course-showcase-item:hover .course-showcase-name,
+  .course-showcase-item:hover .course-showcase-pages {
+    color: #ea580c !important;
   }
 </style>
 

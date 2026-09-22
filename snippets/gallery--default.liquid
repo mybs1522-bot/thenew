@@ -320,6 +320,7 @@
                 }
             });
 
+            {% if product.handle == '5-courses-interior-exterior-design-ai' %}
             const heroVid = document.getElementById('course-hero-video');
             if (heroVid) {
                 heroVid.addEventListener('loadedmetadata', () => updateGalleryHeight(null, false));
@@ -334,11 +335,13 @@
                     });
                 });
             }
+            {% endif %}
         })(jQuery);
     });
 </script>
   
   <style>
+    {% if product.handle == '5-courses-interior-exterior-design-ai' %}
     /* Hero Video Slide & Thumbnail Styling */
     .slide--product-video {
       display: flex !important;
@@ -394,6 +397,7 @@
     .gallery__thumbnail.bstrSlider__thumb--active .video-play-badge {
       background: rgba(0, 0, 0, 0.15);
     }
+    {% endif %}
 
     .gallery__thumbnails {
       max-height: calc((80px + 0.25rem) * 5);

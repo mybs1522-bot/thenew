@@ -235,13 +235,28 @@
           color: #0f172a;
           font-weight: 600;
         }
-        .highlight-strong {
-          background: #fef08a;
-          color: #854d0e;
-          padding: 2px 6px;
-          border-radius: 4px;
-          font-weight: 800;
-          display: inline;
+        .course-pdr-points-list {
+          display: flex;
+          flex-direction: column;
+          gap: 9px;
+          margin-top: 14px;
+          padding-top: 12px;
+          border-top: 1px dashed #cbd5e1;
+          text-align: left;
+        }
+        .course-pdr-point-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 13px;
+          color: #1e293b;
+          font-weight: 600;
+          line-height: 1.35;
+        }
+        .course-pdr-point-icon {
+          flex-shrink: 0;
+          width: 18px;
+          height: 18px;
         }
       </style>
 
@@ -275,6 +290,25 @@
         <p class="course-pdr-desc">
           We start from Zero, teach <strong>Planning in AutoCAD</strong>, <strong>3D Design in Sketchup</strong>, <strong>Rendering in Vray &amp; D5</strong> and <strong>AI</strong> to enhance the output and create walkthroughs.
         </p>
+
+        <div class="course-pdr-points-list">
+          <div class="course-pdr-point-item">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Lifetime access with monthly updates</span>
+          </div>
+          <div class="course-pdr-point-item">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Software download Links included</span>
+          </div>
+          <div class="course-pdr-point-item">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Certificate After Course completion</span>
+          </div>
+          <div class="course-pdr-point-item">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Freelance Projects upto $500 to every student</span>
+          </div>
+        </div>
       </div>
     </div>
     {% elsif product.handle == '6-books-for-interior-exterior-design' %}

@@ -258,56 +258,250 @@
           width: 18px;
           height: 18px;
         }
+        .course-pdr-transformation-card {
+          background: #f8fafc;
+          border: 1.5px solid #e2e8f0;
+          border-top: 3px solid #ea580c;
+          border-radius: 14px;
+          padding: 14px 16px;
+          margin-bottom: 14px;
+          text-align: center;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+        }
+        .course-pdr-trans-badge {
+          display: inline-block;
+          background: #ffedd5;
+          color: #c2410c;
+          font-size: 10.5px;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          padding: 3px 8px;
+          border-radius: 6px;
+          margin-bottom: 6px;
+          text-transform: uppercase;
+        }
+        .course-pdr-trans-title {
+          font-size: 17px;
+          font-weight: 900;
+          color: #0f172a;
+          margin: 0 0 12px 0;
+          line-height: 1.25;
+        }
+        .course-pdr-trans-list {
+          display: flex;
+          flex-direction: column;
+          gap: 7px;
+          text-align: left;
+        }
+        .course-pdr-trans-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 8px;
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
+          padding: 8px 12px;
+          border-radius: 8px;
+          font-size: 12.5px;
+          line-height: 1.35;
+        }
+        .course-pdr-trans-row.trans-highlight-row {
+          background: #fff7ed;
+          border-color: #fed7aa;
+        }
+        .trans-from {
+          color: #64748b;
+          font-weight: 600;
+          flex: 1;
+        }
+        .trans-arrow {
+          color: #ea580c;
+          font-weight: 900;
+          font-size: 14px;
+          padding: 0 4px;
+          flex-shrink: 0;
+        }
+        .trans-to {
+          color: #0f172a;
+          font-weight: 800;
+          flex: 1.3;
+          text-align: right;
+        }
+        .course-pdr-achieve-card {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 14px;
+          padding: 14px 16px;
+          margin-bottom: 14px;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+          text-align: left;
+        }
+        .course-pdr-achieve-title {
+          font-size: 16.5px;
+          font-weight: 900;
+          color: #0f172a;
+          margin: 0 0 12px 0;
+          text-align: center;
+          line-height: 1.3;
+        }
+        .course-pdr-punchline {
+          background: #0f172a;
+          color: #ffffff;
+          border-radius: 8px;
+          padding: 10px 12px;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 0.02em;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          text-align: center;
+          line-height: 1.4;
+        }
+        .course-pdr-punchline span:not(:last-child)::after {
+          content: "·";
+          margin-left: 6px;
+          color: #ea580c;
+          font-weight: 900;
+        }
+        @media (max-width: 640px) {
+          .trans-from {
+            font-size: 11.5px;
+          }
+          .trans-to {
+            font-size: 11.5px;
+          }
+          .course-pdr-trans-row {
+            padding: 7px 9px;
+          }
+          .course-pdr-punchline {
+            font-size: 11px;
+            padding: 8px 10px;
+          }
+        }
       </style>
 
       <div class="course-pdr-headline-wrap">
         <span class="course-pdr-eyebrow">Learn to Design</span>
         <h2 class="course-pdr-title">Homes, Offices &amp; Villas</h2>
-        <div class="course-pdr-subtitle">and show real 3D to clients.</div>
+        <div class="course-pdr-subtitle">and create spaces that clients love.</div>
       </div>
 
+      <!-- Lead Hook Card -->
       <div class="course-pdr-pillar-card">
-        <div class="course-pdr-pill-label">
-          <span class="pdr-badge">LEARN PDR</span>
-          <span class="pdr-formula">Planning, Designing &amp; Rendering</span>
-        </div>
-        <div class="course-pdr-all-in-one">
-          <span class="pdr-check">✓</span> <strong>One bundle.</strong> Everything included.
-        </div>
-      </div>
-
-      <div class="course-pdr-quote-box">
-        <span class="course-pdr-quote-icon">“</span>
-        <p class="course-pdr-quote-text">
-          "In our business of Architecture and Design, <strong>Planning, Design and Rendering</strong> matter the most."
+        <p style="margin: 0; font-size: 13.5px; line-height: 1.55; color: #1e293b; font-weight: 600;">
+          Most courses teach you which tools to click. This course teaches you how to <strong>plan, design, render, and create spaces that clients love</strong>.
         </p>
+        <div style="margin-top: 6px; font-size: 13px; line-height: 1.5; color: #9a3412; font-weight: 700; border-top: 1px dashed #fed7aa; padding-top: 8px; width: 100%;">
+          If you're tired of watching tutorials but still struggle to create professional designs, this <span style="background: #ea580c; color: #fff; padding: 2px 7px; border-radius: 6px; font-weight: 800;">15-day structured program</span> is built for you.
+        </div>
       </div>
 
+      <!-- What You'll Learn Card -->
+      <div class="course-pdr-speed-card" style="text-align: left;">
+        <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+          <span class="pdr-badge" style="background: #0f172a; color: #ffffff; font-size: 10.5px; padding: 3px 9px; border-radius: 6px; letter-spacing: 0.05em;">CURRICULUM</span>
+        </div>
+        <div class="course-pdr-faster-heading" style="margin-bottom: 12px; font-size: 19px; justify-content: center;">
+          What You'll Learn
+        </div>
+        <div class="course-pdr-points-list" style="margin-top: 0; padding-top: 0; border-top: none; gap: 10px;">
+          <div class="course-pdr-point-item" style="align-items: flex-start;">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>AutoCAD Planning:</strong> Create practical floor plans and design layouts.</span>
+          </div>
+          <div class="course-pdr-point-item" style="align-items: flex-start;">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>3D Design in SketchUp:</strong> Turn ideas into impressive 3D interiors and exteriors.</span>
+          </div>
+          <div class="course-pdr-point-item" style="align-items: flex-start;">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>Realistic Rendering:</strong> Learn V-Ray, D5, and AI tools to improve your visuals.</span>
+          </div>
+          <div class="course-pdr-point-item" style="align-items: flex-start;">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>Client Presentation:</strong> Create renders and walkthroughs that communicate your ideas.</span>
+          </div>
+          <div class="course-pdr-point-item" style="align-items: flex-start;">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>Complete Design Workflow:</strong> Understand how planning, designing, and rendering work together.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- From Learning to Earning Card -->
+      <div class="course-pdr-transformation-card">
+        <span class="course-pdr-trans-badge">TRANSFORMATION</span>
+        <h3 class="course-pdr-trans-title">From Learning to Earning</h3>
+        <div class="course-pdr-trans-list">
+          <div class="course-pdr-trans-row">
+            <span class="trans-from">Confusion</span>
+            <span class="trans-arrow">→</span>
+            <span class="trans-to">Clarity</span>
+          </div>
+          <div class="course-pdr-trans-row">
+            <span class="trans-from">2D Plans</span>
+            <span class="trans-arrow">→</span>
+            <span class="trans-to">Professional 3D Visuals</span>
+          </div>
+          <div class="course-pdr-trans-row">
+            <span class="trans-from">Random Tutorials</span>
+            <span class="trans-arrow">→</span>
+            <span class="trans-to">Structured Design Skills</span>
+          </div>
+          <div class="course-pdr-trans-row">
+            <span class="trans-from">Basic Knowledge</span>
+            <span class="trans-arrow">→</span>
+            <span class="trans-to">Client-Ready Project Skills</span>
+          </div>
+          <div class="course-pdr-trans-row trans-highlight-row">
+            <span class="trans-from">Learning Software</span>
+            <span class="trans-arrow">→</span>
+            <span class="trans-to">Opportunities to Earn Through Freelance Design Projects</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- What Can These Skills Help You Achieve? Card -->
+      <div class="course-pdr-achieve-card">
+        <h3 class="course-pdr-achieve-title">What Can These Skills Help You Achieve?</h3>
+        <div class="course-pdr-points-list" style="margin-top: 0; padding-top: 0; border-top: none; gap: 10px;">
+          <div class="course-pdr-point-item" style="align-items: flex-start;">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Create designs for homes, offices, and villas.</span>
+          </div>
+          <div class="course-pdr-point-item" style="align-items: flex-start;">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Present realistic 3D visuals that help clients understand your ideas.</span>
+          </div>
+          <div class="course-pdr-point-item" style="align-items: flex-start;">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Build a portfolio that showcases your design abilities.</span>
+          </div>
+          <div class="course-pdr-point-item" style="align-items: flex-start;">
+            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Explore freelance projects and potential income through interior and exterior design.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Closing Motivation Card -->
       <div class="course-pdr-speed-card">
-        <div class="course-pdr-faster-heading">
-          In next <span class="faster-highlight">15-Days</span>
-        </div>
-        <p class="course-pdr-desc">
-          We start from Zero, teach <strong>Planning in AutoCAD</strong>, <strong>3D Design in Sketchup</strong>, <strong>Rendering in Vray &amp; D5</strong> and <strong>AI</strong> to enhance the output and create walkthroughs.
+        <p class="course-pdr-desc" style="font-size: 13.5px; line-height: 1.55; margin-bottom: 12px; color: #334155;">
+          You don't need to know everything before you start. You need the right system, consistent practice, and the confidence to turn your ideas into real designs.
         </p>
-
-        <div class="course-pdr-points-list">
-          <div class="course-pdr-point-item">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span>Lifetime access with monthly updates</span>
-          </div>
-          <div class="course-pdr-point-item">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span>Software download Links included</span>
-          </div>
-          <div class="course-pdr-point-item">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span>Certificate After Course completion</span>
-          </div>
-          <div class="course-pdr-point-item">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span>Freelance Projects upto $500 to every student</span>
-          </div>
+        <div class="course-pdr-faster-heading" style="font-size: 19px; margin-bottom: 8px;">
+          In just <span class="faster-highlight">15 days</span>
+        </div>
+        <p class="course-pdr-desc" style="font-size: 13px; line-height: 1.5; color: #475569; margin-bottom: 14px;">
+          Start building the skills to design better, present better, and work toward earning through your design expertise.
+        </p>
+        <div class="course-pdr-punchline">
+          <span>Learn the skills</span>
+          <span>Create the designs</span>
+          <span>Build your future in 3D design</span>
         </div>
       </div>
     </div>

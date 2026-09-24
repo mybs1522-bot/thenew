@@ -317,86 +317,161 @@
         <div class="course-pdr-subtitle">and create spaces that clients love.</div>
       </div>
 
-      <!-- Lead Hook Card -->
-      <div class="course-pdr-pillar-card">
-        <p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #1e293b; font-weight: 700;">
-          Stop wasting months on random tutorials. This is the <strong>exact 15-day blueprint</strong> to design, render, and sell spaces that clients eagerly pay for.
-        </p>
-        <div style="margin-top: 6px; font-size: 13px; line-height: 1.45; color: #9a3412; font-weight: 700; border-top: 1px dashed #fed7aa; padding-top: 8px; width: 100%;">
-          From zero knowledge to <span style="background: #ea580c; color: #fff; padding: 2px 7px; border-radius: 6px; font-weight: 800;">client-ready 3D visualizer</span> in just 15 days.
-        </div>
-      </div>
+      <style>
+        .cp-impulse-box {
+          background: #ffffff;
+          border: 1.5px solid #fed7aa;
+          border-radius: 14px;
+          padding: 12px 14px;
+          margin: 8px 0 12px 0;
+          box-shadow: 0 4px 18px rgba(234, 88, 12, 0.07);
+          text-align: left;
+        }
+        .cp-impulse-hook {
+          background: #fff7ed;
+          border: 1px solid #fed7aa;
+          border-radius: 8px;
+          padding: 7px 10px;
+          font-size: 13px;
+          line-height: 1.4;
+          color: #0f172a;
+          text-align: center;
+          margin-bottom: 9px;
+        }
+        .cp-impulse-hook strong {
+          color: #ea580c;
+        }
+        .cp-impulse-skills {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 5px 8px;
+          padding-bottom: 9px;
+          margin-bottom: 9px;
+          border-bottom: 1px dashed #e2e8f0;
+        }
+        .cp-sk-item {
+          font-size: 11.5px;
+          line-height: 1.35;
+          color: #1e293b;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+        .cp-sk-item strong {
+          color: #0f172a;
+        }
+        .cp-sk-full {
+          grid-column: span 2;
+        }
+        .cp-impulse-deals {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          padding-bottom: 9px;
+          margin-bottom: 9px;
+          border-bottom: 1px dashed #e2e8f0;
+        }
+        .cp-dl-item {
+          font-size: 12px;
+          line-height: 1.35;
+          color: #0f172a;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .cp-badge-gold {
+          background: #fef08a;
+          color: #854d0e;
+          font-size: 9.5px;
+          font-weight: 800;
+          padding: 2px 6px;
+          border-radius: 4px;
+          letter-spacing: 0.03em;
+          flex-shrink: 0;
+        }
+        .cp-badge-blue {
+          background: #e0e7ff;
+          color: #3730a3;
+          font-size: 9.5px;
+          font-weight: 800;
+          padding: 2px 6px;
+          border-radius: 4px;
+          letter-spacing: 0.03em;
+          flex-shrink: 0;
+        }
+        .cp-impulse-footer {
+          text-align: center;
+        }
+        .cp-guarantee-text {
+          background: #0f172a;
+          color: #ffffff;
+          border-radius: 8px;
+          padding: 7px 10px;
+          font-size: 11.5px;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+        }
+        .cp-guarantee-text strong {
+          color: #facc15;
+        }
+        @media (max-width: 480px) {
+          .cp-impulse-skills {
+            grid-template-columns: 1fr;
+            gap: 4px;
+          }
+          .cp-sk-full {
+            grid-column: span 1;
+          }
+          .cp-impulse-hook {
+            font-size: 12px;
+            padding: 6px 8px;
+          }
+          .cp-sk-item, .cp-dl-item {
+            font-size: 11px;
+          }
+          .cp-guarantee-text {
+            font-size: 10.5px;
+            padding: 6px 8px;
+          }
+        }
+      </style>
 
-      <!-- What You'll Learn Card -->
-      <div class="course-pdr-speed-card" style="text-align: left;">
-        <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
-          <span class="pdr-badge" style="background: #0f172a; color: #ffffff; font-size: 10.5px; padding: 3px 9px; border-radius: 6px; letter-spacing: 0.05em;">THE COMPLETE 5-IN-1 PACKAGE</span>
+      <!-- 10-Line High-Voltage Impulse Card -->
+      <div class="cp-impulse-box">
+        <!-- 1. The Hook -->
+        <div class="cp-impulse-hook">
+          &#9889; <strong>Stop tutorial hell.</strong> Master the 15-day system to design, render &amp; get paid.
         </div>
-        <div class="course-pdr-faster-heading" style="margin-bottom: 12px; font-size: 18.5px; justify-content: center;">
-          5 High-Income Design Skills
-        </div>
-        <div class="course-pdr-points-list" style="margin-top: 0; padding-top: 0; border-top: none; gap: 9px;">
-          <div class="course-pdr-point-item" style="align-items: flex-start;">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px; flex-shrink: 0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span><strong>AutoCAD 2D Planning:</strong> Draft practical, contractor-ready floor plans &amp; layouts.</span>
-          </div>
-          <div class="course-pdr-point-item" style="align-items: flex-start;">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px; flex-shrink: 0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span><strong>SketchUp 3D Modeling:</strong> Turn ideas into impressive 3D interiors &amp; exteriors.</span>
-          </div>
-          <div class="course-pdr-point-item" style="align-items: flex-start;">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px; flex-shrink: 0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span><strong>Photorealistic V-Ray &amp; D5:</strong> Master cinematic lighting, realistic textures &amp; renders.</span>
-          </div>
-          <div class="course-pdr-point-item" style="align-items: flex-start;">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px; flex-shrink: 0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span><strong>AI Architecture Tools:</strong> 10x your speed and visual output with modern AI workflows.</span>
-          </div>
-          <div class="course-pdr-point-item" style="align-items: flex-start;">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px; flex-shrink: 0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span><strong>Client Walkthroughs:</strong> Create video animations &amp; presentations that close high-ticket clients.</span>
-          </div>
-        </div>
-      </div>
 
-      <!-- What Can These Skills Help You Achieve? Card -->
-      <div class="course-pdr-achieve-card">
-        <h3 class="course-pdr-achieve-title">What This Package Unlocks For You</h3>
-        <div class="course-pdr-points-list" style="margin-top: 0; padding-top: 0; border-top: none; gap: 9px;">
-          <div class="course-pdr-point-item" style="align-items: flex-start;">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px; flex-shrink: 0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span><strong>Earn &#36;500 to &#36;2,000+ per Project:</strong> Charge premium rates for luxury homes, offices &amp; villas.</span>
-          </div>
-          <div class="course-pdr-point-item" style="align-items: flex-start;">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px; flex-shrink: 0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span><strong>Instant Client-Ready Portfolio:</strong> Walk away with real 3D projects to showcase immediately.</span>
-          </div>
-          <div class="course-pdr-point-item" style="align-items: flex-start;">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px; flex-shrink: 0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span><strong>Freelance Projects Included:</strong> Direct access to paid freelance opportunities up to &#36;500.</span>
-          </div>
-          <div class="course-pdr-point-item" style="align-items: flex-start;">
-            <svg class="course-pdr-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="#16a34a" style="margin-top: 2px; flex-shrink: 0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span><strong>Complete All-In-One Toolkit:</strong> Software download links, lifetime updates &amp; verified certificate.</span>
-          </div>
+        <!-- 2-6. 5 High-Income Skills Matrix -->
+        <div class="cp-impulse-skills">
+          <div class="cp-sk-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="#16a34a" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> <span><strong>AutoCAD 2D:</strong> Floor plans &amp; layouts</span></div>
+          <div class="cp-sk-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="#16a34a" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> <span><strong>SketchUp 3D:</strong> Homes, villas &amp; offices</span></div>
+          <div class="cp-sk-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="#16a34a" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> <span><strong>V-Ray &amp; D5:</strong> Photorealistic renders</span></div>
+          <div class="cp-sk-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="#16a34a" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> <span><strong>AI Architecture:</strong> 10x workflow speed</span></div>
+          <div class="cp-sk-item cp-sk-full"><svg width="15" height="15" viewBox="0 0 24 24" fill="#16a34a" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> <span><strong>Video Walkthroughs:</strong> Client-closing 3D tours</span></div>
         </div>
-      </div>
 
-      <!-- Closing Motivation Card -->
-      <div class="course-pdr-speed-card">
-        <p class="course-pdr-desc" style="font-size: 13.5px; line-height: 1.5; margin-bottom: 10px; color: #1e293b; font-weight: 600;">
-          One single freelance design pays for this entire package <strong>10x over</strong>. You don’t need prior experience—just follow the system.
-        </p>
-        <div class="course-pdr-faster-heading" style="font-size: 18.5px; margin-bottom: 8px;">
-          Your First Paid Project in <span class="faster-highlight">30 Days</span>
+        <!-- 7-8. Money & Package Value Stack -->
+        <div class="cp-impulse-deals">
+          <div class="cp-dl-item">
+            <span class="cp-badge-gold">&#128176; MONEY</span>
+            <span><strong>Earn &#36;500–&#36;2,000+/project:</strong> Freelance gigs included (pays 10x over).</span>
+          </div>
+          <div class="cp-dl-item">
+            <span class="cp-badge-blue">&#127881; PACKAGE</span>
+            <span><strong>Complete Toolkit:</strong> Software download links + Certificate + Lifetime updates.</span>
+          </div>
         </div>
-        <p class="course-pdr-desc" style="font-size: 12.5px; line-height: 1.45; color: #64748b; margin-bottom: 12px;">
-          Backed by our unconditional 100% money-back guarantee. You risk nothing.
-        </p>
-        <div class="course-pdr-punchline" style="background: #0f172a !important; color: #ffffff !important;">
-          <span style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">High-Income Skills</span>
-          <span style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Real Paid Projects</span>
-          <span style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important;">Guaranteed ROI</span>
+
+        <!-- 9-10. Risk Reversal & Guarantee -->
+        <div class="cp-impulse-footer">
+          <div class="cp-guarantee-text">
+            &#128737;&#65039; <strong>First Paid Project in 30 Days</strong> or 100% Refund · Zero Risk
+          </div>
         </div>
       </div>
     </div>

@@ -1,17 +1,25 @@
-<!-- Isolated Meta Pixel for 5 Courses Offer -->
+<!-- Meta Pixel Management for 5 Courses Offer -->
 <!-- Target Product: 5-courses-interior-exterior-design-ai (ID: 9319186694282, Variant: 50269007347850) -->
-<!-- Completely suppresses sitewide pixel 2085433195424016 on this page and activates ONLY 955923376982045 -->
+<!-- Active Primary Pixel: 2155894718322083 (Courses Design - Managed via Shopify CAPI & Web Pixel) -->
+<!-- Blocks legacy books pixel 2085433195424016 and suppresses retired pixel 955923376982045 -->
 <script>
 (function() {
-  var BLOCKED_PIXEL_ID = '2085433195424016';
-  var NEW_PIXEL_ID = '955923376982045';
-  var TARGET_VARIANT_ID = '50269007347850';
+  var BLOCKED_PIXEL_IDS = ['2085433195424016', '955923376982045'];
+  var ACTIVE_PIXEL_ID = '2155894718322083';
 
-  // --- 1. NETWORK & BEACON INTERCEPTOR (Prevents any beacon for 2085433195424016) ---
+  // --- 1. SUPPRESS RETIRED & CONFLICTING PIXELS (Prevents beacon/fetch to old pixels) ---
+  function isBlockedUrl(url) {
+    if (typeof url !== 'string' || url.indexOf('facebook.com/tr') === -1) return false;
+    for (var i = 0; i < BLOCKED_PIXEL_IDS.length; i++) {
+      if (url.indexOf(BLOCKED_PIXEL_IDS[i]) !== -1) return true;
+    }
+    return false;
+  }
+
   if (window.navigator && window.navigator.sendBeacon) {
     var origSendBeacon = window.navigator.sendBeacon;
     window.navigator.sendBeacon = function(url, data) {
-      if (typeof url === 'string' && url.indexOf('facebook.com/tr') !== -1 && url.indexOf(BLOCKED_PIXEL_ID) !== -1) {
+      if (isBlockedUrl(url)) {
         return true;
       }
       return origSendBeacon.apply(this, arguments);
@@ -22,116 +30,44 @@
     var origFetch = window.fetch;
     window.fetch = function(input, init) {
       var url = typeof input === 'string' ? input : (input && input.url ? input.url : '');
-      if (url.indexOf('facebook.com/tr') !== -1 && url.indexOf(BLOCKED_PIXEL_ID) !== -1) {
+      if (isBlockedUrl(url)) {
         return Promise.resolve(new Response('{}', { status: 200 }));
       }
       return origFetch.apply(this, arguments);
     };
   }
 
-  // --- 2. FBQ METHOD INTERCEPTOR ---
-  var _queue = [];
-  var customFbq = function() {
-    var args = Array.prototype.slice.call(arguments);
-
-    // Block any initialization of the sitewide pixel
-    if (args[0] === 'init' && String(args[1]) === BLOCKED_PIXEL_ID) {
-      return;
+  // --- 2. CAPTURE fbclid AND WRITE FIRST-PARTY _fbc COOKIE (Required for 9.0+ EMQ) ---
+  try {
+    var urlParams = new URLSearchParams(window.location.search);
+    var fbclid = urlParams.get('fbclid');
+    if (fbclid) {
+      var now = Date.now();
+      var fbcValue = 'fb.1.' + now + '.' + fbclid;
+      var domain = window.location.hostname.replace(/^www\./, '');
+      var expires = new Date(now + 90 * 24 * 60 * 60 * 1000).toUTCString();
+      document.cookie = '_fbc=' + fbcValue + '; path=/; domain=.' + domain + '; expires=' + expires + '; SameSite=Lax';
     }
+  } catch (e) {}
 
-    // Block any trackSingle targeting the sitewide pixel
-    if ((args[0] === 'trackSingle' || args[0] === 'trackSingleCustom') && String(args[1]) === BLOCKED_PIXEL_ID) {
-      return;
-    }
-
-    // Suppress generic PageView (do not send site-wide PageView to new dataset)
-    if (args[0] === 'track' && args[1] === 'PageView') {
-      return;
-    }
-    if (args[0] === 'trackSingle' && args[2] === 'PageView') {
-      return;
-    }
-
-    // Route generic track calls exclusively to the NEW pixel via trackSingle
-    if (args[0] === 'track' || args[0] === 'trackCustom') {
-      var eventType = args[0] === 'track' ? 'trackSingle' : 'trackSingleCustom';
-      var eventName = args[1];
-      var eventData = args[2] || {};
-      var eventOpts = args[3] || {};
-
-      if (customFbq.callMethod) {
-        customFbq.callMethod.apply(customFbq, [eventType, NEW_PIXEL_ID, eventName, eventData, eventOpts]);
-      } else {
-        _queue.push([eventType, NEW_PIXEL_ID, eventName, eventData, eventOpts]);
+  // --- 3. FILTER FBQ CALLS TO PREVENT CONFLICTS ---
+  if (window.fbq) {
+    var origFbq = window.fbq;
+    var filteredFbq = function() {
+      var args = Array.prototype.slice.call(arguments);
+      // Suppress init or trackSingle calls targeting retired pixels
+      if ((args[0] === 'init' || args[0] === 'trackSingle' || args[0] === 'trackSingleCustom') &&
+          BLOCKED_PIXEL_IDS.indexOf(String(args[1])) !== -1) {
+        return;
       }
-      return;
+      return origFbq.apply(window, args);
+    };
+    for (var prop in origFbq) {
+      if (origFbq.hasOwnProperty(prop)) {
+        filteredFbq[prop] = origFbq[prop];
+      }
     }
-
-    // Pass everything else to Meta's runtime
-    if (customFbq.callMethod) {
-      customFbq.callMethod.apply(customFbq, args);
-    } else {
-      _queue.push(args);
-    }
-  };
-
-  customFbq.queue = _queue;
-  customFbq.loaded = true;
-  customFbq.version = '2.0';
-  window.fbq = customFbq;
-  if (!window._fbq) window._fbq = customFbq;
-
-  // --- 3. LOAD META PIXEL RUNTIME ---
-  if (!document.querySelector('script[src*="fbevents.js"]')) {
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://connect.facebook.net/en_US/fbevents.js';
-    var first = document.getElementsByTagName('script')[0];
-    if (first && first.parentNode) {
-      first.parentNode.insertBefore(s, first);
-    } else {
-      document.head.appendChild(s);
-    }
+    window.fbq = filteredFbq;
   }
-
-  // --- 4. INITIALIZE ONLY THE NEW DATASET ---
-  customFbq('set', 'autoConfig', false, NEW_PIXEL_ID);
-  customFbq('init', NEW_PIXEL_ID);
-
-  // --- 5. EMIT VIEWCONTENT EXCLUSIVELY ON 955923376982045 ---
-  customFbq('trackSingle', NEW_PIXEL_ID, 'ViewContent', {
-    content_ids: [TARGET_VARIANT_ID],
-    content_type: 'product',
-    content_name: '5 Courses for Interior/Exterior Design + AI',
-    value: 49.00,
-    currency: 'USD'
-  });
-
-  // --- 6. ATTACH ADDTOCART LISTENER ---
-  document.addEventListener('DOMContentLoaded', function() {
-    function fire5CoursesATC() {
-      customFbq('trackSingle', NEW_PIXEL_ID, 'AddToCart', {
-        content_ids: [TARGET_VARIANT_ID],
-        content_type: 'product',
-        contents: [{
-          id: TARGET_VARIANT_ID,
-          quantity: 1,
-          item_price: 49.00
-        }],
-        value: 49.00,
-        currency: 'USD'
-      });
-    }
-
-    document.querySelectorAll('[data-buy-button], .button--primary, .button--addToCart, .button--buy-now, .c5b-enroll-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        fire5CoursesATC();
-      });
-    });
-  });
 })();
 </script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=955923376982045&ev=ViewContent&noscript=1&cd[content_ids]=50269007347850&cd[content_type]=product&cd[value]=49.00&cd[currency]=USD" />
-</noscript>

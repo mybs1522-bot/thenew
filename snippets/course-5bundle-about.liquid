@@ -755,7 +755,225 @@
       transition: transform 0.2s ease;
       color: #64748b;
     }
+
+    /* Before / After Showcase Cards (v6render style) */
+    .c5b-ba-showcase {
+      margin: 10px auto 45px;
+      text-align: center;
+      position: relative;
+    }
+
+    .c5b-ba-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 380px;
+      max-width: 540px;
+      margin: 12px auto 0;
+      perspective: 1000px;
+    }
+
+    .c5b-ba-grid-bg {
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background:
+        linear-gradient(rgba(148, 163, 184, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.2) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(circle at 50% 50%, black 35%, transparent 75%);
+      -webkit-mask-image: radial-gradient(circle at 50% 50%, black 35%, transparent 75%);
+    }
+
+    @media (min-width: 640px) {
+      .c5b-ba-grid-bg {
+        animation: c5b-grid-scroll 24s linear infinite;
+      }
+      @keyframes c5b-grid-scroll {
+        from { background-position: 0 0, 0 0; }
+        to { background-position: 72px 72px, 72px 72px; }
+      }
+    }
+
+    .c5b-ba-card {
+      position: absolute;
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 18px;
+      padding: 8px 8px 14px;
+      box-shadow: 0 20px 35px -8px rgba(15, 23, 42, 0.16), 0 2px 6px rgba(15, 23, 42, 0.06);
+      width: 215px;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .c5b-ba-card-before {
+      transform: rotate(-8deg) translateX(-58px) translateY(8px);
+      z-index: 1;
+    }
+
+    .c5b-ba-card-after {
+      transform: rotate(8deg) translateX(58px) translateY(-8px) scale(1.05);
+      z-index: 2;
+      box-shadow: 0 25px 45px -10px rgba(16, 185, 129, 0.24), 0 20px 35px -8px rgba(15, 23, 42, 0.18);
+    }
+
+    .c5b-ba-stage:hover .c5b-ba-card-before,
+    .c5b-ba-card-before:hover {
+      transform: rotate(-3deg) translateX(-58px) translateY(0) scale(1.03);
+      z-index: 3;
+    }
+
+    .c5b-ba-stage:hover .c5b-ba-card-after,
+    .c5b-ba-card-after:hover {
+      transform: rotate(3deg) translateX(58px) translateY(-14px) scale(1.08);
+      z-index: 4;
+    }
+
+    .c5b-ba-media {
+      position: relative;
+      width: 100%;
+      height: 255px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0f172a;
+    }
+
+    .c5b-ba-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .c5b-ba-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 4px 9px;
+      border-radius: 6px;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .c5b-ba-badge-before {
+      background: rgba(30, 41, 59, 0.88);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+    }
+
+    .c5b-ba-badge-after {
+      background: #16a34a;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(22, 163, 74, 0.35);
+    }
+
+    .c5b-ba-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #475569;
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.2;
+    }
+
+    .c5b-ba-card-after .c5b-ba-label {
+      color: #0f172a;
+      font-weight: 800;
+    }
+
+    @media (max-width: 640px) {
+      .c5b-ba-showcase {
+        margin: 5px auto 35px;
+      }
+      .c5b-ba-stage {
+        height: 270px;
+        max-width: 320px;
+        margin-top: 8px;
+      }
+      .c5b-ba-card {
+        width: 145px;
+        padding: 6px 6px 10px;
+        border-radius: 14px;
+      }
+      .c5b-ba-media {
+        height: 170px;
+        border-radius: 9px;
+      }
+      .c5b-ba-card-before {
+        transform: rotate(-7deg) translateX(-42px) translateY(5px);
+      }
+      .c5b-ba-card-after {
+        transform: rotate(7deg) translateX(42px) translateY(-5px) scale(1.05);
+      }
+      .c5b-ba-badge {
+        font-size: 9px;
+        padding: 3px 7px;
+        top: 6px;
+        left: 6px;
+      }
+      .c5b-ba-label {
+        font-size: 11.5px;
+        margin-top: 8px;
+      }
+    }
   </style>
+
+  <!-- Top Before/After Showcase (From SketchUp to 4K Photorealism) -->
+  <div class="c5b-ba-showcase">
+    <div class="c5b-badge">⚡ The Real Transformation</div>
+    <h2 class="c5b-title" style="margin-bottom: 8px;">From Raw SketchUp Model to 4K Photorealism</h2>
+    <p class="c5b-subtitle" style="margin-bottom: 15px; max-width: 680px;">
+      Master how to take basic 3D geometry and transform it into hyper-realistic lighting, lifelike textures, and high-ticket client presentations.
+    </p>
+
+    <div class="c5b-ba-stage">
+      <div class="c5b-ba-grid-bg"></div>
+
+      <!-- Before Card -->
+      <div class="c5b-ba-card c5b-ba-card-before">
+        <div class="c5b-ba-media">
+          <img src="{{ 'before-sketchup.png' | asset_url }}" alt="Before: SketchUp Model" loading="lazy">
+          <span class="c5b-ba-badge c5b-ba-badge-before">BEFORE</span>
+        </div>
+        <div class="c5b-ba-label">SketchUp Model</div>
+      </div>
+
+      <!-- After Card -->
+      <div class="c5b-ba-card c5b-ba-card-after">
+        <div class="c5b-ba-media">
+          <img src="{{ 'after-render.png' | asset_url }}" alt="After: 4K Render" loading="lazy">
+          <span class="c5b-ba-badge c5b-ba-badge-after">AFTER</span>
+        </div>
+        <div class="c5b-ba-label">4K Render</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var stage = document.querySelector('.c5b-ba-stage');
+      if (!stage) return;
+      var beforeCard = stage.querySelector('.c5b-ba-card-before');
+      var afterCard = stage.querySelector('.c5b-ba-card-after');
+      if (beforeCard && afterCard) {
+        beforeCard.addEventListener('click', function(e) {
+          beforeCard.style.zIndex = '10';
+          afterCard.style.zIndex = '2';
+        });
+        afterCard.addEventListener('click', function(e) {
+          afterCard.style.zIndex = '10';
+          beforeCard.style.zIndex = '2';
+        });
+      }
+    })();
+  </script>
 
   <!-- Hero & Pipeline Overview -->
   <div class="c5b-hero">

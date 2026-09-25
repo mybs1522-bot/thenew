@@ -27,15 +27,24 @@
         </div>
 
         <div class="product__atc-row">
-            <div class="quantity--input">
-                <button class="quantity--input__button quantity--input__incr" onclick="BoosterTheme.cart.quantityHandler(event, false, false)">-</button>
-                <input {% if product.selected_or_first_available_variant.inventory_policy != "continue" %}max="{{ product.selected_or_first_available_variant.inventory_quantity }}"{% endif %} class="quantity--input__input" value="1" data-qty-input type="number" name="quantity" min="1" aria-label="Quantity input"><!--
-                --><button class="quantity--input__button quantity--input__decr" onclick="BoosterTheme.cart.quantityHandler(event, true, false)">+</button>
-            </div>
+            <input class="quantity--input__input" value="1" data-qty-input type="hidden" name="quantity">
             {% render 'add-to-cart-button', type: 'secondary', price: product.price, text: 'Buy Now', is_buy_now: true %}
         </div>
         <div class="checkout--dynamic">
             {{ form | payment_button }}
+        </div>
+
+        <!-- Risk Reversal Badge: Instant Access | 7-Day Return -->
+        <div class="arch-risk-reversal">
+          <span class="arch-risk-item">
+            <svg class="arch-risk-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>Instant Access</span>
+          </span>
+          <span class="arch-risk-sep">|</span>
+          <span class="arch-risk-item">
+            <svg class="arch-risk-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span>7-Day Return</span>
+          </span>
         </div>
     {% else %}
         {% render 'sold-out-button', disabled: 'disabled' %}
@@ -219,6 +228,45 @@ document.addEventListener('booster:initialized', (e)=>{
 {% endif %}
 
 <style>
+/* ─── Risk Reversal Badge ─── */
+.arch-risk-reversal {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin: 10px auto 4px auto !important;
+  padding: 6px 14px !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  letter-spacing: 0.01em !important;
+  text-align: center !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 9999px !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+}
+.arch-risk-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+.arch-risk-icon {
+  flex-shrink: 0 !important;
+}
+.arch-risk-sep {
+  color: #cbd5e1 !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+}
+.product__atc-row .button--buy-now,
+.product__atc-row .button--addToCart,
+.product__atc-row button[data-buy-button] {
+  width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
 /* ─── Transparent Pill Urgency Timer Above Buy Now ─── */
 .arch-pill-timer-wrap {
   width: 100% !important;

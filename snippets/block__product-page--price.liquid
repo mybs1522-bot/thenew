@@ -335,15 +335,9 @@
           width: 48px;
           height: 48px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #ffffff;
-          font-size: 20px;
-          font-weight: 900;
           flex-shrink: 0;
-          box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          object-fit: cover;
         }
 
         .cp-edu-name-block {
@@ -522,7 +516,7 @@
       <div class="cp-edu-intro">
         <!-- Educator Greeting -->
         <div class="cp-edu-greeting">
-          <div class="cp-edu-avatar">MH</div>
+          <img class="cp-edu-avatar" src="{{ 'mark-hathing-avatar.jpg' | asset_url }}" alt="Mark Hathing" width="48" height="48" loading="eager">
           <div class="cp-edu-name-block">
             <div class="cp-edu-hi">Hey, I'm Mark Hathing 👋</div>
             <div class="cp-edu-role">Your educator on this journey</div>

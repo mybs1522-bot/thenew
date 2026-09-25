@@ -399,6 +399,32 @@
           margin-bottom: 16px;
         }
 
+        .cp-edu-point-logo {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 3px;
+          flex-shrink: 0;
+          min-width: 42px;
+          margin-top: 2px;
+        }
+
+        .cp-edu-point-logo svg {
+          width: 30px;
+          height: 30px;
+        }
+
+        .cp-edu-point-logo-label {
+          font-size: 8px;
+          font-weight: 700;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          text-align: center;
+          line-height: 1.1;
+          white-space: nowrap;
+        }
+
         .cp-edu-point {
           display: flex;
           align-items: flex-start;
@@ -413,21 +439,6 @@
         .cp-edu-point:hover {
           border-color: #fed7aa;
           box-shadow: 0 4px 14px rgba(234, 88, 12, 0.06);
-        }
-
-        .cp-edu-point-num {
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background: #ea580c;
-          color: #ffffff;
-          font-size: 12px;
-          font-weight: 900;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          margin-top: 1px;
         }
 
         .cp-edu-point-text {
@@ -541,27 +552,42 @@
 
         <div class="cp-edu-points">
           <div class="cp-edu-point">
-            <span class="cp-edu-point-num">1</span>
+            <div class="cp-edu-point-logo">
+              <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#E51937"/><path d="M7 23l3.5-12h2.2L16 20.5 19.3 11h2.2L25 23h-2.3l-2.5-8.8L17 23h-2l-3.5-8.8L9 23H7z" fill="#fff"/></svg>
+              <span class="cp-edu-point-logo-label">AutoCAD</span>
+            </div>
             <span class="cp-edu-point-text"><strong>You'll draft real floor plans in AutoCAD</strong> — the same construction-ready blueprints architecture firms charge &#36;500+ to produce.</span>
           </div>
 
           <div class="cp-edu-point">
-            <span class="cp-edu-point-num">2</span>
+            <div class="cp-edu-point-logo">
+              <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#005F9E"/><path d="M8 22V10h2.4l3.6 6 3.6-6H20v12h-2.2v-8.2L14 19.5 10.2 13.8V22H8zm14-6a4 4 0 108 0 4 4 0 00-8 0z" fill="#fff"/></svg>
+              <span class="cp-edu-point-logo-label">SketchUp</span>
+            </div>
             <span class="cp-edu-point-text"><strong>You'll model full 3D homes, kitchens &amp; villas in SketchUp</strong> — and it'll look like you've been doing this for years.</span>
           </div>
 
           <div class="cp-edu-point">
-            <span class="cp-edu-point-num">3</span>
+            <div class="cp-edu-point-logo">
+              <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#1B1B1B"/><path d="M6 22l5-12h2.5L8.5 22H6zm6.5-12L16 16l3.5-6h2.5L16 22l-6-12h2.5zm9 0l5 12H24l-5-12h2.5z" fill="#F5A623"/></svg>
+              <span class="cp-edu-point-logo-label">V-Ray & D5</span>
+            </div>
             <span class="cp-edu-point-text"><strong>You'll produce photorealistic renders in V-Ray &amp; D5</strong> — the kind that make clients say "shut up and take my money."</span>
           </div>
 
           <div class="cp-edu-point">
-            <span class="cp-edu-point-num">4</span>
+            <div class="cp-edu-point-logo">
+              <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#7C3AED"/><path d="M16 6l2.5 5.5L24 13l-4 4 1 5.5L16 20l-5 2.5 1-5.5-4-4 5.5-1.5L16 6z" fill="#fff"/><circle cx="22" cy="9" r="2" fill="#FBBF24"/><circle cx="10" cy="9" r="1.5" fill="#A78BFA"/></svg>
+              <span class="cp-edu-point-logo-label">Gen AI</span>
+            </div>
             <span class="cp-edu-point-text"><strong>You'll use AI to generate design concepts in seconds</strong> — while other designers are still sketching by hand.</span>
           </div>
 
           <div class="cp-edu-point">
-            <span class="cp-edu-point-num">5</span>
+            <div class="cp-edu-point-logo">
+              <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#059669"/><path d="M7 12a3 3 0 013-3h12a3 3 0 013 3v5a3 3 0 01-3 3H10a3 3 0 01-3-3v-5z" fill="#fff" fill-opacity=".9"/><path d="M12 14l5 3-5 3v-6z" fill="#059669"/><circle cx="16" cy="25" r="2" fill="#fff" fill-opacity=".7"/><path d="M14 23h4v1h-4z" fill="#fff" fill-opacity=".5"/></svg>
+              <span class="cp-edu-point-logo-label">3D Walk</span>
+            </div>
             <span class="cp-edu-point-text"><strong>You'll walk clients through live 3D walkthroughs on Zoom</strong> — and close projects worth &#36;1,500–&#36;5,000 with confidence.</span>
           </div>
         </div>

@@ -310,283 +310,322 @@
           }
         }
       </style>
-      <!-- Friend-to-Friend Educator Intro Section -->
+      <!-- Interior Design Career Pitch Section -->
       <style>
-        .cp-edu-intro {
+        .cp-pitch-card {
           background: #ffffff;
           border: 1.5px solid #e2e8f0;
           border-radius: 14px;
-          padding: 14px 14px;
-          margin: 6px 0 10px;
-          box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-          text-align: left;
+          padding: 16px 15px;
+          margin: 6px 0 12px;
+          box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
           box-sizing: border-box;
+          color: #1e293b;
+          text-align: left;
           width: 100%;
         }
 
-        .cp-edu-greeting {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 10px;
-        }
-
-        .cp-edu-avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          flex-shrink: 0;
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
-          object-fit: cover;
-        }
-
-        .cp-edu-name-block {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .cp-edu-hi {
-          font-size: 14px;
+        .cp-pitch-headline {
+          font-size: 14.5px;
           font-weight: 800;
           color: #0f172a;
-          line-height: 1.2;
+          line-height: 1.35;
+          margin: 0 0 12px 0;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #f1f5f9;
+          text-align: center;
+          letter-spacing: -0.01em;
+        }
+
+        .cp-pitch-hook {
+          background: #fffaf0;
+          border: 1px solid #fed7aa;
+          border-radius: 10px;
+          padding: 11px 12px;
+          margin-bottom: 12px;
+        }
+        .cp-pitch-hook-title {
+          font-size: 13px;
+          font-weight: 800;
+          color: #9a3412;
+          margin: 0 0 5px 0;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .cp-pitch-hook-desc {
+          font-size: 12px;
+          line-height: 1.42;
+          color: #431407;
           margin: 0;
         }
 
-        .cp-edu-role {
-          font-size: 11px;
-          font-weight: 600;
-          color: #64748b;
-          margin-top: 1px;
-        }
-
-        .cp-edu-message {
-          font-size: 12.5px;
-          line-height: 1.45;
-          color: #334155;
-          margin: 0 0 7px;
-        }
-
-        .cp-edu-message strong {
-          color: #0f172a;
-          font-weight: 800;
-        }
-
-        .cp-edu-message em {
-          color: #ea580c;
-          font-style: normal;
-          font-weight: 700;
-        }
-
-        .cp-edu-divider {
-          border: none;
-          border-top: 1px dashed #e2e8f0;
-          margin: 10px 0;
-        }
-
-        .cp-edu-subhead {
-          font-size: 12.5px;
-          font-weight: 800;
-          color: #0f172a;
-          margin: 0 0 8px;
-          text-align: center;
-        }
-
-        .cp-edu-points {
+        .cp-pitch-pain-list {
           display: flex;
           flex-direction: column;
-          gap: 6px;
-          margin-bottom: 10px;
+          gap: 5px;
+          margin-bottom: 12px;
         }
-
-        .cp-edu-point {
-          display: flex;
-          align-items: flex-start;
-          gap: 9px;
-          background: #f8fafc;
-          border: 1px solid #f1f5f9;
-          border-radius: 8px;
-          padding: 8px 10px;
-          transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .cp-edu-point:hover {
-          border-color: #fed7aa;
-          box-shadow: 0 3px 10px rgba(234, 88, 12, 0.05);
-        }
-
-        .cp-edu-point-num {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: #ea580c;
-          color: #ffffff;
-          font-size: 11px;
-          font-weight: 800;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          margin-top: 1px;
-        }
-
-        .cp-edu-point-text {
-          font-size: 12px;
-          line-height: 1.38;
-          color: #334155;
-        }
-
-        .cp-edu-point-text strong {
-          color: #0f172a;
-          font-weight: 800;
-        }
-
-        .cp-edu-perks {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-        }
-
-        .cp-edu-perk-row {
-          font-size: 11.5px;
-          line-height: 1.35;
-          color: #1e293b;
+        .cp-pitch-pain-item {
           display: flex;
           align-items: flex-start;
           gap: 7px;
+          background: #fef2f2;
+          border: 1px solid #fee2e2;
+          border-radius: 8px;
+          padding: 7px 9px;
+          font-size: 11.5px;
+          line-height: 1.35;
+          color: #7f1d1d;
         }
-
-        .cp-edu-perk-tag {
-          font-size: 9px;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          padding: 1.5px 6px;
-          border-radius: 4px;
+        .cp-pitch-pain-icon {
+          font-size: 11px;
           flex-shrink: 0;
-          line-height: 1.25;
           margin-top: 1px;
         }
 
-        .cp-edu-perk-tag.money {
-          background: #ecfdf5;
-          color: #047857;
-          border: 1px solid #a7f3d0;
+        .cp-pitch-insight {
+          background: #f8fafc;
+          border-left: 3px solid #ea580c;
+          border-radius: 0 8px 8px 0;
+          padding: 8px 10px;
+          margin-bottom: 12px;
+          font-size: 12px;
+          line-height: 1.4;
+          color: #0f172a;
+        }
+        .cp-pitch-insight strong {
+          color: #ea580c;
         }
 
-        .cp-edu-perk-tag.toolkit {
-          background: #f1f5f9;
-          color: #334155;
+        .cp-pitch-solution {
+          background: #f0fdf4;
+          border: 1px solid #bbf7d0;
+          border-radius: 10px;
+          padding: 11px 12px;
+          margin-bottom: 12px;
+        }
+        .cp-pitch-solution-title {
+          font-size: 13px;
+          font-weight: 800;
+          color: #166534;
+          margin: 0 0 6px 0;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .cp-pitch-solution-lead {
+          font-size: 12px;
+          line-height: 1.4;
+          color: #14532d;
+          margin: 0 0 8px 0;
+        }
+
+        .cp-pitch-pipeline {
+          background: #0f172a;
+          color: #ffffff;
+          border-radius: 8px;
+          padding: 7px 10px;
+          font-size: 11px;
+          font-weight: 800;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          margin: 8px 0;
+          text-align: center;
+          letter-spacing: 0.02em;
+        }
+        .cp-pitch-pipeline span {
+          color: #fdba74;
+        }
+
+        .cp-pitch-software {
+          font-size: 11.5px;
+          line-height: 1.4;
+          color: #15803d;
+          margin: 0;
+        }
+
+        .cp-pitch-matters {
+          background: #f8fafc;
           border: 1px solid #e2e8f0;
+          border-radius: 10px;
+          padding: 10px 12px;
+          margin-bottom: 12px;
+        }
+        .cp-pitch-matters-title {
+          font-size: 12.5px;
+          font-weight: 800;
+          color: #0f172a;
+          margin: 0 0 5px 0;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .cp-pitch-matters-text {
+          font-size: 12px;
+          line-height: 1.42;
+          color: #334155;
+          margin: 0;
+        }
+        .cp-pitch-matters-highlight {
+          margin-top: 5px;
+          font-size: 12px;
+          font-weight: 700;
+          color: #ea580c;
         }
 
-        .cp-edu-closing {
-          margin-top: 10px;
+        .cp-pitch-urgency {
+          border-top: 1px dashed #e2e8f0;
+          padding-top: 10px;
+          margin-bottom: 10px;
+        }
+        .cp-pitch-urgency-title {
+          font-size: 12.5px;
+          font-weight: 800;
+          color: #0f172a;
+          margin: 0 0 5px 0;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .cp-pitch-urgency-text {
           font-size: 11.5px;
           line-height: 1.4;
           color: #475569;
-          text-align: center;
-          font-style: italic;
+          margin: 0 0 5px 0;
+        }
+        .cp-pitch-urgency-warn {
+          font-size: 11.5px;
+          font-weight: 700;
+          color: #dc2626;
+          margin: 0;
         }
 
-        .cp-edu-closing strong {
+        .cp-pitch-closing {
+          background: #f8fafc;
+          border: 1px solid #fed7aa;
+          border-radius: 10px;
+          padding: 10px 12px;
+          text-align: center;
+        }
+        .cp-pitch-closing-title {
+          font-size: 12.5px;
+          font-weight: 800;
+          color: #0f172a;
+          margin: 0 0 4px 0;
+        }
+        .cp-pitch-closing-sub {
+          font-size: 11.5px;
+          color: #64748b;
+          margin: 0;
+          line-height: 1.4;
+        }
+        .cp-pitch-closing-bold {
+          font-size: 12px;
+          font-weight: 800;
           color: #ea580c;
-          font-style: normal;
+          display: block;
+          margin-top: 2px;
         }
 
         @media (max-width: 480px) {
-          .cp-edu-intro {
-            padding: 12px 10px;
+          .cp-pitch-card {
+            padding: 13px 12px;
           }
-          .cp-edu-message {
-            font-size: 11.5px;
-            line-height: 1.4;
-          }
-          .cp-edu-point {
-            padding: 7px 8px;
-            gap: 7px;
-          }
-          .cp-edu-point-text {
-            font-size: 11px;
-            line-height: 1.35;
-          }
-          .cp-edu-perk-row {
-            font-size: 10.5px;
+          .cp-pitch-headline {
+            font-size: 13.5px;
           }
         }
       </style>
 
-      <div class="cp-edu-intro">
-        <!-- Educator Greeting -->
-        <div class="cp-edu-greeting">
-          <img class="cp-edu-avatar" src="{{ 'mark-hathing-avatar.jpg' | asset_url }}" alt="Mark Hathing" width="40" height="40" loading="eager">
-          <div class="cp-edu-name-block">
-            <div class="cp-edu-hi">Hey, I'm Mark Hathing 👋</div>
-            <div class="cp-edu-role">Your educator on this journey</div>
+      <div class="cp-pitch-card">
+        <!-- Headline -->
+        <h3 class="cp-pitch-headline">Learn Interior Design. Build a Career. Start Earning From Your Skill.</h3>
+
+        <!-- Hook -->
+        <div class="cp-pitch-hook">
+          <div class="cp-pitch-hook-title">🚨 Still Watching Random Tutorials to Learn Interior Design?</div>
+          <p class="cp-pitch-hook-desc">Every month you delay learning the right skills, you’re potentially losing <strong>time, opportunities and income.</strong></p>
+        </div>
+
+        <!-- Pain points -->
+        <div class="cp-pitch-pain-list">
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Spending months jumping between random YouTube tutorials</span>
+          </div>
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Paying others to create designs you could learn to make yourself</span>
+          </div>
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Missing client opportunities because you don’t have the right skills</span>
+          </div>
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Knowing software individually but not knowing how to complete a real project</span>
+          </div>
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Staying stuck in the same career while others are building valuable design skills</span>
           </div>
         </div>
 
-        <!-- Conversational Message -->
-        <p class="cp-edu-message">
-          Let me be honest with you — <strong>you don't need any previous design experience</strong>. You don't need an architecture degree. You don't even need to know what AutoCAD looks like right now.
-        </p>
-        <p class="cp-edu-message">
-          All you need is <em>a laptop and the willingness to follow along</em>. I built this program so you can go from <strong>absolute zero to getting paid by real clients</strong> — in 15 days or less.
-        </p>
-        <p class="cp-edu-message">
-          Here's exactly what happens when you hit that button below:
-        </p>
+        <!-- Insight -->
+        <div class="cp-pitch-insight">
+          👉 <strong>The problem isn’t that you can’t learn Interior Design.</strong><br>
+          The problem is learning it without a proper roadmap.
+        </div>
 
-        <hr class="cp-edu-divider">
-
-        <!-- 5 Conversion Points -->
-        <div class="cp-edu-subhead">What You Walk Away With:</div>
-
-        <div class="cp-edu-points">
-          <div class="cp-edu-point">
-            <span class="cp-edu-point-num">1</span>
-            <span class="cp-edu-point-text"><strong>You'll draft real floor plans in AutoCAD</strong> — the same construction-ready blueprints architecture firms charge &#36;500+ to produce.</span>
+        <!-- Solution -->
+        <div class="cp-pitch-solution">
+          <div class="cp-pitch-solution-title">✅ Stop Wasting Time. Learn the Complete Design Process.</div>
+          <div class="cp-pitch-solution-lead">
+            This isn’t just another software course.<br>
+            It’s a <strong>Practical, Step-by-Step Interior Design Training</strong> that teaches you:
           </div>
 
-          <div class="cp-edu-point">
-            <span class="cp-edu-point-num">2</span>
-            <span class="cp-edu-point-text"><strong>You'll model full 3D homes, kitchens &amp; villas in SketchUp</strong> — and it'll look like you've been doing this for years.</span>
+          <!-- Pipeline -->
+          <div class="cp-pitch-pipeline">
+            Plan <span>→</span> Design <span>→</span> 3D Model <span>→</span> Render <span>→</span> Present
           </div>
 
-          <div class="cp-edu-point">
-            <span class="cp-edu-point-num">3</span>
-            <span class="cp-edu-point-text"><strong>You'll produce photorealistic renders in V-Ray &amp; D5</strong> — the kind that make clients say "shut up and take my money."</span>
-          </div>
+          <p class="cp-pitch-software">
+            Learn <strong>AutoCAD, SketchUp, V-Ray, D5, Enscape &amp; AI workflows</strong> and understand how they come together to create real interior projects.
+          </p>
+        </div>
 
-          <div class="cp-edu-point">
-            <span class="cp-edu-point-num">4</span>
-            <span class="cp-edu-point-text"><strong>You'll use AI to generate design concepts in seconds</strong> — while other designers are still sketching by hand.</span>
-          </div>
-
-          <div class="cp-edu-point">
-            <span class="cp-edu-point-num">5</span>
-            <span class="cp-edu-point-text"><strong>You'll walk clients through live 3D walkthroughs on Zoom</strong> — and close projects worth &#36;1,500–&#36;5,000 with confidence.</span>
+        <!-- Why This Skill Matters -->
+        <div class="cp-pitch-matters">
+          <div class="cp-pitch-matters-title">💰 WHY THIS SKILL MATTERS</div>
+          <p class="cp-pitch-matters-text">
+            A professional design skill can help you <strong>freelance, work with clients, build a portfolio or grow your career in interior design.</strong>
+          </p>
+          <div class="cp-pitch-matters-highlight">
+            You’re not just learning software. You’re building a skill you can use to create opportunities.
           </div>
         </div>
 
-        <hr class="cp-edu-divider">
-
-        <!-- Perks -->
-        <div class="cp-edu-perks">
-          <div class="cp-edu-perk-row">
-            <span class="cp-edu-perk-tag money">💰 EARNINGS</span>
-            <span><strong>&#36;500–&#36;2,000+ per project</strong> — I show you exactly how to land your first freelance gig inside the course.</span>
-          </div>
-          <div class="cp-edu-perk-row">
-            <span class="cp-edu-perk-tag toolkit">📦 INCLUDED</span>
-            <span><strong>All software links, 10,000+ textures, verified certificates</strong> &amp; lifetime updates. Everything you need in one place.</span>
-          </div>
+        <!-- Urgency -->
+        <div class="cp-pitch-urgency">
+          <div class="cp-pitch-urgency-title">⏳ Why Start Now?</div>
+          <p class="cp-pitch-urgency-text">
+            Another 6 months of random tutorials won’t give you a career.<br>
+            <strong>6 months of focused learning and practice can change what you’re capable of doing.</strong>
+          </p>
+          <p class="cp-pitch-urgency-warn">👉 Don’t waste more time learning the wrong way.</p>
         </div>
 
-        <!-- Closing Line -->
-        <p class="cp-edu-closing">
-          This isn't another course you'll forget about. <strong>This is the one that changes everything.</strong>
-        </p>
+        <!-- Closing -->
+        <div class="cp-pitch-closing">
+          <div class="cp-pitch-closing-title">🚀 Your Career. Your Skill. Your Decision.</div>
+          <p class="cp-pitch-closing-sub">Keep watching random tutorials…</p>
+          <span class="cp-pitch-closing-bold">or start learning Interior Design properly.</span>
+        </div>
       </div>
     </div>
     {% elsif product.handle == '6-books-for-interior-exterior-design' %}

@@ -461,7 +461,9 @@
       }
 
       function getSortedReviews() {
-        var copy = ALL_REVIEWS.slice();
+        var isEnglishProduct = {% if product.handle contains 'english' %}true{% else %}false{% endif %};
+        var source = isEnglishProduct ? ALL_REVIEWS_EN : ALL_REVIEWS_HI;
+        var copy = source.slice();
         if (currentSort === 'highest') {
           copy.sort(function(a, b) { return b.s - a.s; });
         }
@@ -489,8 +491,12 @@
         if (container) {
           var html = '';
           pageItems.forEach(function(r) {
+            var isEnglishProduct = {% if product.handle contains 'english' %}true{% else %}false{% endif %};
             var inits = r.name.split(' ').map(function(w){return w[0];}).join('');
-            var edText = r.ed === 1 ? "हार्डकॉपी + ई-बुक" : "ई-बुक";
+            var edText = isEnglishProduct ? (r.ed === 1 ? "Hardcopy + E-Book" : "E-Book Edition") : (r.ed === 1 ? "हार्डकॉपी + ई-बुक" : "ई-बुक");
+            var verifiedText = isEnglishProduct ? "Verified Buyer" : "वेरीफाइड ख़रीदार";
+            var reviewedText = isEnglishProduct ? "Reviewed: " : "रिव्यू किया गया: ";
+            var helpfulText = isEnglishProduct ? "Helpful" : "मददगार";
             html += '<div class="bstr-rev-card">';
             html += '  <div class="bstr-rev-card-header">';
             html += '    <div class="bstr-rev-author-info">';
@@ -500,7 +506,7 @@
             html += '          <span>' + r.name + '</span>';
             html += '          <span class="bstr-rev-verified-pill">';
             html += '            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-            html += '            वेरीफाइड ख़रीदार';
+            html += '            ' + verifiedText;
             html += '          </span>';
             html += '        </div>';
             html += '        <div class="bstr-rev-meta">' + edText + ' · ' + r.loc + ' · ' + r.d + '</div>';
@@ -511,8 +517,8 @@
             html += '  <div class="bstr-rev-title">"' + r.t + '"</div>';
             html += '  <div class="bstr-rev-body">' + r.b + '</div>';
             html += '  <div class="bstr-rev-card-footer">';
-            html += '    <span>रिव्यू किया गया: ' + r.d + '</span>';
-            html += '    <button type="button" class="bstr-rev-helpful-btn" onclick="this.innerHTML=\'✓ मददगार (' + (r.h + 1) + ')\'">👍 Helpful (' + r.h + ')</button>';
+            html += '    <span>' + reviewedText + r.d + '</span>';
+            html += '    <button type="button" class="bstr-rev-helpful-btn" onclick="this.innerHTML=\'✓ ' + helpfulText + ' (' + (r.h + 1) + ')\'">👍 ' + (isEnglishProduct ? 'Helpful (' + r.h + ')' : 'मददगार (' + r.h + ')') + '</button>';
             html += '  </div>';
             html += '</div>';
           });

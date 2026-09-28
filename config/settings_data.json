@@ -41,7 +41,7 @@
     "recentlyBought": true,
     "recentlyBoughtMobile": true,
     "recentlyBoughtCollection": "all",
-    "recentlyBoughtInterval": 36,
+    "recentlyBoughtInterval": 30,
     "recentlyBoughtRemain": 6,
     "reviewApp": "booster",
     "messenger": false,

@@ -1,0 +1,127 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page": {
+      "type": "product-page__product",
+      "blocks": {
+        "ppTitle": {
+          "type": "productPageTitle",
+          "settings": {
+            "noMargin": true,
+            "color": "rgba(0,0,0,0)",
+            "fontFamily": "title",
+            "fontSize": "large"
+          }
+        },
+        "review_stars": {
+          "type": "productPageReviewStars",
+          "settings": {
+            "noMargin": false
+          }
+        },
+        "ppPrice": {
+          "type": "productPagePrice",
+          "settings": {
+            "noMargin": false,
+            "color": "rgba(0,0,0,0)",
+            "newPriceColor": "#ea580c",
+            "oldPriceColor": "#8c918e",
+            "fontFamily": "base",
+            "fontSize": "medium"
+          }
+        },
+        "ppSwatch": {
+          "type": "productPageSwatch",
+          "settings": {
+            "noMargin": false
+          }
+        },
+        "ppATC": {
+          "type": "productPageATC",
+          "settings": {
+            "noMargin": false,
+            "stickyATC": "scroll"
+          }
+        },
+        "shop_pay": {
+          "type": "productPageShopPay",
+          "settings": {
+            "noMargin": false
+          }
+        },
+        "tab_synopsis": {
+          "type": "productPageTab",
+          "settings": {
+            "showInline": false,
+            "heading": "About",
+            "content": "description",
+            "metafieldNS": "global",
+            "metafieldKey": "",
+            "page": "",
+            "customContent": "<p>150 pages. Hand-drawn diagrams. Verified clearances. The one resource on every designer's desk.</p>"
+          }
+        },
+        "tab_reviews": {
+          "type": "productPageTab",
+          "settings": {
+            "showInline": false,
+            "heading": "Reviews",
+            "content": "reviews",
+            "metafieldNS": "global",
+            "metafieldKey": "",
+            "page": "",
+            "customContent": "<p>Add custom content here!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ppTitle",
+        "review_stars",
+        "ppPrice",
+        "ppSwatch",
+        "ppATC",
+        "tab_synopsis",
+        "tab_reviews"
+      ],
+      "settings": {
+        "view": "default",
+        "layout": "max-width",
+        "galleryStyle": "default",
+        "galleryPosition": "left",
+        "autoZoom": true,
+        "autoChange": true,
+        "galleryImageFit": "contain",
+        "galleryImageGap": 16,
+        "productNavigation": true,
+        "productMainImageSize": "full_ratio",
+        "imageSticky": true,
+        "imageStickyPosition": 80
+      }
+    },
+    "recommended": {
+      "type": "product-page__recommended",
+      "settings": {
+        "enabled": true,
+        "personalizedOffers": true,
+        "layout": "max-width",
+        "heading": "Readers Also Loved",
+        "subheading": "Curated Recommendations",
+        "subheadingPosition": "above",
+        "textAlignment": "center",
+        "defaultCollection": ""
+      }
+    }
+  },
+  "order": [
+    "page",
+    "recommended"
+  ]
+}

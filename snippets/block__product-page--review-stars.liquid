@@ -3,7 +3,7 @@
   {% assign score = "4.9" %}
   {% case product.handle %}
     {% when 'kitchen-design-book' %}
-      {% assign rating_count = "548" %}
+      {% assign rating_count = "434" %}
       {% assign score = "4.9" %}
     {% when 'living-room-design-book' %}
       {% assign rating_count = "512" %}
@@ -20,81 +20,62 @@
     {% when '6-books-for-interior-exterior-design' %}
       {% assign rating_count = "2,324" %}
       {% assign score = "4.9" %}
+    {% when '5-courses-interior-exterior-design-ai' %}
+      {% assign rating_count = "1,840" %}
+      {% assign score = "4.9" %}
   {% endcase %}
   <div class="book-editorial-rating-wrapper" onclick="scrollToProductReviews(event);" style="cursor: pointer;" title="Read {{ rating_count }} verified reviews">
     <div class="rating-stars-gold">
-      <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-half">★</span>
+      <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span class="star-half">&#9733;</span>
     </div>
     <span class="rating-score-bold">{{ score }}</span>
     <span class="rating-count-text">({{ rating_count }}&nbsp;ratings)</span>
-    <span class="rating-dot-separator">•</span>
-    <span class="rating-bestseller-badge">Verified Readers</span>
+    <span class="rating-dot-separator">&#8226;</span>
+    <span class="rating-bestseller-badge">{% if product.handle == '5-courses-interior-exterior-design-ai' %}Verified Students{% else %}Verified Readers{% endif %}</span>
   </div>
 
-  {% if product.handle contains 'vastu' %}
-  <!-- Vastu Page Motion Slider -->
-  <div class="vastu-pages-slider-wrap" onclick="scrollToProductReviews(event);">
-    <div class="vastu-pages-slider-track">
-      {% for i in (1..8) %}
-        {% assign asset_name = 'vastu-page-' | append: i | append: '.png' %}
-        <div class="vastu-page-item">
-          <img src="{{ asset_name | asset_url }}" alt="Vastu Book Page {{i}}" loading="lazy" />
+  {% if product.handle == '5-courses-interior-exterior-design-ai' %}
+  <!-- 5 Courses Showcase with Square Thumbnails & Center-Aligned Text -->
+  <div class="top-rating-books-ripple-wrap course-showcase-wrap">
+    <div class="top-rating-books-track course-showcase-track">
+      <div class="top-rating-book-item course-showcase-item" style="--ripple-delay: 0s;">
+        <div class="top-rating-book-cover course-showcase-cover">
+          <img src="https://lh3.googleusercontent.com/d/1fV5bz4JDugh8HxLMJ0fXu5K5sDj3qlSR" alt="AutoCAD Mastery" loading="lazy" width="70" height="70" />
         </div>
-      {% endfor %}
-      {% for i in (1..8) %}
-        {% assign asset_name = 'vastu-page-' | append: i | append: '.png' %}
-        <div class="vastu-page-item">
-          <img src="{{ asset_name | asset_url }}" alt="Vastu Book Page {{i}}" loading="lazy" />
+        <span class="top-rating-book-name course-showcase-name">AutoCAD</span>
+        <span class="top-rating-book-pages course-showcase-pages">2D Blueprints</span>
+      </div>
+      <div class="top-rating-book-item course-showcase-item" style="--ripple-delay: 0.25s;">
+        <div class="top-rating-book-cover course-showcase-cover">
+          <img src="https://lh3.googleusercontent.com/d/1wl6by5AO5MiPeoYsZ8F6Zi5AJahoeTQo" alt="SketchUp Pro" loading="lazy" width="70" height="70" />
         </div>
-      {% endfor %}
+        <span class="top-rating-book-name course-showcase-name">SketchUp</span>
+        <span class="top-rating-book-pages course-showcase-pages">3D Modeling</span>
+      </div>
+      <div class="top-rating-book-item course-showcase-item" style="--ripple-delay: 0.5s;">
+        <div class="top-rating-book-cover course-showcase-cover">
+          <img src="https://lh3.googleusercontent.com/d/1aHEt_z78tYD_0Cn66DiduAnhwn-o8El8" alt="V-Ray Photorealism" loading="lazy" width="70" height="70" />
+        </div>
+        <span class="top-rating-book-name course-showcase-name">V-Ray</span>
+        <span class="top-rating-book-pages course-showcase-pages">Photorealism</span>
+      </div>
+      <div class="top-rating-book-item course-showcase-item" style="--ripple-delay: 0.75s;">
+        <div class="top-rating-book-cover course-showcase-cover">
+          <img src="https://lh3.googleusercontent.com/d/1vbV4j6K9sgzbbZ7qlRdgqPTXWiHBPLsr" alt="D5 Render AI" loading="lazy" width="70" height="70" />
+        </div>
+        <span class="top-rating-book-name course-showcase-name">D5 Render</span>
+        <span class="top-rating-book-pages course-showcase-pages">Real-Time AI</span>
+      </div>
+      <div class="top-rating-book-item course-showcase-item" style="--ripple-delay: 1.0s;">
+        <div class="top-rating-book-cover course-showcase-cover">
+          <img src="https://lh3.googleusercontent.com/d/1s-HzZVKpc9F92mLW2gMOPk0kVrKAqUIS" alt="AI in Architecture" loading="lazy" width="70" height="70" />
+        </div>
+        <span class="top-rating-book-name course-showcase-name">AI Design</span>
+        <span class="top-rating-book-pages course-showcase-pages">Generative</span>
+      </div>
     </div>
   </div>
-  <style>
-    .vastu-pages-slider-wrap {
-      margin: 15px 0 8px 0;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-      mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-      cursor: pointer;
-    }
-    .vastu-pages-slider-track {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      width: max-content;
-      animation: marqueeLeftToRight 15s linear infinite;
-    }
-    .vastu-pages-slider-track:hover {
-      animation-play-state: paused;
-    }
-    .vastu-page-item {
-      flex: 0 0 clamp(75px, 22vw, 110px);
-      width: clamp(75px, 22vw, 110px);
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-      border: 1.5px solid #e2e8f0;
-      background: #ffffff;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    .vastu-page-item:hover {
-      transform: scale(1.05);
-      border-color: #ea580c;
-    }
-    .vastu-page-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
-    @keyframes marqueeLeftToRight {
-      0% { transform: translateX(-50%); }
-      100% { transform: translateX(0%); }
-    }
-  </style>
-  {% else %}
+  {% elsif product.handle != 'kitchen-design-book' %}
   <!-- 6 Books Showcase with Zoom Ripple Animation -->
   <div class="top-rating-books-ripple-wrap">
     <div class="top-rating-books-track">
@@ -139,7 +120,7 @@
         </div>
         <span class="top-rating-book-name">Exteriors</span>
         <span class="top-rating-book-pages">150+ Pages</span>
-            </div>
+      </div>
     </div>
   </div>
   {% endif %}
@@ -240,8 +221,8 @@
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
     border: 1.5px solid #e2e8f0;
     background: #ffffff;
-    animation: topBookZoomRipple 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    animation-delay: var(--ripple-delay, 0s);
+    
+    
     will-change: transform, box-shadow;
     transition: border-color 0.2s ease, transform 0.2s ease;
   }
@@ -274,23 +255,7 @@
     transition: color 0.2s ease;
   }
 
-  @keyframes topBookZoomRipple {
-    0%, 100% {
-      transform: scale(1) translateY(0);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-      border-color: #e2e8f0;
-    }
-    20% {
-      transform: scale(1.12) translateY(-5px);
-      box-shadow: 0 10px 20px rgba(234, 88, 12, 0.28), 0 3px 6px rgba(0, 0, 0, 0.1);
-      border-color: #ea580c;
-    }
-    40% {
-      transform: scale(1) translateY(0);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-      border-color: #e2e8f0;
-    }
-  }
+  
 
   .top-rating-book-item:hover .top-rating-book-cover {
     animation-play-state: paused;
@@ -306,4 +271,96 @@
   .top-rating-book-item:hover .top-rating-book-pages {
     color: #ea580c;
   }
+
+  /* 5 Courses Square Thumbnails & Center-Aligned Text */
+  .course-showcase-track {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: clamp(8px, 2.2vw, 14px) !important;
+    padding: 6px 2px 8px 2px !important;
+  }
+  .course-showcase-item {
+    flex: 0 0 clamp(56px, 15vw, 68px) !important;
+    width: clamp(56px, 15vw, 68px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    box-sizing: border-box !important;
+  }
+  .course-showcase-cover {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08) !important;
+    border: 1.5px solid #e2e8f0 !important;
+    background: #ffffff !important;
+    margin-bottom: 5px !important;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+  .course-showcase-cover img {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .course-showcase-name {
+    display: block !important;
+    width: 100% !important;
+    font-size: clamp(9.5px, 2.1vw, 11px) !important;
+    font-weight: 700 !important;
+    color: #334155 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.01em !important;
+    transition: color 0.2s ease !important;
+  }
+  .course-showcase-pages {
+    display: block !important;
+    width: 100% !important;
+    font-size: clamp(8px, 1.8vw, 9.5px) !important;
+    font-weight: 600 !important;
+    color: #64748b !important;
+    margin: 2px auto 0 auto !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    transition: color 0.2s ease !important;
+  }
+  .course-showcase-item:hover .course-showcase-cover {
+    transform: translateY(-4px) scale(1.08) !important;
+    box-shadow: 0 10px 20px rgba(234, 88, 12, 0.28) !important;
+    border-color: #ea580c !important;
+  }
+  .course-showcase-item:hover .course-showcase-name,
+  .course-showcase-item:hover .course-showcase-pages {
+    color: #ea580c !important;
+  }
+
+  {% if product.handle == '5-courses-interior-exterior-design-ai' %}
+  @media (max-width: 768px) {
+    .course-showcase-wrap {
+      margin-top: 4px !important;
+      margin-bottom: 2px !important;
+    }
+    .course-showcase-track {
+      padding-bottom: 2px !important;
+    }
+    .product__review-stars {
+      margin-bottom: 2px !important;
+    }
+  }
+  {% endif %}
 </style>
+
+{% render 'kitchen-pre-price' %}
+
+

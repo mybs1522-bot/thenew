@@ -143,7 +143,11 @@ Checking for vertical gallery styles (additional gallery styles can be added her
       <div class="col-12" style="padding: 0 8px;">
         <div class="arch-image-top-bar">
           <span class="arch-image-top-bar__text">
-            Made with <span class="arch-heart-emoji">❤️</span> for Home Owners, Interior Designers &amp; Architects
+            {% if product.handle == '5-courses-interior-exterior-design-ai' or product.id == 9319186694282 %}
+              Your First Paid Design Project in 30 Days, Or you get 100% refund.
+            {% else %}
+              Made with <span class="arch-heart-emoji">❤️</span> for Home Owners, Interior Designers &amp; Architects
+            {% endif %}
           </span>
         </div>
       </div>
@@ -178,7 +182,11 @@ Checking for vertical gallery styles (additional gallery styles can be added her
       <div class="col-12" style="padding: 0 8px;">
         <div class="arch-image-top-bar">
           <span class="arch-image-top-bar__text">
-            Made with <span class="arch-heart-emoji">❤️</span> for Home Owners, Interior Designers &amp; Architects
+            {% if product.handle == '5-courses-interior-exterior-design-ai' or product.id == 9319186694282 %}
+              Your First Paid Design Project in 30 Days, Or you get 100% refund.
+            {% else %}
+              Made with <span class="arch-heart-emoji">❤️</span> for Home Owners, Interior Designers &amp; Architects
+            {% endif %}
           </span>
         </div>
       </div>
@@ -259,6 +267,7 @@ Rendering according to the view (default, marketplace)
       {% render 'get-block', block: block, product: product, form: form %}
     {% else %}
       {% render 'block__product-page--title', product: product, noMargin: true %}
+      {% render 'kitchen-pre-price' %}
       {% render 'block__product-page--price', product: product %}
       {% render 'block__product-page--swatch' with product as product %}
       {% render 'block__product-page--atc', product: product, form: form %}
@@ -269,6 +278,7 @@ Rendering according to the view (default, marketplace)
 {% else %}
   <div class="col-12 {{size}} unflex product__page--info">
     <h1 class="h-reset product__title margin__bottom--reduced">{{ product.title }}</h1>
+    {% render 'kitchen-pre-price' %}
     {% render 'block__product-page--price' with product as product %}
     {% if product.description != blank %}
     <div class="product__description">
@@ -330,6 +340,10 @@ Rendering according to the view (default, marketplace)
 {%- comment -%}
 /Product container row
 {%- endcomment -%}
+
+{% if product.handle == 'kitchen-design-book' %}
+  {% render 'kitchen-design-about' %}
+{% endif %}
 
 {% assign tabs = section.blocks | where: 'type', 'productPageTab' %}
 {% if tabs.size > 0 %}

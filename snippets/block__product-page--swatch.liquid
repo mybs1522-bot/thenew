@@ -86,25 +86,13 @@
                         <span class="lazyload swatch--color" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% unless is_available %}data-swatch-soldout="true"{% endunless %}></span>
                     {% else %}
                         <div class="luxury-swatch-card {% if value contains 'Digital' or value contains 'E-Book' or value contains 'E-book' or value contains 'eBook' %}is-popular{% endif %}" data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% unless is_available %}data-swatch-soldout="true"{% endunless %}>
-                            {% assign is_vastu_hi = false %}{% if product.handle contains 'vastu' %}{% unless product.handle contains 'english' %}{% assign is_vastu_hi = true %}{% endunless %}{% endif %}{% if is_vastu_hi %}
-                                {% if value contains 'Digital' or value contains 'E-Book' or value contains 'E-book' or value contains 'eBook' %}
-                                    <div class="luxury-card-badge">★ तुरंत पाएं</div>
-                                {% elsif value contains 'Hard' or value == 'Hardcopy' %}
-                                    {% if is_available %}
-                                        <div class="luxury-card-badge">★ बेस्ट वैल्यू</div>
-                                    {% else %}
-                                        <div class="luxury-card-badge sold-out">आउट ऑफ स्टॉक</div>
-                                    {% endif %}
-                                {% endif %}
-                            {% else %}
-                                {% if value contains 'Digital' or value contains 'E-Book' or value contains 'E-book' or value contains 'eBook' %}
-                                    <div class="luxury-card-badge">★ INSTANT ACCESS</div>
-                                {% elsif value contains 'Hard' or value == 'Hardcopy' %}
-                                    {% if is_available %}
-                                        <div class="luxury-card-badge">★ BEST VALUE</div>
-                                    {% else %}
-                                        <div class="luxury-card-badge sold-out">OUT OF STOCK</div>
-                                    {% endif %}
+                            {% if value contains 'Digital' or value contains 'E-Book' or value contains 'E-book' or value contains 'eBook' %}
+                                <div class="luxury-card-badge">★ INSTANT ACCESS</div>
+                            {% elsif value contains 'Hard' or value == 'Hardcopy' %}
+                                {% if is_available %}
+                                    <div class="luxury-card-badge">★ BEST VALUE</div>
+                                {% else %}
+                                    <div class="luxury-card-badge sold-out">OUT OF STOCK</div>
                                 {% endif %}
                             {% endif %}
                             <div class="luxury-card-inner">
@@ -115,50 +103,24 @@
                                     <div class="luxury-card-top-row">
                                         <span class="luxury-card-title">{{value | escape}}{% unless is_available %} <span class="luxury-soldout-tag">Out of Stock</span>{% endunless %}</span>
                                         {% if var %}
-                                            <span class="luxury-card-price jsPrice" data-price-raw="{{ var.price }}" {% unless is_available %}style="color: #94a3b8; text-decoration: line-through;"{% endunless %}>{{ var.price | money | strip_html | replace: 'Rs. ', '₹' | replace: 'Rs.', '₹' | replace: 'Rs ', '₹' }}</span>
+                                            <span class="luxury-card-price" {% unless is_available %}style="color: #94a3b8; text-decoration: line-through;"{% endunless %}>{{ var.price | money }}</span>
                                         {% endif %}
                                     </div>
                                     <span class="luxury-card-subtitle">
-                                        {% if product.handle contains 'vastu' and product.handle contains 'english' %}
-                                            {% if value contains 'Digital' or value contains 'E-Book' or value contains 'E-book' or value contains 'eBook' %}
-                                                ⚡ Instant PDF Download · 150+ Pages
-                                            {% elsif value == 'Hardcopy' or value contains 'Hard' %}
-                                                {% if is_available %}
-                                                    📦 Printed Book Delivered to Your Doorstep
-                                                {% else %}
-                                                    📦 Printed Book (Currently Out of Stock)
-                                                {% endif %}
+                                        {% if value contains 'Digital' or value contains 'PDF' or value contains 'E-book' or value contains 'E-Book' or value contains 'eBook' %}
+                                            {% if product.handle contains '6-books' %}
+                                                ⚡ Instant PDF Download · 800+ Pages · Lifetime Updates
                                             {% else %}
-                                                Full Access Edition
+                                                ⚡ Instant PDF Download · 150+ Pages · Lifetime Updates
                                             {% endif %}
-                                        {% elsif product.handle contains 'vastu' %}
-                                            {% if value contains 'Digital' or value contains 'E-Book' or value contains 'E-book' or value contains 'eBook' %}
-                                                ⚡ PDF हिंदी में डाउनलोड
-                                            {% elsif value == 'Hardcopy' or value contains 'Hard' %}
-                                                {% if is_available %}
-                                                    📦 हिंदी बुक आपके घर डिलीवरी
-                                                {% else %}
-                                                    📦 हिंदी बुक (अभी आउट ऑफ स्टॉक)
-                                                {% endif %}
+                                        {% elsif value == 'Hardcopy' or value contains 'Hard' %}
+                                            {% if is_available %}
+                                                📦 Deluxe Printed Book + Free Digital PDF
                                             {% else %}
-                                                Full Access Edition
+                                                📦 Deluxe Printed Edition (Currently Out of Stock)
                                             {% endif %}
                                         {% else %}
-                                            {% if value contains 'Digital' or value contains 'PDF' or value contains 'E-book' or value contains 'E-Book' or value contains 'eBook' %}
-                                                {% if product.handle contains '6-books' %}
-                                                    ⚡ Instant PDF Download · 800+ Pages · Lifetime Updates
-                                                {% else %}
-                                                    ⚡ Instant PDF Download · 150+ Pages · Lifetime Updates
-                                                {% endif %}
-                                            {% elsif value == 'Hardcopy' or value contains 'Hard' %}
-                                                {% if is_available %}
-                                                    📦 Deluxe Printed Book + Free Digital PDF
-                                                {% else %}
-                                                    📦 Deluxe Printed Edition (Currently Out of Stock)
-                                                {% endif %}
-                                            {% else %}
-                                                Full Access Edition
-                                            {% endif %}
+                                            Full Access Edition
                                         {% endif %}
                                     </span>
                                 </div>
@@ -172,12 +134,12 @@
     {% endfor %}
 </div>
 
-{% else %}
+{% elsif product.handle != '5-courses-interior-exterior-design-ai' and product.id != 9319186694282 %}
 <div class="product__swatches default-edition-pill">
     <h4 class="h-reset swatches__title">Edition / Format</h4>
     <div class="default-edition-card">
         <span class="edition-name">Standard Edition</span>
-        <span class="edition-price jsPrice" data-price-raw="{{ product.price }}">{{ product.price | money | strip_html | replace: 'Rs. ', '₹' | replace: 'Rs.', '₹' | replace: 'Rs ', '₹' }}</span>
+        <span class="edition-price">{{ product.price | money }}</span>
         <span class="edition-badge">In Stock</span>
     </div>
 </div>

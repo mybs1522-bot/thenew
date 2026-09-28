@@ -1,8 +1,12 @@
-﻿<div class="product--tab__content {% if first %}tab--show{% endif %} {% if block.settings.content == 'description' or block.settings.content contains 'page' %}{% endif %}" id="tab--{{-block.id}}">
+<div class="product--tab__content {% if first %}tab--show{% endif %} {% if block.settings.content == 'description' or block.settings.content contains 'page' %}{% endif %}" id="tab--{{-block.id}}">
     {%- case block.settings.content %}
         {% when 'description' %}
             {% if product.handle == '6-books-for-interior-exterior-design' %}
                 {% render 'landing-page-6books', product: product %}
+            {% elsif product.handle == '5-courses-interior-exterior-design-ai' %}
+                {% render 'course-5bundle-about', product: product %}
+            {% elsif product.handle == 'kitchen-design-book' %}
+                {% render 'kitchen-design-about', product: product %}
             {% else %}
                 {% render 'book-about-editorial', product: product %}
             {% endif %}
@@ -24,4 +28,3 @@
             {{page.content | replace: '%product%', product.title | replace: '%brand%', product.vendor | replace: '%price%', price | replace: '%prediscount%', prediscount}}
     {% endcase %}
 </div>
-

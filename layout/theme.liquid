@@ -31,65 +31,11 @@
 
     {% render 'layout__favicon' %}
 
-    <script>
-    (function() {
-      try {
-        var exp = new Date(Date.now() + 365 * 864e5).toUTCString();
-        var cmpVal = encodeURIComponent(JSON.stringify({
-          purposes: { a: true, p: true, m: true, t: true },
-          display_banner: false,
-          sale_of_data: true,
-          reg: ""
-        }));
-        document.cookie = "_tracking_consent=true; path=/; expires=" + exp + "; SameSite=Lax";
-        document.cookie = "_cmp_a=" + cmpVal + "; path=/; expires=" + exp + "; SameSite=Lax";
-        localStorage.setItem('_tracking_consent', 'true');
-        localStorage.setItem('_cmp_a', cmpVal);
-        localStorage.setItem('bstr_gdpr', 'true');
-      } catch(e) {}
-    })();
-    </script>
-    <style>
-      shopify-privacy-banner,
-      #shopify-privacy-banner,
-      .shopify-privacy-banner,
-      #shopify-customer-privacy-banner,
-      .shopify-customer-privacy-banner,
-      #shopify-cookie-banner,
-      .shopify-cookie-banner,
-      .shopify-cookie-consent,
-      #shopify-consent-banner,
-      [id*="shopify-privacy"],
-      [class*="shopify-privacy"],
-      [id*="cookie-banner"],
-      [class*="cookie-banner"],
-      [id*="cookie-consent"],
-      [class*="cookie-consent"],
-      [id*="cookieconsent"],
-      [class*="cookieconsent"],
-      [id*="consent-banner"],
-      [class*="consent-banner"],
-      [aria-label*="Cookie" i],
-      [aria-label*="cookie" i],
-      [aria-label*="privacy" i],
-      [data-privacy-banner],
-      #bstr--notice,
-      .gdpr__holder,
-      .gdpr__notice {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        height: 0 !important;
-        min-height: 0 !important;
-        max-height: 0 !important;
-        position: absolute !important;
-        top: -99999px !important;
-        left: -99999px !important;
-        z-index: -999999 !important;
-        overflow: hidden !important;
-      }
-    </style>
+    {% if product.handle == '5-courses-interior-exterior-design-ai' %}
+      {% render 'meta-pixel-5courses' %}
+    {% else %}
+      {% render 'meta-pixel-books' %}
+    {% endif %}
 
     {{ content_for_header }}
 
@@ -227,5 +173,44 @@
 888   d88P Y88..88P Y88..88P      X88 Y88b. Y8b.     888     888     888  888 Y8b.     888  888  888 Y8b.     
 8888888P"   "Y88P"   "Y88P"   88888P'  "Y888 "Y8888  888     888     888  888  "Y8888  888  888  888  "Y8888  
 -->
+  <!-- E-Book Quantity Enforcer -->
+  <script>
+  (function() {
+    function enforceDigitalQuantityLimit() {
+      fetch('/cart.js')
+        .then(function(res) { return res.json(); })
+        .then(function(cart) {
+          var updates = {};
+          var needsUpdate = false;
+          cart.items.forEach(function(item) {
+            if (item.requires_shipping === false && item.quantity > 1) {
+              updates[item.key] = 1;
+              needsUpdate = true;
+            }
+          });
+          if (needsUpdate) {
+            fetch('/cart/update.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ updates: updates })
+            }).then(function() {
+              if (window.BoosterTheme && window.BoosterTheme.cart) {
+                 BoosterTheme.cart.getCart(); 
+                 if (window.location.pathname.indexOf('/cart') !== -1) {
+                   window.location.reload();
+                 }
+              } else {
+                 window.location.reload();
+              }
+            });
+          }
+        });
+    }
+    document.addEventListener('DOMContentLoaded', enforceDigitalQuantityLimit);
+    document.addEventListener('booster:cart:update', function() {
+      setTimeout(enforceDigitalQuantityLimit, 300);
+    });
+  })();
+  </script>
   </body>
 </html>

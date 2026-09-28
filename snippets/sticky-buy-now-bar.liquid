@@ -1,4 +1,4 @@
-{% comment %}
+﻿{% comment %}
   Sticky Bottom "Buy Now" Bar with Evergreen Timer (7h 37m 40s)
   Timer placed above price, commanding black & bigger Buy Now button.
   Slides up smoothly when the user scrolls down to the "About" section.
@@ -27,10 +27,10 @@
           {% assign sticky_curr_var = product.selected_or_first_available_variant %}
           {% assign sticky_double_price = sticky_curr_var.price | times: 2 %}
           <span class="arch-sticky-bar__compare" id="archStickyCompare">
-            {{ sticky_double_price | money | replace: 'Rs. ', '₹' | replace: 'Rs.', '₹' | replace: 'Rs ', '₹' }}
+            {{ sticky_double_price | money | replace: 'Rs. ', 'â‚¹' | replace: 'Rs.', 'â‚¹' | replace: 'Rs ', 'â‚¹' }}
           </span>
           <span class="arch-sticky-bar__price" id="archStickyPrice">
-            {{ sticky_curr_var.price | money | replace: 'Rs. ', '₹' | replace: 'Rs.', '₹' | replace: 'Rs ', '₹' }}
+            {{ sticky_curr_var.price | money | replace: 'Rs. ', 'â‚¹' | replace: 'Rs.', 'â‚¹' | replace: 'Rs ', 'â‚¹' }}
           </span>
         </div>
       </div>
@@ -57,7 +57,7 @@
 </div>
 
 <style>
-/* ─── STICKY BOTTOM BUY NOW BAR STYLING ─── */
+/* â”€â”€â”€ STICKY BOTTOM BUY NOW BAR STYLING â”€â”€â”€ */
 .arch-sticky-bar {
   position: fixed;
   bottom: 0;
@@ -268,7 +268,7 @@
   100% { transform: rotate(360deg); }
 }
 
-/* ─── MOBILE RESPONSIVE TWEAKS ─── */
+/* â”€â”€â”€ MOBILE RESPONSIVE TWEAKS â”€â”€â”€ */
 @media (max-width: 640px) {
   .arch-sticky-bar__inner {
     padding: 10px 14px;
@@ -390,7 +390,8 @@
 
   /* 2. SCROLL DETECTION: SHOW WHEN USER REACHES ABOUT SECTION */
   function getAboutSection() {
-    return document.getElementById('product-tabs-section') ||
+    return document.querySelector('.kd-about-section') ||
+             document.getElementById('product-tabs-section') ||
            document.querySelector('.tab__container--product') ||
            document.querySelector('.book-about-editorial') ||
            document.querySelector('.lp6-hero') ||
@@ -440,7 +441,7 @@
                         document.querySelector('.product-page__price');
       let text = '';
       if (mainPrice) {
-        text = mainPrice.innerText.trim().split('\n')[0].replace(/Rs\.?\s*/g, '₹');
+        text = mainPrice.innerText.trim().split('\n')[0].replace(/Rs\.?\s*/g, 'â‚¹');
         const stickyPrice = document.getElementById('archStickyPrice');
         if (stickyPrice && text) stickyPrice.textContent = text;
       }
@@ -503,3 +504,4 @@
 
 })();
 </script>
+

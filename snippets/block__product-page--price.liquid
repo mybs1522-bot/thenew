@@ -21,24 +21,660 @@
     {% assign current_variant = product.selected_or_first_available_variant %}
     {% assign s_type = settings.saleType | default: 'percent' %}
 
-    {% if product.handle == '6-books-for-interior-exterior-design' %}
+    {% if product.handle == '5-courses-interior-exterior-design-ai' %}
+    <div class="course-pdr-editorial-block">
+      <style>
+        .course-pdr-editorial-block {
+          margin: 6px 0 18px 0;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          box-sizing: border-box;
+          width: 100%;
+          text-align: center;
+        }
+        @media (max-width: 768px) {
+          .course-pdr-editorial-block {
+            margin: 0 0 14px 0 !important;
+            padding-top: 0 !important;
+          }
+        }
+        .sticky--container .course-pdr-editorial-block {
+          display: none !important;
+        }
+        .course-pdr-headline-wrap {
+          margin-bottom: 14px;
+          text-align: center;
+        }
+        @media (max-width: 768px) {
+          .course-pdr-headline-wrap {
+            margin-top: 0 !important;
+            margin-bottom: 10px !important;
+          }
+        }
+        .course-pdr-eyebrow {
+          display: block;
+          font-family: 'Space Grotesk', 'Inter', sans-serif;
+          font-size: 13.5px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: #475569;
+          margin-bottom: 3px;
+          text-align: center;
+        }
+        .course-pdr-title {
+          font-size: clamp(23px, 5.2vw, 31px);
+          font-weight: 900;
+          color: #0f172a;
+          line-height: 1.15;
+          letter-spacing: -0.03em;
+          margin: 0 0 4px 0;
+          text-align: center;
+        }
+        .course-pdr-subtitle {
+          font-size: clamp(16px, 3.8vw, 19px);
+          font-weight: 700;
+          color: #ea580c;
+          line-height: 1.3;
+          letter-spacing: -0.015em;
+          text-align: center;
+        }
+        .course-pdr-pillar-card {
+          background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+          border: 1px solid #fed7aa;
+          border-radius: 12px;
+          padding: 12px 16px;
+          margin-bottom: 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+        }
+        @media (max-width: 768px) {
+          .course-pdr-pillar-card {
+            padding: 10px 14px !important;
+            margin-bottom: 10px !important;
+          }
+        }
+        .course-pdr-pill-label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          flex-wrap: wrap;
+          text-align: center;
+          width: 100%;
+        }
+        .pdr-badge {
+          background: #ea580c;
+          color: #ffffff;
+          font-size: 11px;
+          font-weight: 800;
+          padding: 3px 8px;
+          border-radius: 6px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+        .pdr-formula {
+          font-size: 13.5px;
+          font-weight: 700;
+          color: #9a3412;
+          letter-spacing: -0.01em;
+        }
+        .course-pdr-all-in-one {
+          font-size: 13px;
+          color: #334155;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          font-weight: 500;
+          text-align: center;
+          width: 100%;
+        }
+        .pdr-check {
+          color: #059669;
+          font-weight: 900;
+          font-size: 14px;
+        }
+        .course-pdr-quote-box {
+          background: #f8fafc;
+          border-top: 3px solid #0f172a;
+          border-bottom: 1px solid #e2e8f0;
+          border-left: 1px solid #e2e8f0;
+          border-right: 1px solid #e2e8f0;
+          border-radius: 12px;
+          padding: 12px 18px;
+          margin-bottom: 12px;
+          position: relative;
+          text-align: center;
+        }
+        @media (max-width: 768px) {
+          .course-pdr-quote-box {
+            padding: 10px 14px !important;
+            margin-bottom: 10px !important;
+          }
+        }
+        .course-pdr-quote-icon {
+          font-family: Georgia, serif;
+          font-size: 26px;
+          line-height: 1;
+          color: #94a3b8;
+          display: block;
+          margin: 0 auto 2px auto;
+          text-align: center;
+          opacity: 0.6;
+        }
+        .course-pdr-quote-text {
+          font-family: Georgia, 'Playfair Display', serif;
+          font-style: italic;
+          font-size: 14px;
+          color: #1e293b;
+          line-height: 1.5;
+          margin: 0;
+          text-align: center;
+        }
+        .course-pdr-speed-card {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 14px;
+          padding: 14px 16px;
+          margin-bottom: 16px;
+          text-align: center;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+        }
+        @media (max-width: 768px) {
+          .course-pdr-speed-card {
+            padding: 12px 14px !important;
+            margin-bottom: 12px !important;
+          }
+        }
+        .course-pdr-curiosity {
+          font-size: 12px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          color: #64748b;
+          margin-bottom: 4px;
+          text-align: center;
+        }
+        .course-pdr-faster-heading {
+          font-size: clamp(19px, 4.5vw, 24px);
+          font-weight: 900;
+          color: #0f172a;
+          line-height: 1.2;
+          letter-spacing: -0.02em;
+          margin-bottom: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          flex-wrap: wrap;
+          text-align: center;
+          width: 100%;
+        }
+        .faster-highlight {
+          color: #ea580c;
+          text-decoration: underline;
+          text-decoration-color: #fdba74;
+          text-underline-offset: 4px;
+        }
+        .faster-rocket {
+          display: inline-block;
+          font-size: 20px;
+        }
+        .course-pdr-desc {
+          font-size: 13.5px;
+          color: #334155;
+          line-height: 1.55;
+          margin: 0;
+          text-align: center;
+        }
+        .highlight-soft {
+          color: #0f172a;
+          font-weight: 600;
+        }
+        .course-pdr-points-list {
+          display: flex;
+          flex-direction: column;
+          gap: 9px;
+          margin-top: 14px;
+          padding-top: 12px;
+          border-top: 1px dashed #cbd5e1;
+          text-align: left;
+        }
+        .course-pdr-point-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 13px;
+          color: #1e293b;
+          font-weight: 600;
+          line-height: 1.35;
+        }
+        .course-pdr-point-icon {
+          flex-shrink: 0;
+          width: 18px;
+          height: 18px;
+        }
+        .course-pdr-achieve-card {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 14px;
+          padding: 14px 16px;
+          margin-bottom: 14px;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+          text-align: left;
+        }
+        .course-pdr-achieve-title {
+          font-size: 16.5px;
+          font-weight: 900;
+          color: #0f172a;
+          margin: 0 0 12px 0;
+          text-align: center;
+          line-height: 1.3;
+        }
+        .course-pdr-punchline {
+          background: #0f172a !important;
+          color: #ffffff !important;
+          border-radius: 8px !important;
+          padding: 10px 14px !important;
+          font-size: 12.5px !important;
+          font-weight: 800 !important;
+          letter-spacing: 0.02em !important;
+          display: flex !important;
+          flex-wrap: wrap !important;
+          align-items: center !important;
+          justify-content: center !important;
+          gap: 6px !important;
+          text-align: center !important;
+          line-height: 1.4 !important;
+        }
+        .course-pdr-punchline span {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+          font-weight: 800 !important;
+        }
+        .course-pdr-punchline span:not(:last-child)::after {
+          content: "·" !important;
+          margin-left: 6px !important;
+          color: #ea580c !important;
+          -webkit-text-fill-color: #ea580c !important;
+          font-weight: 900 !important;
+        }
+        @media (max-width: 640px) {
+          .course-pdr-punchline {
+            font-size: 11px;
+            padding: 8px 10px;
+          }
+        }
+      </style>
+      <!-- Interior Design Career Pitch Section -->
+      <style>
+        .cp-pitch-card {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 14px;
+          padding: 16px 15px;
+          margin: 6px 0 12px;
+          box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+          box-sizing: border-box;
+          color: #1e293b;
+          text-align: left;
+          width: 100%;
+        }
+
+        .cp-pitch-headline {
+          font-size: 14.5px;
+          font-weight: 800;
+          color: #0f172a;
+          line-height: 1.35;
+          margin: 0 0 12px 0;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #f1f5f9;
+          text-align: center;
+          letter-spacing: -0.01em;
+        }
+
+        .cp-pitch-hook {
+          background: #fffaf0;
+          border: 1px solid #fed7aa;
+          border-radius: 10px;
+          padding: 11px 12px;
+          margin-bottom: 12px;
+        }
+        .cp-pitch-hook-title {
+          font-size: 13px;
+          font-weight: 800;
+          color: #9a3412;
+          margin: 0 0 5px 0;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .cp-pitch-hook-desc {
+          font-size: 12px;
+          line-height: 1.42;
+          color: #431407;
+          margin: 0;
+        }
+
+        .cp-pitch-pain-list {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          margin-bottom: 12px;
+        }
+        .cp-pitch-pain-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 7px;
+          background: #fef2f2;
+          border: 1px solid #fee2e2;
+          border-radius: 8px;
+          padding: 7px 9px;
+          font-size: 11.5px;
+          line-height: 1.35;
+          color: #7f1d1d;
+        }
+        .cp-pitch-pain-icon {
+          font-size: 11px;
+          flex-shrink: 0;
+          margin-top: 1px;
+        }
+
+        .cp-pitch-insight {
+          background: #f8fafc;
+          border-left: 3px solid #ea580c;
+          border-radius: 0 8px 8px 0;
+          padding: 8px 10px;
+          margin-bottom: 12px;
+          font-size: 12px;
+          line-height: 1.4;
+          color: #0f172a;
+        }
+        .cp-pitch-insight strong {
+          color: #ea580c;
+        }
+
+        .cp-pitch-solution {
+          background: #f0fdf4;
+          border: 1px solid #bbf7d0;
+          border-radius: 10px;
+          padding: 11px 12px;
+          margin-bottom: 12px;
+        }
+        .cp-pitch-solution-title {
+          font-size: 13px;
+          font-weight: 800;
+          color: #166534;
+          margin: 0 0 6px 0;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .cp-pitch-solution-lead {
+          font-size: 12px;
+          line-height: 1.4;
+          color: #14532d;
+          margin: 0 0 8px 0;
+        }
+
+        .cp-pitch-pipeline {
+          background: #0f172a;
+          color: #ffffff;
+          border-radius: 8px;
+          padding: 7px 10px;
+          font-size: 11px;
+          font-weight: 800;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          margin: 8px 0;
+          text-align: center;
+          letter-spacing: 0.02em;
+        }
+        .cp-pitch-pipeline span {
+          color: #fdba74;
+        }
+
+        .cp-pitch-software {
+          font-size: 11.5px;
+          line-height: 1.4;
+          color: #15803d;
+          margin: 0;
+        }
+
+        .cp-pitch-matters {
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 10px;
+          padding: 10px 12px;
+          margin-bottom: 12px;
+        }
+        .cp-pitch-matters-title {
+          font-size: 12.5px;
+          font-weight: 800;
+          color: #0f172a;
+          margin: 0 0 5px 0;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .cp-pitch-matters-text {
+          font-size: 12px;
+          line-height: 1.42;
+          color: #334155;
+          margin: 0;
+        }
+        .cp-pitch-matters-highlight {
+          margin-top: 5px;
+          font-size: 12px;
+          font-weight: 700;
+          color: #ea580c;
+        }
+
+        .cp-pitch-urgency {
+          border-top: 1px dashed #e2e8f0;
+          padding-top: 10px;
+          margin-bottom: 10px;
+        }
+        .cp-pitch-urgency-title {
+          font-size: 12.5px;
+          font-weight: 800;
+          color: #0f172a;
+          margin: 0 0 5px 0;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .cp-pitch-urgency-text {
+          font-size: 11.5px;
+          line-height: 1.4;
+          color: #475569;
+          margin: 0 0 5px 0;
+        }
+        .cp-pitch-urgency-warn {
+          font-size: 11.5px;
+          font-weight: 700;
+          color: #dc2626;
+          margin: 0;
+        }
+
+        .cp-pitch-closing {
+          background: #f8fafc;
+          border: 1px solid #fed7aa;
+          border-radius: 10px;
+          padding: 10px 12px;
+          text-align: center;
+        }
+        .cp-pitch-closing-title {
+          font-size: 12.5px;
+          font-weight: 800;
+          color: #0f172a;
+          margin: 0 0 4px 0;
+        }
+        .cp-pitch-closing-sub {
+          font-size: 11.5px;
+          color: #64748b;
+          margin: 0;
+          line-height: 1.4;
+        }
+        .cp-pitch-closing-bold {
+          font-size: 12px;
+          font-weight: 800;
+          color: #ea580c;
+          display: block;
+          margin-top: 2px;
+        }
+
+        @media (max-width: 480px) {
+          .cp-pitch-card {
+            padding: 13px 12px;
+          }
+          .cp-pitch-headline {
+            font-size: 13.5px;
+          }
+        }
+      </style>
+
+      <div class="cp-pitch-card">
+        <!-- Headline -->
+        <h3 class="cp-pitch-headline">Learn Interior Design. Build a Career. Start Earning From Your Skill.</h3>
+
+        <!-- Hook -->
+        <div class="cp-pitch-hook">
+          <div class="cp-pitch-hook-title">🚨 Still Watching Random Tutorials to Learn Interior Design?</div>
+          <p class="cp-pitch-hook-desc">Every month you delay learning the right skills, you’re potentially losing <strong>time, opportunities and income.</strong></p>
+        </div>
+
+        <!-- Pain points -->
+        <div class="cp-pitch-pain-list">
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Spending months jumping between random YouTube tutorials</span>
+          </div>
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Paying others to create designs you could learn to make yourself</span>
+          </div>
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Missing client opportunities because you don’t have the right skills</span>
+          </div>
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Knowing software individually but not knowing how to complete a real project</span>
+          </div>
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Staying stuck in the same career while others are building valuable design skills</span>
+          </div>
+        </div>
+
+        <!-- Insight -->
+        <div class="cp-pitch-insight">
+          👉 <strong>The problem isn’t that you can’t learn Interior Design.</strong><br>
+          The problem is learning it without a proper roadmap.
+        </div>
+
+        <!-- Solution -->
+        <div class="cp-pitch-solution">
+          <div class="cp-pitch-solution-title">✅ Stop Wasting Time. Learn the Complete Design Process.</div>
+          <div class="cp-pitch-solution-lead">
+            This isn’t just another software course.<br>
+            It’s a <strong>Practical, Step-by-Step Interior Design Training</strong> that teaches you:
+          </div>
+
+          <!-- Pipeline -->
+          <div class="cp-pitch-pipeline">
+            Plan <span>→</span> Design <span>→</span> 3D Model <span>→</span> Render <span>→</span> Present
+          </div>
+
+          <p class="cp-pitch-software">
+            Learn <strong>AutoCAD, SketchUp, V-Ray, D5, Enscape &amp; AI workflows</strong> and understand how they come together to create real interior projects.
+          </p>
+        </div>
+
+        <!-- Why This Skill Matters -->
+        <div class="cp-pitch-matters">
+          <div class="cp-pitch-matters-title">💰 WHY THIS SKILL MATTERS</div>
+          <p class="cp-pitch-matters-text">
+            A professional design skill can help you <strong>freelance, work with clients, build a portfolio or grow your career in interior design.</strong>
+          </p>
+          <div class="cp-pitch-matters-highlight">
+            You’re not just learning software. You’re building a skill you can use to create opportunities.
+          </div>
+        </div>
+
+        <!-- Urgency -->
+        <div class="cp-pitch-urgency">
+          <div class="cp-pitch-urgency-title">⏳ Why Start Now?</div>
+          <p class="cp-pitch-urgency-text">
+            Another 6 months of random tutorials won’t give you a career.<br>
+            <strong>6 months of focused learning and practice can change what you’re capable of doing.</strong>
+          </p>
+          <p class="cp-pitch-urgency-warn">👉 Don’t waste more time learning the wrong way.</p>
+        </div>
+
+        <!-- Closing -->
+        <div class="cp-pitch-closing">
+          <div class="cp-pitch-closing-title">🚀 Your Career. Your Skill. Your Decision.</div>
+          <p class="cp-pitch-closing-sub">Keep watching random tutorials…</p>
+          <span class="cp-pitch-closing-bold">or start learning Interior Design properly.</span>
+        </div>
+      </div>
+    </div>
+    {% elsif product.handle == '6-books-for-interior-exterior-design' %}
     <div class="product-editorial-block">
       <h2 class="pe-headline-primary">
         <span class="pe-headline-light">Books You Can Refer to Design</span> <strong class="pe-headline-books">Kitchens, Living Spaces, Bedrooms, Washrooms, Study &amp; Exteriors</strong>
       </h2>
 
       <div class="pe-statement-block">
-        <h3 class="pe-statement-heading">
-          Handmade Diagrams. Real Dimensions. No Guesswork. <mark class="pe-mark-yellow">No Regrets.</mark>
-        </h3>
+        
+      
+        
+      <h3 class="pe-statement-heading" style="font-size: 1.1rem; font-weight: 800; color: #111827; line-height: 1.3; overflow-wrap: break-word; word-break: break-word; hyphens: auto;">
+        &#127969; DESIGN YOUR DREAM HOME LIKE A PRO!
+      </h3>
 
-        <div class="pe-solution-card">
-          <p class="pe-solution-lead">
-            A home is the heart of your life—don't let one wrong decision turn your dream into daily frustration.
-          </p>
-          <p class="pe-solution-text">
-            These 6 step-by-step books <span class="pe-text-orange">guide you like a</span> <span class="pe-text-green">professional designer</span>.
-          </p>
+      <div class="pe-solution-card">
+        <p class="pe-solution-lead" style="font-weight: 600; font-size: 1rem; line-height: 1.4; margin-bottom: 15px;">
+          6 Books. 1 Complete Library. Discover the secrets to stunning interiors with 1,000+ precise, easy-to-read diagrams.
+        </p>
+
+        <ul style="text-align: left; margin: 15px 0; list-style: none; padding: 0; font-size: 0.95rem; color: #374151; line-height: 1.4;">
+          <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#059669" style="flex-shrink: 0; margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>Save &#36;1,000s on Mistakes</strong><br>Prevent costly rework before contractors even start.</span>
+          </li>
+          <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#059669" style="flex-shrink: 0; margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>Master Exact Dimensions</strong><br>100% accurate layouts for kitchens, baths &amp; more.</span>
+          </li>
+          <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#059669" style="flex-shrink: 0; margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>Design Like a Pro</strong><br>Understand the "WHY" behind every architectural rule.</span>
+          </li>
+          <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#059669" style="flex-shrink: 0; margin-top: 2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>No More Guesswork</strong><br>Both Imperial (inches) &amp; Metric (mm) included.</span>
+          </li>
+        </ul>
+
+        <p class="pe-solution-text" style="font-weight: 800; color: #ea580c; font-size: 1rem; margin-bottom: 12px; line-height: 1.4;">
+          &#128161; STOP GUESSING. START DESIGNING.
+        </p>
+        <p class="pe-solution-text" style="font-weight: 800; font-size: 0.95rem; color: #111827; line-height: 1.4; margin-bottom: 24px;">
+          &#128218; GET THE COMPLETE 6-BOOK COLLECTION TODAY!
+        </p>
+
+
+
         </div>
       </div>
     </div>
@@ -227,272 +863,7 @@
     </div>
     {% endif %}
 
-    
-    {% if product.handle contains 'vastu' %}
-    <style>
-      .vastu-flow-box {
-        font-family: inherit;
-        margin: 0 0 16px 0;
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 10px;
-        padding: 16px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-        color: #1e293b;
-        line-height: 1.55;
-      }
-      .vastu-flow-hero {
-        font-size: 16.5px;
-        font-weight: 700;
-        line-height: 1.4;
-        margin-bottom: 12px;
-      }
-      .vastu-hl-tag {
-        background: #fef08a;
-        padding: 1px 5px;
-        border-radius: 4px;
-        font-weight: 700;
-      }
-      .vastu-alert-chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        background: #fef2f2;
-        border: 1px solid #fee2e2;
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 13.5px;
-        margin-bottom: 10px;
-      }
-      .vastu-flow-lead {
-        font-size: 13.5px;
-        margin-bottom: 8px;
-        color: #334155;
-      }
-      .vastu-flow-mistakes {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 10px 0;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
-      .vastu-flow-mistakes li {
-        font-size: 13px;
-        background: #f8fafc;
-        border: 1px solid #f1f5f9;
-        padding: 6px 10px;
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .vastu-x-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 17px;
-        height: 17px;
-        border-radius: 50%;
-        background: #fee2e2;
-        font-size: 10px;
-        font-weight: bold;
-        flex-shrink: 0;
-      }
-      .vastu-warn-strip {
-        background: #fff7ed;
-        border-left: 3px solid #ea580c;
-        padding: 6px 10px;
-        border-radius: 0 6px 6px 0;
-        font-size: 13px;
-        margin-bottom: 14px;
-      }
-      .vastu-solution-chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        background: #f0fdf4;
-        border: 1px solid #dcfce7;
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 13.5px;
-        margin-bottom: 8px;
-      }
-      .vastu-solution-text {
-        font-size: 13px;
-        margin-bottom: 14px;
-        padding-left: 4px;
-      }
-      .vastu-why-chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        background: #fffbeb;
-        border: 1px solid #fef3c7;
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 13.5px;
-        margin-bottom: 8px;
-      }
-      .vastu-closing-card {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        padding: 10px 12px;
-        font-size: 13px;
-        margin-top: 10px;
-      }
-      @media (max-width: 480px) {
-        .vastu-flow-box {
-          padding: 12px 14px;
-        }
-        .vastu-flow-hero {
-          font-size: 15px;
-        }
-      }
-    </style>
-
-    <div class="vastu-flow-box">
-      {% if product.handle contains 'english' %}
-        <!-- 1. Top Hook Headline -->
-        <div class="vastu-flow-hero">
-          Is your home draining your peace &amp; wealth? <span class="vastu-hl-tag">Audit and fix its Vastu flaws before it’s too late.</span>
-        </div>
-
-        <!-- 2. Problem Warning -->
-        <div class="vastu-alert-chip">
-          🚨 Essential knowledge before building or purchasing a home…
-        </div>
-
-        <div class="vastu-flow-lead">
-          Many buy without inspection — only to realize critical flaws later:
-        </div>
-
-        <ul class="vastu-flow-mistakes">
-          <li>
-            <span class="vastu-x-icon">✕</span>
-            <span>Main entrance located in an adverse direction</span>
-          </li>
-          <li>
-            <span class="vastu-x-icon">✕</span>
-            <span>Brahmasthan (energy center) obstructed by heavy structures</span>
-          </li>
-          <li>
-            <span class="vastu-x-icon">✕</span>
-            <span>Kitchen or bedroom placed in conflicting zones</span>
-          </li>
-          <li>
-            <span class="vastu-x-icon">✕</span>
-            <span>Energy circulation throughout the home is imbalanced</span>
-          </li>
-        </ul>
-
-        <div class="vastu-warn-strip">
-          👉 And rectifying post-construction becomes <strong>expensive + stressful</strong>.
-        </div>
-
-        <!-- 3. Solution -->
-        <div class="vastu-solution-chip">
-          ✅ No guesswork — make decisions backed by verified knowledge
-        </div>
-
-        <div class="vastu-solution-text">
-          This is not an abstract theory book. It is a <strong>Practical Step-by-Step Guide</strong> that teaches you:<br>
-          <strong>👉 How to inspect your home's Vastu independently</strong>
-        </div>
-
-        <!-- 4. Why Today & Decision -->
-        <div class="vastu-why-chip">
-          ⏳ Why acquire this today?
-        </div>
-
-        <div style="font-size: 13px; margin-bottom: 8px; padding-left: 4px;">
-          A home is built once in a lifetime — but mistakes impact comfort for decades.<br>
-          <strong>👉 The right knowledge at the right time = massive long-term savings</strong>
-        </div>
-
-        <div class="vastu-closing-card">
-          <div style="font-weight: 700; margin-bottom: 4px; font-size: 13.5px;">
-            🚀 The choice is yours
-          </div>
-          <div>
-            Rely on assumptions… or <strong>build with verified Vastu precision?</strong>
-          </div>
-        </div>
-      {% else %}
-        <!-- 1. Top Hook Headline -->
-        <div class="vastu-flow-hero">
-          अपने घर का वास्तु चेक और सही करें, <span class="vastu-hl-tag">रहने से पहले या रहने के बाद मौका अभी भी है।</span>
-        </div>
-
-        <!-- 2. Problem Warning -->
-        <div class="vastu-alert-chip">
-          🚨 घर बनाने या खरीदने से पहले यह जरूर जानें…
-        </div>
-
-        <div class="vastu-flow-lead">
-          कई लोग बिना जांच के घर ले लेते हैं — और बाद में पता चलता है:
-        </div>
-
-        <ul class="vastu-flow-mistakes">
-          <li>
-            <span class="vastu-x-icon">✕</span>
-            <span>एंट्रेंस गलत दिशा में है</span>
-          </li>
-          <li>
-            <span class="vastu-x-icon">✕</span>
-            <span>ब्रह्मस्थान ब्लॉक हो चुका है</span>
-          </li>
-          <li>
-            <span class="vastu-x-icon">✕</span>
-            <span>किचन या बेडरूम गलत जगह है</span>
-          </li>
-          <li>
-            <span class="vastu-x-icon">✕</span>
-            <span>पूरे घर की ऊर्जा असंतुलित है</span>
-          </li>
-        </ul>
-
-        <div class="vastu-warn-strip">
-          👉 और तब सुधार करना <strong>महंगा + मुश्किल</strong> हो जाता है।
-        </div>
-
-        <!-- 3. Solution -->
-        <div class="vastu-solution-chip">
-          ✅ अब अंदाज़ा नहीं — सही ज्ञान के साथ निर्णय लें
-        </div>
-
-        <div class="vastu-solution-text">
-          यह कोई सामान्य वास्तु बुक नहीं है। यह एक <strong>Practical Step-by-Step Guide</strong> है जो आपको सिखाती है:<br>
-          <strong>👉 अपने घर का वास्तु खुद कैसे चेक करें</strong>
-        </div>
-
-        <!-- 4. Why Today & Decision -->
-        <div class="vastu-why-chip">
-          ⏳ आज ही क्यों लें?
-        </div>
-
-        <div style="font-size: 13px; margin-bottom: 8px; padding-left: 4px;">
-          घर एक बार बनता है — लेकिन गलत फैसला सालों तक असर डालता है।<br>
-          <strong>👉 सही समय पर सही जानकारी = बड़ी बचत</strong>
-        </div>
-
-        <div class="vastu-closing-card">
-          <div style="font-weight: 700; margin-bottom: 4px; font-size: 13.5px;">
-            🚀 अब फैसला आपका है
-          </div>
-          <div>
-            अंदाज़े से काम करना है… या <strong>सही ज्ञान के साथ?</strong>
-          </div>
-        </div>
-      {% endif %}
-    </div>
-    {% endif %}
-
-<div 
+    <div 
     class="product__price--holder product__price--{{block.id}}
     font__family--{{-block.settings.fontFamily}} font__size--{{-block.settings.fontSize}} 
     {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>

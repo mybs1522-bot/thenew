@@ -1,4 +1,4 @@
-﻿<div class="product__atc {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
+<div class="product__atc {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
     {% if product.available %}
         <input style="display: none;" name="id" data-bstr-variant-input="{{product.id}}" value="{{product.selected_or_first_available_variant.id}}">
 
@@ -6,14 +6,14 @@
         {% assign atc_var = product.selected_or_first_available_variant %}
         {% assign atc_price_raw = atc_var.price %}
         {% assign atc_double_raw = atc_price_raw | times: 2 %}
-        {% assign atc_compare = atc_double_raw | money_without_trailing_zeros | replace: 'Rs. ', 'â‚¹' | replace: 'Rs.', 'â‚¹' | replace: 'Rs ', 'â‚¹' %}
-        {% assign atc_price = atc_price_raw | money_without_trailing_zeros | replace: 'Rs. ', 'â‚¹' | replace: 'Rs.', 'â‚¹' | replace: 'Rs ', 'â‚¹' %}
+        {% assign atc_compare = atc_double_raw | money_without_trailing_zeros | replace: 'Rs. ', '₹' | replace: 'Rs.', '₹' | replace: 'Rs ', '₹' %}
+        {% assign atc_price = atc_price_raw | money_without_trailing_zeros | replace: 'Rs. ', '₹' | replace: 'Rs.', '₹' | replace: 'Rs ', '₹' %}
 
         <div class="arch-pill-timer-wrap">
           <div class="arch-pill-timer">
             <div class="arch-pill-price-group">
-              <span class="arch-pill-price-cut jsPrice" data-price-raw="{{ atc_double_raw }}">{{ atc_compare }}</span>
-              <span class="arch-pill-price-active jsPrice" data-price-raw="{{ atc_price_raw }}">{{ atc_price }}</span>
+              <span class="arch-pill-price-cut">{{ atc_compare }}</span>
+              <span class="arch-pill-price-active">{{ atc_price }}</span>
             </div>
             <span class="arch-pill-label">OFFER ENDS IN:</span>
             <div class="arch-pill-clock-wrap" aria-live="polite">
@@ -27,57 +27,31 @@
         </div>
 
         <div class="product__atc-row">
-            <div class="quantity--input">
-                <button class="quantity--input__button quantity--input__incr" onclick="BoosterTheme.cart.quantityHandler(event, false, false)">-</button>
-                <input {% if product.selected_or_first_available_variant.inventory_policy != "continue" %}max="{{ product.selected_or_first_available_variant.inventory_quantity }}"{% endif %} class="quantity--input__input" value="1" data-qty-input type="number" name="quantity" min="1" aria-label="Quantity input"><!--
-                --><button class="quantity--input__button quantity--input__decr" onclick="BoosterTheme.cart.quantityHandler(event, true, false)">+</button>
-            </div>
+            <input class="quantity--input__input" value="1" data-qty-input type="hidden" name="quantity">
             {% render 'add-to-cart-button', type: 'secondary', price: product.price, text: 'Buy Now', is_buy_now: true %}
         </div>
-        {% comment %} Dynamic checkout removed - only Buy Now button is displayed {% endcomment %}
+        <div class="checkout--dynamic">
+            {{ form | payment_button }}
+        </div>
+
+        <!-- Risk Reversal Badge: Instant Access | 7-Day Return -->
+        <div class="arch-risk-reversal">
+          <span class="arch-risk-item">
+            <svg class="arch-risk-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>Instant Access</span>
+          </span>
+          <span class="arch-risk-sep">|</span>
+          <span class="arch-risk-item">
+            <svg class="arch-risk-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span>7-Day Return</span>
+          </span>
+        </div>
     {% else %}
         {% render 'sold-out-button', disabled: 'disabled' %}
     {%endif%}
 </div>
 
 <style>
-/* Remove/hide dynamic checkout button (Buy it now / Shop Pay / PayPal) and installments completely */
-.checkout--dynamic,
-[data-dynamic-button],
-.shopify-payment-button,
-.shopify-payment-button__button,
-shopify-accelerated-checkout,
-.product__shoppay-installments,
-.hide-non-dollar-btn,
-body.non-dollar-currency .checkout--dynamic,
-body.non-dollar-currency [data-dynamic-button],
-body.non-dollar-currency .shopify-payment-button,
-body.non-dollar-currency .product__shoppay-installments {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  pointer-events: none !important;
-  opacity: 0 !important;
-}
-
-/* Remove More Payment Options */
-.shopify-payment-button__more-options,
-[data-testid="MorePaymentOptionsButton"],
-shopify-accelerated-checkout .shopify-payment-button__more-options,
-.shopify-payment-button .shopify-payment-button__more-options,
-.shopify-payment-button__skeleton.shopify-payment-button__more-options {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  pointer-events: none !important;
-  opacity: 0 !important;
-}
 
 /* Pay in installments directly under Buy with Shop */
 .product__shoppay-installments {
@@ -172,8 +146,28 @@ shopify-accelerated-checkout .shopify-payment-button__more-options,
 </script>
 
 
-{% if product.handle contains 'vastu' %}{% render 'product-mini-reviews-slider-vastu' %}{% else %}{% render 'product-mini-reviews-slider' %}{% endif %}
+{% render 'product-mini-reviews-slider' %}
 
+{% if product.handle == '5-courses-interior-exterior-design-ai' or product.id == 9319186694282 %}
+<div class="product-luxury-trust-bar">
+    <div class="luxury-trust-item">
+        <svg class="luxury-trust-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+        <div class="luxury-trust-heading">Software Links Included</div>
+        <div class="luxury-trust-sub">Instant download + setup guides</div>
+    </div>
+    <div class="luxury-trust-item">
+        <svg class="luxury-trust-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+        </svg>
+        <div class="luxury-trust-heading">7-Day Refund</div>
+        <div class="luxury-trust-sub">100% Money-back guarantee</div>
+    </div>
+</div>
+{% else %}
 <div class="product-luxury-trust-bar">
     <div class="luxury-trust-item">
         <svg class="luxury-trust-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -200,6 +194,7 @@ shopify-accelerated-checkout .shopify-payment-button__more-options,
         <div class="luxury-trust-sub luxury-trust-refund-sub">Physical Copy Refund Policy</div>
     </div>
 </div>
+{% endif %}
 
 
 {% if block.settings.stickyATC == "scroll" %}
@@ -233,7 +228,46 @@ document.addEventListener('booster:initialized', (e)=>{
 {% endif %}
 
 <style>
-/* â”€â”€â”€ Transparent Pill Urgency Timer Above Buy Now â”€â”€â”€ */
+/* ─── Risk Reversal Badge ─── */
+.arch-risk-reversal {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin: 10px auto 4px auto !important;
+  padding: 6px 14px !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  letter-spacing: 0.01em !important;
+  text-align: center !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 9999px !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+}
+.arch-risk-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+.arch-risk-icon {
+  flex-shrink: 0 !important;
+}
+.arch-risk-sep {
+  color: #cbd5e1 !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+}
+.product__atc-row .button--buy-now,
+.product__atc-row .button--addToCart,
+.product__atc-row button[data-buy-button] {
+  width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+/* ─── Transparent Pill Urgency Timer Above Buy Now ─── */
 .arch-pill-timer-wrap {
   width: 100% !important;
   display: flex !important;
@@ -425,15 +459,15 @@ window.executeDirectBuyNow = function(e, btn) {
   const form = btn ? btn.closest('form') : document.querySelector('form[action*="/cart/add"]');
   if (form) {
     const varInp = form.querySelector('[name="id"]');
-    if (varInp && varInp.value && varInp.value !== '-1') variantId = varInp.value;
+    if (varInp && varInp.value) variantId = varInp.value;
     const qtyInp = form.querySelector('[name="quantity"]');
     if (qtyInp && qtyInp.value) qty = parseInt(qtyInp.value, 10) || 1;
   }
-  if (!variantId || variantId === '-1') {
+  if (!variantId) {
     const varInp = document.querySelector('[data-bstr-variant-input]') || document.querySelector('input[name="id"]');
-    if (varInp && varInp.value && varInp.value !== '-1') variantId = varInp.value;
+    if (varInp && varInp.value) variantId = varInp.value;
   }
-  if (!variantId || variantId === '-1') {
+  if (!variantId) {
     variantId = '{{ product.selected_or_first_available_variant.id }}';
   }
 
@@ -486,61 +520,27 @@ window.executeDirectBuyNow = function(e, btn) {
     const pillActive = document.querySelector('.arch-pill-price-active');
     const mainPriceEl = document.querySelector('[data-product-price]');
     
-    if (mainPriceEl && pillActive && mainPriceEl.textContent.trim()) {
-      pillActive.textContent = mainPriceEl.textContent.trim().replace(/Rs\.?\s*/g, 'â‚¹');
-    }
-    
     if (pillCut && pillCut.textContent.includes('Rs')) {
-      pillCut.textContent = pillCut.textContent.replace(/Rs\.?\s*/g, 'â‚¹');
+      pillCut.textContent = pillCut.textContent.replace(/Rs\.?\s*/g, '₹');
     }
     if (pillActive && pillActive.textContent.includes('Rs')) {
-      pillActive.textContent = pillActive.textContent.replace(/Rs\.?\s*/g, 'â‚¹');
+      pillActive.textContent = pillActive.textContent.replace(/Rs\.?\s*/g, '₹');
     }
 
     let source = (pillActive && pillActive.textContent.trim()) ? pillActive.textContent.trim() : (mainPriceEl ? mainPriceEl.textContent.trim() : '');
     if (!source || !pillCut) return;
 
-    source = source.replace(/Rs\.?\s*/g, 'â‚¹');
-    const match = source.match(/([^\d.,\s]*)\s*([\d.,]+)\s*([^\d.,\s]*)/);
+    source = source.replace(/Rs\.?\s*/g, '₹');
+    const match = source.match(/[\d,.]+/);
     if (!match) return;
 
-    var prefix = match[1] || '';
-    var numStr = match[2];
-    var suffix = match[3] || '';
-
-    var cleanNumStr = numStr;
-    if (cleanNumStr.indexOf(',') !== -1 && cleanNumStr.indexOf('.') !== -1) {
-      if (cleanNumStr.lastIndexOf('.') > cleanNumStr.lastIndexOf(',')) {
-        cleanNumStr = cleanNumStr.replace(/,/g, '');
-      } else {
-        cleanNumStr = cleanNumStr.replace(/\./g, '').replace(',', '.');
-      }
-    } else if (cleanNumStr.indexOf(',') !== -1) {
-      var parts = cleanNumStr.split(',');
-      if (parts[1] && parts[1].length === 2) {
-        cleanNumStr = cleanNumStr.replace(',', '.');
-      } else {
-        cleanNumStr = cleanNumStr.replace(/,/g, '');
-      }
-    }
-
-    const num = parseFloat(cleanNumStr);
+    const rawNumStr = match[0].replace(/,/g, '');
+    const num = parseFloat(rawNumStr);
     if (isNaN(num) || num <= 0) return;
 
     const doubled = num * 2;
-    var hasDecimals = numStr.includes('.') || numStr.includes(',');
-    var decCount = hasDecimals ? (cleanNumStr.split('.')[1] ? cleanNumStr.split('.')[1].length : 2) : 0;
-    var formattedDoubled;
-    if (numStr.includes(',') && !numStr.includes('.')) {
-      formattedDoubled = doubled.toFixed(decCount).replace('.', ',');
-    } else {
-      formattedDoubled = doubled.toLocaleString('en-US', {
-        minimumFractionDigits: decCount,
-        maximumFractionDigits: decCount
-      });
-    }
-
-    pillCut.textContent = prefix + formattedDoubled + (suffix ? ' ' + suffix : '');
+    const formattedNum = (doubled % 1 === 0) ? Math.round(doubled).toString() : doubled.toFixed(2);
+    pillCut.textContent = source.replace(match[0], formattedNum);
   }
 
   function checkCurrencyAndToggleDynamicButton() {
@@ -554,7 +554,7 @@ window.executeDirectBuyNow = function(e, btn) {
       var priceEl = document.querySelector('[data-product-price], .product__price, .arch-pill-price-active');
       if (priceEl) {
         var txt = (priceEl.textContent || '').trim();
-        if (txt.includes('â‚¹') || txt.includes('Rs') || txt.includes('â‚¬') || txt.includes('Â£') || txt.includes('AED') || txt.includes('Â¥')) {
+        if (txt.includes('₹') || txt.includes('Rs') || txt.includes('€') || txt.includes('£') || txt.includes('AED') || txt.includes('¥')) {
           isDollar = false;
         } else if (txt.includes('$') || txt.includes('USD')) {
           isDollar = true;
@@ -591,28 +591,19 @@ window.executeDirectBuyNow = function(e, btn) {
   }
   setInterval(initPillTimer, 1000);
 
-  ['booster:variant:select', 'booster:price:update', 'booster:currency:changed', 'booster:content:update'].forEach(function(evt) {
-    document.addEventListener(evt, function() {
-      setTimeout(function() {
-        syncPillPrice();
-        checkCurrencyAndToggleDynamicButton();
-      }, 50);
-    });
+  document.addEventListener('booster:currency:changed', function() {
+    syncPillPrice();
+    checkCurrencyAndToggleDynamicButton();
   });
-
+  document.addEventListener('booster:content:update', function() {
+    syncPillPrice();
+    checkCurrencyAndToggleDynamicButton();
+  });
   document.addEventListener('change', function(e) {
     if (e.target && (e.target.matches('[data-swatch-index]') || e.target.name === 'id' || e.target.matches('[data-currency-selector]'))) {
       setTimeout(function() {
         syncPillPrice();
         checkCurrencyAndToggleDynamicButton();
-      }, 100);
-    }
-  });
-
-  document.addEventListener('click', function(e) {
-    if (e.target && e.target.closest('.luxury-swatch-card, [data-swatch-option]')) {
-      setTimeout(function() {
-        syncPillPrice();
       }, 100);
     }
   });

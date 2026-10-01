@@ -38,12 +38,24 @@
 
         .luxe-card {
           background: #ffffff;
-          border: 1px solid #e4e4e7;
+          border: 1.5px solid #e4e4e7;
           border-radius: 16px;
           padding: 20px 18px;
-          box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+          box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
           box-sizing: border-box;
           width: 100%;
+        }
+
+        /* YELLOW TEXT HIGHLIGHTER EFFECT */
+        .luxe-hl {
+          background: #fef08a;
+          color: #09090b;
+          padding: 2px 6px;
+          border-radius: 4px;
+          font-weight: 800;
+          display: inline;
+          box-decoration-break: clone;
+          -webkit-box-decoration-break: clone;
         }
 
         /* 1. HEADER */
@@ -54,19 +66,19 @@
         }
         .luxe-tag {
           display: inline-block;
-          font-size: 10px;
-          font-weight: 800;
-          letter-spacing: 0.12em;
+          font-size: 10.5px;
+          font-weight: 850;
+          letter-spacing: 0.08em;
           text-transform: uppercase;
-          color: #18181b;
-          background: #f4f4f5;
-          border: 1px solid #e4e4e7;
+          color: #991b1b;
+          background: #fef2f2;
+          border: 1px solid #fecaca;
           padding: 3px 9px;
           border-radius: 9999px;
           margin-bottom: 8px;
         }
         .luxe-title {
-          font-size: clamp(19px, 4.5vw, 23px);
+          font-size: clamp(20px, 4.8vw, 24px);
           font-weight: 900;
           color: #09090b;
           line-height: 1.25;
@@ -75,51 +87,43 @@
         }
         .luxe-title-sub {
           display: block;
-          font-size: clamp(14px, 3.5vw, 16px);
+          font-size: clamp(14.5px, 3.6vw, 16.5px);
           font-weight: 700;
-          color: #52525b;
-          margin-top: 4px;
+          color: #3f3f46;
+          margin-top: 5px;
           letter-spacing: -0.015em;
+          line-height: 1.4;
         }
 
-        /* 2. EDITORIAL PERSPECTIVE */
+        /* 2. EDITORIAL PERSPECTIVE (Direct Confrontation) */
         .luxe-perspective {
           background: #fafafa;
-          border-left: 2.5px solid #09090b;
+          border-left: 3px solid #09090b;
           border-radius: 0 8px 8px 0;
-          padding: 11px 13px;
+          padding: 12px 14px;
           margin-bottom: 16px;
         }
         .luxe-perspective p {
-          font-size: 12.5px;
+          font-size: 13px;
           line-height: 1.5;
-          color: #27272a;
+          color: #18181b;
           margin: 0;
         }
-        .luxe-perspective strong {
-          color: #09090b;
-          font-weight: 800;
-        }
-        .luxe-perspective em {
-          font-style: normal;
-          color: #09090b;
-          font-weight: 700;
-          text-decoration: underline;
-          text-underline-offset: 3px;
-          text-decoration-color: #d4d4d8;
+        .luxe-perspective p + p {
+          margin-top: 8px;
         }
 
         /* SECTION LABEL */
         .luxe-section-label {
-          font-size: 10.5px;
-          font-weight: 800;
-          letter-spacing: 0.08em;
+          font-size: 11px;
+          font-weight: 850;
+          letter-spacing: 0.06em;
           text-transform: uppercase;
           color: #71717a;
-          margin-bottom: 8px;
+          margin-bottom: 9px;
         }
 
-        /* 3. INDUSTRY TRAP LIST */
+        /* 3. PAIN POINTS LIST */
         .luxe-trap-list {
           display: flex;
           flex-direction: column;
@@ -134,13 +138,13 @@
           gap: 9px;
           font-size: 12.5px;
           line-height: 1.42;
-          color: #3f3f46;
+          color: #27272a;
         }
         .luxe-dash {
-          color: #a1a1aa;
-          font-weight: 700;
-          font-size: 14px;
-          line-height: 1.3;
+          color: #dc2626;
+          font-weight: 900;
+          font-size: 12px;
+          line-height: 1.4;
           flex-shrink: 0;
         }
         .luxe-trap-item strong {
@@ -148,39 +152,37 @@
           font-weight: 800;
         }
 
-        /* 4. HIGH-EARNER REALITY (Commanding Charcoal Card) */
+        /* 4. HIGH-EARNER REALITY (Commanding Dark Card) */
         .luxe-obsidian-card {
           background: #09090b;
           color: #ffffff;
           border-radius: 12px;
-          padding: 13px 15px;
+          padding: 14px 16px;
           margin-bottom: 16px;
         }
         .luxe-obsidian-label {
-          font-size: 9.5px;
-          font-weight: 800;
+          font-size: 10px;
+          font-weight: 850;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          color: #a1a1aa;
+          color: #fef08a;
           margin-bottom: 5px;
         }
         .luxe-obsidian-statement {
-          font-size: 13px;
-          line-height: 1.48;
-          color: #f4f4f5;
-          margin: 0;
-        }
-        .luxe-obsidian-statement strong {
+          font-size: 14px;
+          line-height: 1.45;
           color: #ffffff;
+          margin: 0;
           font-weight: 800;
         }
         .luxe-obsidian-sub {
           display: block;
-          margin-top: 7px;
-          padding-top: 7px;
+          margin-top: 8px;
+          padding-top: 8px;
           border-top: 1px solid #27272a;
-          font-size: 12px;
+          font-size: 12.5px;
           color: #d4d4d8;
+          line-height: 1.45;
         }
 
         /* 5. 5-STEP PIPELINE TRACK */
@@ -210,14 +212,14 @@
           text-align: center;
         }
         .luxe-step-num {
-          font-size: 8.5px;
+          font-size: 8px;
           font-weight: 800;
-          color: #a1a1aa;
+          color: #fef08a;
           letter-spacing: 0.04em;
         }
         .luxe-step-name {
           font-size: 9.5px;
-          font-weight: 800;
+          font-weight: 850;
           color: #ffffff;
           letter-spacing: 0.04em;
         }
@@ -238,15 +240,15 @@
           background: #ffffff;
           border: 1px solid #d4d4d8;
           color: #18181b;
-          font-size: 10.5px;
-          font-weight: 700;
-          padding: 2.5px 7px;
+          font-size: 11px;
+          font-weight: 750;
+          padding: 2.5px 8px;
           border-radius: 5px;
         }
         .luxe-soft-tag.luxe-soft-ai {
           border-color: #18181b;
           background: #18181b;
-          color: #ffffff;
+          color: #fef08a;
         }
 
         /* Scope: Flats, Offices, Villas */
@@ -255,35 +257,36 @@
           padding-top: 10px;
         }
         .luxe-scope-label {
-          font-size: 9.5px;
-          font-weight: 800;
-          letter-spacing: 0.06em;
+          font-size: 10px;
+          font-weight: 850;
+          letter-spacing: 0.05em;
           text-transform: uppercase;
-          color: #52525b;
+          color: #09090b;
           margin-bottom: 6px;
           display: block;
         }
         .luxe-scope-items {
           display: flex;
           flex-direction: column;
-          gap: 5px;
+          gap: 6px;
         }
         .luxe-scope-item {
           display: flex;
           align-items: baseline;
           gap: 6px;
-          font-size: 11.5px;
-          line-height: 1.38;
+          font-size: 12px;
+          line-height: 1.4;
           color: #3f3f46;
         }
         .luxe-scope-dot {
-          color: #71717a;
-          font-size: 9px;
+          color: #16a34a;
+          font-size: 12px;
+          font-weight: 900;
           flex-shrink: 0;
         }
         .luxe-scope-item strong {
           color: #09090b;
-          font-weight: 750;
+          font-weight: 800;
         }
 
         /* 6. OUTCOMES (2x2 Grid) */
@@ -306,8 +309,8 @@
           padding: 10px 11px;
         }
         .luxe-outcome-title {
-          font-size: 12px;
-          font-weight: 800;
+          font-size: 12.5px;
+          font-weight: 850;
           color: #09090b;
           margin-bottom: 2px;
           display: flex;
@@ -315,12 +318,12 @@
           gap: 5px;
         }
         .luxe-outcome-check {
-          color: #09090b;
+          color: #16a34a;
           font-weight: 900;
-          font-size: 11.5px;
+          font-size: 12px;
         }
         .luxe-outcome-desc {
-          font-size: 11px;
+          font-size: 11.5px;
           line-height: 1.35;
           color: #52525b;
           margin: 0;
@@ -341,13 +344,13 @@
           display: flex;
           align-items: baseline;
           gap: 6px;
-          font-size: 11.5px;
+          font-size: 12px;
           line-height: 1.35;
           color: #3f3f46;
         }
         .luxe-trust-row strong {
           color: #09090b;
-          font-weight: 800;
+          font-weight: 850;
         }
 
         /* 8. CLOSING PUNCH */
@@ -355,19 +358,19 @@
           background: #09090b;
           color: #ffffff;
           border-radius: 9px;
-          padding: 11px 12px;
+          padding: 12px 14px;
           text-align: center;
         }
         .luxe-closing-main {
-          font-size: 12.5px;
-          font-weight: 800;
+          font-size: 13px;
+          font-weight: 850;
           color: #ffffff;
-          margin-bottom: 2px;
+          margin-bottom: 3px;
           letter-spacing: -0.01em;
         }
         .luxe-closing-sub {
-          font-size: 11px;
-          color: #a1a1aa;
+          font-size: 11.5px;
+          color: #d4d4d8;
           margin: 0;
         }
 
@@ -376,7 +379,7 @@
             padding: 15px 13px;
           }
           .luxe-title {
-            font-size: 18px;
+            font-size: 18.5px;
           }
         }
       </style>
@@ -384,78 +387,84 @@
       <div class="luxe-card">
         <!-- 1. HEADER -->
         <div class="luxe-header">
-          <span class="luxe-tag">Career &amp; Studio Accelerator</span>
+          <span class="luxe-tag">🚨 THE BRUTAL REALITY</span>
           <h3 class="luxe-title">
-            Stop Getting Stuck in Low-Paying Jobs.
-            <span class="luxe-title-sub">Learn to Design &amp; Deliver Entire Projects from Scratch.</span>
+            Are You Still Stuck In Low-Paying Design Jobs?
+            <span class="luxe-title-sub">
+              Here is why <span class="luxe-hl">most designers stay underpaid</span> — and how top earners make 5x more.
+            </span>
           </h3>
         </div>
 
-        <!-- 2. EDITORIAL PERSPECTIVE -->
+        <!-- 2. DIRECT TALK PERSPECTIVE -->
         <div class="luxe-perspective">
           <p>
-            <strong>Knowing just one tool keeps designers in low-paying drafting wages.</strong> Clients and top architectural studios don't pay premium fees for button-clickers — they pay for designers who can <em>plan, model, render, and execute complete turnkey projects</em>.
+            Let's be completely honest: <strong>knowing just AutoCAD or basic 3D won't make you good money.</strong> Anyone can draw basic lines or make flat models today.
+          </p>
+          <p>
+            Clients and firms don't pay big fees for button-clickers. They pay premium money when you <span class="luxe-hl">hand them the ENTIRE project</span> — from the 2D layout all the way to a photorealistic 3D render that sells the dream before it's even built.
           </p>
         </div>
 
-        <!-- 3. INDUSTRY TRAP LIST -->
-        <div class="luxe-section-label">Why Most Designers Remain Underpaid:</div>
+        <!-- 3. PAIN CHECKLIST -->
+        <div class="luxe-section-label">Be Honest — Is This Happening To You?</div>
         <div class="luxe-trap-list">
           <div class="luxe-trap-item">
-            <span class="luxe-dash">—</span>
-            <div><strong>Trapped in basic drafting wages:</strong> Trading long hours for entry-level drafting pay without career leverage or promotion.</div>
+            <span class="luxe-dash">✕</span>
+            <div><strong>Working 10-hour days for entry-level pay:</strong> Grinding on repetitive drafting while senior designers take home the big checks.</div>
           </div>
           <div class="luxe-trap-item">
-            <span class="luxe-dash">—</span>
-            <div><strong>The isolated-tool trap:</strong> Knowing software individually, but unable to connect technical planning, 3D modeling, and rendering into one project.</div>
+            <span class="luxe-dash">✕</span>
+            <div><strong>Stuck knowing tools in pieces:</strong> You know a bit of AutoCAD or SketchUp, but you <span class="luxe-hl">freeze when a client asks for a complete project</span>.</div>
           </div>
           <div class="luxe-trap-item">
-            <span class="luxe-dash">—</span>
-            <div><strong>Unsure how to start a business:</strong> Lacking the end-to-end framework to quote, design, and deliver residential flats or commercial offices.</div>
+            <span class="luxe-dash">✕</span>
+            <div><strong>Scared to start your own business:</strong> You want direct freelance clients or your own studio, but don't know how to quote and execute flats or offices end-to-end.</div>
           </div>
           <div class="luxe-trap-item">
-            <span class="luxe-dash">—</span>
-            <div><strong>Losing out to full-stack designers:</strong> Who command 3x–5x higher fees because they present complete, photorealistic 4K projects.</div>
+            <span class="luxe-dash">✕</span>
+            <div><strong>Losing out to full-stack designers:</strong> Watching others win the highest-paying clients simply because their 3D renders look like real photos.</div>
           </div>
         </div>
 
-        <!-- 4. HIGH-EARNER REALITY -->
+        <!-- 4. HIGH-EARNER REALITY (DARK CONTRAST) -->
         <div class="luxe-obsidian-card">
-          <div class="luxe-obsidian-label">The High-Earner Reality</div>
+          <div class="luxe-obsidian-label">💡 The High-Earner Secret</div>
           <p class="luxe-obsidian-statement">
-            Designers who master the <strong>entire project pipeline</strong> earn dramatically better.
+            The designers making real money don't just "use software."<br>
+            They control the entire project from scratch.
           </p>
           <span class="luxe-obsidian-sub">
-            Controlling Planning, 3D Modeling, 4K Rendering &amp; AI Presentation makes you immediately job-ready for leading studios and business-ready to launch your own practice.
+            When you can take an empty space, plan the layout, build the 3D model, and produce stunning 4K renders — <span style="color: #fef08a; font-weight: 800;">YOU name your price.</span>
           </span>
         </div>
 
         <!-- 5. 5-STEP PIPELINE + SOFTWARE + SCOPE -->
         <div class="luxe-pipeline-box">
-          <div class="luxe-section-label">The Complete 5-Step Turnkey Pipeline</div>
+          <div class="luxe-section-label">The 5-Step Process You Will Master:</div>
           <div class="luxe-track">
             <div class="luxe-step">
-              <span class="luxe-step-num">01</span>
+              <span class="luxe-step-num">STEP 1</span>
               <span class="luxe-step-name">PLAN</span>
             </div>
             <span class="luxe-step-arrow">→</span>
             <div class="luxe-step">
-              <span class="luxe-step-num">02</span>
+              <span class="luxe-step-num">STEP 2</span>
               <span class="luxe-step-name">DESIGN</span>
             </div>
             <span class="luxe-step-arrow">→</span>
             <div class="luxe-step">
-              <span class="luxe-step-num">03</span>
+              <span class="luxe-step-num">STEP 3</span>
               <span class="luxe-step-name">3D MODEL</span>
             </div>
             <span class="luxe-step-arrow">→</span>
             <div class="luxe-step">
-              <span class="luxe-step-num">04</span>
+              <span class="luxe-step-num">STEP 4</span>
               <span class="luxe-step-name">RENDER</span>
             </div>
             <span class="luxe-step-arrow">→</span>
             <div class="luxe-step">
-              <span class="luxe-step-num">05</span>
+              <span class="luxe-step-num">STEP 5</span>
               <span class="luxe-step-name">PRESENT</span>
             </div>
           </div>
@@ -467,78 +476,84 @@
             <span class="luxe-soft-tag">V-Ray</span>
             <span class="luxe-soft-tag">D5 Render</span>
             <span class="luxe-soft-tag">Enscape</span>
-            <span class="luxe-soft-tag luxe-soft-ai">AI Workflows</span>
+            <span class="luxe-soft-tag luxe-soft-ai">✨ AI Speed Tools</span>
           </div>
 
           <!-- Scope: Flats, Offices, Luxury Villas -->
           <div class="luxe-scope-wrap">
-            <span class="luxe-scope-label">Capable of Designing Any Project:</span>
+            <span class="luxe-scope-label">What You Will Be Able To Design:</span>
             <div class="luxe-scope-items">
               <div class="luxe-scope-item">
-                <span class="luxe-scope-dot">▪</span>
-                <div><strong>Modern Flats &amp; Apartments:</strong> Turnkey 1BHK, 2BHK &amp; 3BHK space planning, joinery &amp; lighting.</div>
+                <span class="luxe-scope-dot">✔</span>
+                <div><strong>Modern Flats &amp; Apartments:</strong> 1BHK, 2BHK, 3BHK full interior layouts, modular kitchens &amp; false ceilings.</div>
               </div>
               <div class="luxe-scope-item">
-                <span class="luxe-scope-dot">▪</span>
-                <div><strong>Corporate Offices &amp; Commercial:</strong> Workspaces, boardrooms, retail showrooms &amp; client reception areas.</div>
+                <span class="luxe-scope-dot">✔</span>
+                <div><strong>Offices &amp; Commercial:</strong> Corporate workspaces, conference rooms, cafes, showrooms &amp; retail stores.</div>
               </div>
               <div class="luxe-scope-item">
-                <span class="luxe-scope-dot">▪</span>
-                <div><strong>Luxury Villas &amp; Exteriors:</strong> Multi-story architecture, exterior facades, landscaping &amp; night illumination.</div>
+                <span class="luxe-scope-dot">✔</span>
+                <div><strong>Luxury Villas &amp; Exteriors:</strong> Multi-story house elevations, modern exterior facades &amp; realistic night lighting.</div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- 6. OUTCOMES (2x2 Grid) -->
-        <div class="luxe-section-label">Career &amp; Business Impact:</div>
+        <div class="luxe-section-label">What Changes In Your Career &amp; Income:</div>
         <div class="luxe-outcomes-grid">
           <div class="luxe-outcome-card">
             <div class="luxe-outcome-title">
-              <span class="luxe-outcome-check">✓</span>
-              Escape Low-Paying Roles
+              <span class="luxe-outcome-check">💰</span>
+              Ditch Low-Paying Jobs
             </div>
-            <p class="luxe-outcome-desc">Qualify for senior designer positions and high-salary studio opportunities with proof of full-project execution.</p>
+            <p class="luxe-outcome-desc">Qualify for high-salary designer positions in top studios. Stop begging for entry-level wages.</p>
           </div>
           <div class="luxe-outcome-card">
             <div class="luxe-outcome-title">
-              <span class="luxe-outcome-check">✓</span>
-              Establish Your Own Studio
+              <span class="luxe-outcome-check">🚀</span>
+              Start Your Own Studio
             </div>
-            <p class="luxe-outcome-desc">Confidently pitch direct clients, quote full turnkey residential &amp; commercial projects, and build your own practice.</p>
+            <p class="luxe-outcome-desc">Take on direct clients with 100% confidence. Pitch, design, and quote turnkey projects on your own terms.</p>
           </div>
           <div class="luxe-outcome-card">
             <div class="luxe-outcome-title">
-              <span class="luxe-outcome-check">✓</span>
-              Photorealistic 4K Renders
+              <span class="luxe-outcome-check">📸</span>
+              Photo-Quality 4K Renders
             </div>
-            <p class="luxe-outcome-desc">Master V-Ray, D5 Render &amp; AI to produce hyper-realistic materials, shadows and lighting clients approve on first sight.</p>
+            <p class="luxe-outcome-desc">Master V-Ray, D5 Render &amp; AI so your renders look like real photos and clients approve on the very first view.</p>
           </div>
           <div class="luxe-outcome-card">
             <div class="luxe-outcome-title">
-              <span class="luxe-outcome-check">✓</span>
-              Job-Ready 4K Portfolio
+              <span class="luxe-outcome-check">📁</span>
+              Job &amp; Career Ready Portfolio
             </div>
-            <p class="luxe-outcome-desc">Graduate with verified, site-accurate portfolio projects that immediately separate you from amateur drafters.</p>
+            <p class="luxe-outcome-desc">Walk into any interview or client meeting with a solid portfolio proving you can execute full real-world projects.</p>
           </div>
         </div>
 
         <!-- 7. REASSURANCE STRIP -->
         <div class="luxe-trust-strip">
           <div class="luxe-trust-row">
-            <strong>Zero Degree Needed:</strong>
-            <span>Every technical shortcut, drafting standard &amp; 3D method taught step-by-step from zero.</span>
+            <strong>🎓 No Degree Needed:</strong>
+            <span>Every tool, drafting standard &amp; 3D technique is taught from absolute zero.</span>
           </div>
           <div class="luxe-trust-row">
-            <strong>$0 Software Cost to Start:</strong>
-            <span>Includes comprehensive student &amp; community installation walkthroughs.</span>
+            <strong>💻 $0 Software Cost to Start:</strong>
+            <span>We include full step-by-step guides for free student &amp; community setups.</span>
+          </div>
+          <div class="luxe-trust-row">
+            <strong>⚡ Fast Results:</strong>
+            <span>Create your first client-ready 3D render in just 14 days.</span>
           </div>
         </div>
 
-        <!-- 8. CLOSING STATEMENT -->
+        <!-- 8. PROVOKING CLOSING PUNCH -->
         <div class="luxe-closing">
-          <div class="luxe-closing-main">Master The Entire Pipeline. Build A Career AI Can’t Replace.</div>
-          <p class="luxe-closing-sub">Job-ready. Business-ready. Capable of designing any flat, office, or villa.</p>
+          <div class="luxe-closing-main">Stop Waiting. Stop Getting Underpaid.</div>
+          <p class="luxe-closing-sub">
+            Every month you delay is another month of <span style="color: #fef08a; font-weight: 800;">lost income and missed clients.</span> Learn the complete skill now.
+          </p>
         </div>
       </div>
     </div>

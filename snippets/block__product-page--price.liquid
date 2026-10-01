@@ -22,954 +22,523 @@
     {% assign s_type = settings.saleType | default: 'percent' %}
 
     {% if product.handle == '5-courses-interior-exterior-design-ai' %}
-    <div class="course-pdr-editorial-block">
+    <div class="arch-luxe-pitch">
       <style>
-        .course-pdr-editorial-block {
-          margin: 6px 0 18px 0;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        .arch-luxe-pitch {
+          margin: 10px 0 18px 0;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
           box-sizing: border-box;
           width: 100%;
-          text-align: center;
+          text-align: left;
+          color: #09090b;
         }
-        @media (max-width: 768px) {
-          .course-pdr-editorial-block {
-            margin: 0 0 14px 0 !important;
-            padding-top: 0 !important;
-          }
-        }
-        .sticky--container .course-pdr-editorial-block {
+        .sticky--container .arch-luxe-pitch {
           display: none !important;
         }
-        .course-pdr-headline-wrap {
-          margin-bottom: 14px;
-          text-align: center;
-        }
-        @media (max-width: 768px) {
-          .course-pdr-headline-wrap {
-            margin-top: 0 !important;
-            margin-bottom: 10px !important;
-          }
-        }
-        .course-pdr-eyebrow {
-          display: block;
-          font-family: 'Space Grotesk', 'Inter', sans-serif;
-          font-size: 13.5px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          color: #475569;
-          margin-bottom: 3px;
-          text-align: center;
-        }
-        .course-pdr-title {
-          font-size: clamp(23px, 5.2vw, 31px);
-          font-weight: 900;
-          color: #0f172a;
-          line-height: 1.15;
-          letter-spacing: -0.03em;
-          margin: 0 0 4px 0;
-          text-align: center;
-        }
-        .course-pdr-subtitle {
-          font-size: clamp(16px, 3.8vw, 19px);
-          font-weight: 700;
-          color: #ea580c;
-          line-height: 1.3;
-          letter-spacing: -0.015em;
-          text-align: center;
-        }
-        .course-pdr-pillar-card {
-          background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
-          border: 1px solid #fed7aa;
-          border-radius: 12px;
-          padding: 12px 16px;
-          margin-bottom: 12px;
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-          text-align: center;
-          align-items: center;
-          justify-content: center;
-        }
-        @media (max-width: 768px) {
-          .course-pdr-pillar-card {
-            padding: 10px 14px !important;
-            margin-bottom: 10px !important;
-          }
-        }
-        .course-pdr-pill-label {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          flex-wrap: wrap;
-          text-align: center;
-          width: 100%;
-        }
-        .pdr-badge {
-          background: #ea580c;
-          color: #ffffff;
-          font-size: 11px;
-          font-weight: 800;
-          padding: 3px 8px;
-          border-radius: 6px;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-        }
-        .pdr-formula {
-          font-size: 13.5px;
-          font-weight: 700;
-          color: #9a3412;
-          letter-spacing: -0.01em;
-        }
-        .course-pdr-all-in-one {
-          font-size: 13px;
-          color: #334155;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 6px;
-          font-weight: 500;
-          text-align: center;
-          width: 100%;
-        }
-        .pdr-check {
-          color: #059669;
-          font-weight: 900;
-          font-size: 14px;
-        }
-        .course-pdr-quote-box {
-          background: #f8fafc;
-          border-top: 3px solid #0f172a;
-          border-bottom: 1px solid #e2e8f0;
-          border-left: 1px solid #e2e8f0;
-          border-right: 1px solid #e2e8f0;
-          border-radius: 12px;
-          padding: 12px 18px;
-          margin-bottom: 12px;
-          position: relative;
-          text-align: center;
-        }
-        @media (max-width: 768px) {
-          .course-pdr-quote-box {
-            padding: 10px 14px !important;
-            margin-bottom: 10px !important;
-          }
-        }
-        .course-pdr-quote-icon {
-          font-family: Georgia, serif;
-          font-size: 26px;
-          line-height: 1;
-          color: #94a3b8;
-          display: block;
-          margin: 0 auto 2px auto;
-          text-align: center;
-          opacity: 0.6;
-        }
-        .course-pdr-quote-text {
-          font-family: Georgia, 'Playfair Display', serif;
-          font-style: italic;
-          font-size: 14px;
-          color: #1e293b;
-          line-height: 1.5;
-          margin: 0;
-          text-align: center;
-        }
-        .course-pdr-speed-card {
+
+        .luxe-card {
           background: #ffffff;
-          border: 1.5px solid #e2e8f0;
-          border-radius: 14px;
-          padding: 14px 16px;
-          margin-bottom: 16px;
-          text-align: center;
-          box-shadow: 0 4px 14px rgba(0,0,0,0.03);
-        }
-        @media (max-width: 768px) {
-          .course-pdr-speed-card {
-            padding: 12px 14px !important;
-            margin-bottom: 12px !important;
-          }
-        }
-        .course-pdr-curiosity {
-          font-size: 12px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          color: #64748b;
-          margin-bottom: 4px;
-          text-align: center;
-        }
-        .course-pdr-faster-heading {
-          font-size: clamp(19px, 4.5vw, 24px);
-          font-weight: 900;
-          color: #0f172a;
-          line-height: 1.2;
-          letter-spacing: -0.02em;
-          margin-bottom: 8px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 6px;
-          flex-wrap: wrap;
-          text-align: center;
+          border: 1px solid #e4e4e7;
+          border-radius: 16px;
+          padding: 20px 18px;
+          box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+          box-sizing: border-box;
           width: 100%;
         }
-        .faster-highlight {
-          color: #ea580c;
-          text-decoration: underline;
-          text-decoration-color: #fdba74;
-          text-underline-offset: 4px;
+
+        /* 1. HEADER */
+        .luxe-header {
+          margin-bottom: 14px;
+          padding-bottom: 14px;
+          border-bottom: 1px solid #f4f4f5;
         }
-        .faster-rocket {
+        .luxe-tag {
           display: inline-block;
-          font-size: 20px;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #18181b;
+          background: #f4f4f5;
+          border: 1px solid #e4e4e7;
+          padding: 3px 9px;
+          border-radius: 9999px;
+          margin-bottom: 8px;
         }
-        .course-pdr-desc {
-          font-size: 13.5px;
-          color: #334155;
-          line-height: 1.55;
+        .luxe-title {
+          font-size: clamp(19px, 4.5vw, 23px);
+          font-weight: 900;
+          color: #09090b;
+          line-height: 1.25;
+          letter-spacing: -0.03em;
           margin: 0;
-          text-align: center;
         }
-        .highlight-soft {
-          color: #0f172a;
-          font-weight: 600;
+        .luxe-title-sub {
+          display: block;
+          font-size: clamp(14px, 3.5vw, 16px);
+          font-weight: 700;
+          color: #52525b;
+          margin-top: 4px;
+          letter-spacing: -0.015em;
         }
-        .course-pdr-points-list {
+
+        /* 2. EDITORIAL PERSPECTIVE */
+        .luxe-perspective {
+          background: #fafafa;
+          border-left: 2.5px solid #09090b;
+          border-radius: 0 8px 8px 0;
+          padding: 11px 13px;
+          margin-bottom: 16px;
+        }
+        .luxe-perspective p {
+          font-size: 12.5px;
+          line-height: 1.5;
+          color: #27272a;
+          margin: 0;
+        }
+        .luxe-perspective strong {
+          color: #09090b;
+          font-weight: 800;
+        }
+        .luxe-perspective em {
+          font-style: normal;
+          color: #09090b;
+          font-weight: 700;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+          text-decoration-color: #d4d4d8;
+        }
+
+        /* SECTION LABEL */
+        .luxe-section-label {
+          font-size: 10.5px;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: #71717a;
+          margin-bottom: 8px;
+        }
+
+        /* 3. INDUSTRY TRAP LIST */
+        .luxe-trap-list {
           display: flex;
           flex-direction: column;
           gap: 9px;
-          margin-top: 14px;
-          padding-top: 12px;
-          border-top: 1px dashed #cbd5e1;
-          text-align: left;
+          margin-bottom: 16px;
+          padding: 0;
+          list-style: none;
         }
-        .course-pdr-point-item {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          font-size: 13px;
-          color: #1e293b;
-          font-weight: 600;
-          line-height: 1.35;
-        }
-        .course-pdr-point-icon {
-          flex-shrink: 0;
-          width: 18px;
-          height: 18px;
-        }
-        .course-pdr-achieve-card {
-          background: #ffffff;
-          border: 1.5px solid #e2e8f0;
-          border-radius: 14px;
-          padding: 14px 16px;
-          margin-bottom: 14px;
-          box-shadow: 0 4px 14px rgba(0,0,0,0.03);
-          text-align: left;
-        }
-        .course-pdr-achieve-title {
-          font-size: 16.5px;
-          font-weight: 900;
-          color: #0f172a;
-          margin: 0 0 12px 0;
-          text-align: center;
-          line-height: 1.3;
-        }
-        .course-pdr-punchline {
-          background: #0f172a !important;
-          color: #ffffff !important;
-          border-radius: 8px !important;
-          padding: 10px 14px !important;
-          font-size: 12.5px !important;
-          font-weight: 800 !important;
-          letter-spacing: 0.02em !important;
-          display: flex !important;
-          flex-wrap: wrap !important;
-          align-items: center !important;
-          justify-content: center !important;
-          gap: 6px !important;
-          text-align: center !important;
-          line-height: 1.4 !important;
-        }
-        .course-pdr-punchline span {
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
-          font-weight: 800 !important;
-        }
-        .course-pdr-punchline span:not(:last-child)::after {
-          content: "·" !important;
-          margin-left: 6px !important;
-          color: #ea580c !important;
-          -webkit-text-fill-color: #ea580c !important;
-          font-weight: 900 !important;
-        }
-        @media (max-width: 640px) {
-          .course-pdr-punchline {
-            font-size: 11px;
-            padding: 8px 10px;
-          }
-        }
-      </style>
-      <!-- Interior Design High-Impact Conversion Pitch -->
-      <style>
-        .cpx-card {
-          background: #ffffff;
-          border: 1.5px solid #e2e8f0;
-          border-radius: 16px;
-          padding: 18px 15px;
-          margin: 6px 0 16px;
-          box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
-          box-sizing: border-box;
-          color: #0f172a;
-          text-align: left;
-          width: 100%;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
-          overflow: hidden;
-        }
-
-        /* 1. HERO HEADER */
-        .cpx-header {
-          text-align: center;
-          margin-bottom: 14px;
-          padding-bottom: 12px;
-          border-bottom: 1px solid #f1f5f9;
-        }
-        .cpx-pill-top {
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-          background: #fff7ed;
-          border: 1px solid #fed7aa;
-          color: #c2410c;
-          font-size: 11px;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          padding: 3px 10px;
-          border-radius: 999px;
-          margin-bottom: 6px;
-        }
-        .cpx-title {
-          font-size: clamp(17px, 4.4vw, 21px);
-          font-weight: 900;
-          color: #0f172a;
-          line-height: 1.25;
-          margin: 0;
-          letter-spacing: -0.025em;
-        }
-        .cpx-highlight-yellow {
-          background: linear-gradient(120deg, #fef08a 0%, #fde047 100%);
-          color: #0f172a;
-          padding: 2px 7px;
-          border-radius: 4px;
-          display: inline-block;
-          margin-top: 2px;
-          box-decoration-break: clone;
-          -webkit-box-decoration-break: clone;
-        }
-
-        /* 2. REALITY CHECK ALERT */
-        .cpx-alert {
-          background: #fff1f2;
-          border-left: 4px solid #f43f5e;
-          border-radius: 0 10px 10px 0;
-          padding: 10px 12px;
-          margin-bottom: 14px;
-        }
-        .cpx-alert-tag {
-          display: inline-flex;
-          align-items: center;
-          gap: 4px;
-          font-size: 11px;
-          font-weight: 850;
-          color: #e11d48;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          margin-bottom: 4px;
-        }
-        .cpx-alert-text {
-          font-size: 12.5px;
-          line-height: 1.45;
-          color: #4c0519;
-          margin: 0;
-        }
-        .cpx-alert-text strong {
-          color: #881337;
-        }
-        .cpx-alert-text em {
-          color: #be123c;
-          font-style: italic;
-          font-weight: 600;
-        }
-
-        /* 3. PAIN CHECKLIST (NO BOXES, CLEAN SCANNING) */
-        .cpx-pain-wrap {
-          margin-bottom: 14px;
-          padding: 0 2px;
-        }
-        .cpx-pain-heading {
-          font-size: 11px;
-          font-weight: 800;
-          color: #64748b;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          margin-bottom: 8px;
-        }
-        .cpx-pain-list {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-        .cpx-pain-item {
+        .luxe-trap-item {
           display: flex;
           align-items: flex-start;
-          gap: 8px;
+          gap: 9px;
           font-size: 12.5px;
-          line-height: 1.38;
-          color: #334155;
+          line-height: 1.42;
+          color: #3f3f46;
         }
-        .cpx-pain-x {
-          background: #fee2e2;
-          color: #dc2626;
-          font-weight: 900;
-          font-size: 11px;
-          width: 17px;
-          height: 17px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        .luxe-dash {
+          color: #a1a1aa;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 1.3;
           flex-shrink: 0;
-          margin-top: 1px;
         }
-        .cpx-pain-item strong {
-          color: #0f172a;
-          font-weight: 750;
+        .luxe-trap-item strong {
+          color: #09090b;
+          font-weight: 800;
         }
 
-        /* 4. THE HARD TRUTH (DARK MANIFESTO BREAK) */
-        .cpx-manifesto {
-          background: #0f172a;
+        /* 4. HIGH-EARNER REALITY (Commanding Charcoal Card) */
+        .luxe-obsidian-card {
+          background: #09090b;
           color: #ffffff;
           border-radius: 12px;
           padding: 13px 15px;
-          margin-bottom: 14px;
-          position: relative;
-          box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+          margin-bottom: 16px;
         }
-        .cpx-manifesto-badge {
-          display: inline-block;
-          background: #ea580c;
-          color: #ffffff;
-          font-size: 10px;
-          font-weight: 850;
+        .luxe-obsidian-label {
+          font-size: 9.5px;
+          font-weight: 800;
+          letter-spacing: 0.1em;
           text-transform: uppercase;
-          letter-spacing: 0.08em;
-          padding: 2px 7px;
-          border-radius: 4px;
-          margin-bottom: 6px;
+          color: #a1a1aa;
+          margin-bottom: 5px;
         }
-        .cpx-manifesto-text {
+        .luxe-obsidian-statement {
           font-size: 13px;
-          line-height: 1.45;
+          line-height: 1.48;
+          color: #f4f4f5;
           margin: 0;
-          color: #e2e8f0;
         }
-        .cpx-manifesto-text strong {
-          color: #fdba74;
+        .luxe-obsidian-statement strong {
+          color: #ffffff;
           font-weight: 800;
         }
-        .cpx-manifesto-highlight {
-          color: #ffffff;
-          font-weight: 750;
+        .luxe-obsidian-sub {
           display: block;
-          margin-top: 5px;
-          padding-top: 5px;
-          border-top: 1px solid #1e293b;
+          margin-top: 7px;
+          padding-top: 7px;
+          border-top: 1px solid #27272a;
+          font-size: 12px;
+          color: #d4d4d8;
         }
 
-        /* 5. SOLUTION & PIPELINE */
-        .cpx-pipeline-card {
-          background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-          border: 1.5px solid #86efac;
+        /* 5. 5-STEP PIPELINE TRACK */
+        .luxe-pipeline-box {
+          background: #fafafa;
+          border: 1px solid #e4e4e7;
           border-radius: 12px;
-          padding: 13px 14px;
-          margin-bottom: 14px;
+          padding: 13px 13px;
+          margin-bottom: 16px;
         }
-        .cpx-pipe-top {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          font-size: 11px;
-          font-weight: 850;
-          color: #15803d;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          margin-bottom: 4px;
-        }
-        .cpx-pipe-title {
-          font-size: 14px;
-          font-weight: 850;
-          color: #0f172a;
-          line-height: 1.3;
-          margin: 0 0 10px 0;
-        }
-        .cpx-pipe-track {
-          background: #090d16;
+        .luxe-track {
+          background: #09090b;
           border-radius: 8px;
-          padding: 9px 8px;
+          padding: 9px 6px;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin-bottom: 10px;
           gap: 2px;
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
+          margin-bottom: 11px;
         }
-        .cpx-step {
+        .luxe-step {
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 1px;
           flex: 1;
-          min-width: 44px;
           text-align: center;
         }
-        .cpx-step-num {
+        .luxe-step-num {
           font-size: 8.5px;
-          font-weight: 850;
-          color: #f97316;
+          font-weight: 800;
+          color: #a1a1aa;
           letter-spacing: 0.04em;
         }
-        .cpx-step-name {
-          font-size: 10px;
-          font-weight: 850;
-          color: #ffffff;
-          letter-spacing: 0.03em;
-        }
-        .cpx-step-arrow {
-          color: #64748b;
-          font-size: 11px;
-          font-weight: 900;
-          padding: 0 1px;
-        }
-        .cpx-software-tags {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          gap: 5px;
-        }
-        .cpx-soft-pill {
-          background: #ffffff;
-          border: 1px solid #bbf7d0;
-          color: #166534;
-          font-size: 10.5px;
-          font-weight: 750;
-          padding: 2px 7px;
-          border-radius: 5px;
-        }
-        .cpx-soft-pill.cpx-soft-ai {
-          background: #fef08a;
-          border-color: #facc15;
-          color: #854d0e;
-        }
-
-        /* SCOPE: DESIGN ANYTHING (FLATS, OFFICES, VILLAS) */
-        .cpx-scope-box {
-          background: #ffffff;
-          border: 1px solid #cbd5e1;
-          border-radius: 8px;
-          padding: 8px 10px;
-          margin-top: 10px;
-          text-align: left;
-        }
-        .cpx-scope-tag {
-          display: block;
+        .luxe-step-name {
           font-size: 9.5px;
-          font-weight: 850;
-          color: #0f172a;
-          letter-spacing: 0.05em;
-          margin-bottom: 5px;
-          text-transform: uppercase;
+          font-weight: 800;
+          color: #ffffff;
+          letter-spacing: 0.04em;
         }
-        .cpx-scope-list {
+        .luxe-step-arrow {
+          color: #52525b;
+          font-size: 10px;
+          font-weight: 900;
+        }
+
+        /* Software Stack Pills */
+        .luxe-software-row {
           display: flex;
           flex-wrap: wrap;
           gap: 5px;
+          margin-bottom: 12px;
         }
-        .cpx-scope-pill {
-          background: #f8fafc;
-          color: #1e293b;
-          font-size: 11px;
+        .luxe-soft-tag {
+          background: #ffffff;
+          border: 1px solid #d4d4d8;
+          color: #18181b;
+          font-size: 10.5px;
           font-weight: 700;
-          padding: 3px 8px;
+          padding: 2.5px 7px;
           border-radius: 5px;
-          border: 1px solid #e2e8f0;
-          display: inline-flex;
-          align-items: center;
-          gap: 4px;
+        }
+        .luxe-soft-tag.luxe-soft-ai {
+          border-color: #18181b;
+          background: #18181b;
+          color: #ffffff;
         }
 
-        /* 6. BARRIER BUSTERS (3 COMPACT CHIPS) */
-        .cpx-barriers-row {
+        /* Scope: Flats, Offices, Villas */
+        .luxe-scope-wrap {
+          border-top: 1px solid #e4e4e7;
+          padding-top: 10px;
+        }
+        .luxe-scope-label {
+          font-size: 9.5px;
+          font-weight: 800;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: #52525b;
+          margin-bottom: 6px;
+          display: block;
+        }
+        .luxe-scope-items {
           display: flex;
           flex-direction: column;
-          gap: 6px;
-          margin-bottom: 14px;
+          gap: 5px;
         }
-        .cpx-barrier-chip {
+        .luxe-scope-item {
           display: flex;
-          align-items: center;
-          gap: 8px;
-          background: #f8fafc;
-          border: 1px solid #e2e8f0;
-          border-radius: 8px;
-          padding: 7px 10px;
-          font-size: 12px;
-          line-height: 1.35;
-          color: #334155;
+          align-items: baseline;
+          gap: 6px;
+          font-size: 11.5px;
+          line-height: 1.38;
+          color: #3f3f46;
         }
-        .cpx-b-icon {
-          font-size: 15px;
+        .luxe-scope-dot {
+          color: #71717a;
+          font-size: 9px;
           flex-shrink: 0;
-          line-height: 1;
         }
-        .cpx-barrier-chip strong {
-          color: #0f172a;
-          font-weight: 800;
-        }
-        .cpx-barrier-chip span {
-          color: #64748b;
+        .luxe-scope-item strong {
+          color: #09090b;
+          font-weight: 750;
         }
 
-        /* 7. OUTCOMES (2x2 VISUAL GRID) */
-        .cpx-results {
-          margin-bottom: 14px;
-        }
-        .cpx-results-title {
-          font-size: 12px;
-          font-weight: 850;
-          color: #0f172a;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          margin-bottom: 8px;
-        }
-        .cpx-results-grid {
+        /* 6. OUTCOMES (2x2 Grid) */
+        .luxe-outcomes-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 7px;
+          margin-bottom: 16px;
         }
-        @media (max-width: 440px) {
-          .cpx-results-grid {
+        @media (max-width: 480px) {
+          .luxe-outcomes-grid {
             grid-template-columns: 1fr;
             gap: 6px;
           }
         }
-        .cpx-res-box {
+        .luxe-outcome-card {
           background: #ffffff;
-          border: 1.5px solid #e2e8f0;
+          border: 1px solid #e4e4e7;
           border-radius: 9px;
-          padding: 8px 10px;
-          display: flex;
-          align-items: flex-start;
-          gap: 7px;
+          padding: 10px 11px;
         }
-        .cpx-check-icon {
-          color: #16a34a;
-          font-weight: 900;
-          font-size: 13px;
-          flex-shrink: 0;
-          margin-top: 1px;
-        }
-        .cpx-res-content {
-          font-size: 11.5px;
-          line-height: 1.3;
-          color: #475569;
-        }
-        .cpx-res-content strong {
-          color: #0f172a;
-          font-weight: 800;
-          display: block;
+        .luxe-outcome-title {
           font-size: 12px;
-          margin-bottom: 1px;
+          font-weight: 800;
+          color: #09090b;
+          margin-bottom: 2px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
         }
-
-        /* AI SYNERGY BANNER */
-        .cpx-ai-banner {
-          background: linear-gradient(135deg, #f8fafc 0%, #fff7ed 100%);
-          border: 1px dashed #fdba74;
-          border-radius: 8px;
-          padding: 8px 11px;
-          margin-top: 8px;
+        .luxe-outcome-check {
+          color: #09090b;
+          font-weight: 900;
           font-size: 11.5px;
-          color: #431407;
-          line-height: 1.4;
         }
-        .cpx-ai-banner strong {
-          color: #ea580c;
+        .luxe-outcome-desc {
+          font-size: 11px;
+          line-height: 1.35;
+          color: #52525b;
+          margin: 0;
         }
 
-        /* 8. 6-MONTH FORK (SPLIT CARD) */
-        .cpx-fork-wrap {
-          background: #f8fafc;
-          border: 1px solid #e2e8f0;
-          border-radius: 11px;
-          padding: 10px 12px;
-          margin-bottom: 12px;
-        }
-        .cpx-fork-title {
-          font-size: 11px;
-          font-weight: 850;
-          color: #475569;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          margin-bottom: 7px;
-        }
-        .cpx-fork-flow {
+        /* 7. REASSURANCE STRIP */
+        .luxe-trust-strip {
+          background: #fafafa;
+          border: 1px solid #e4e4e7;
+          border-radius: 9px;
+          padding: 9px 12px;
           display: flex;
           flex-direction: column;
           gap: 6px;
+          margin-bottom: 14px;
         }
-        .cpx-fork-path {
-          border-radius: 7px;
-          padding: 6px 9px;
+        .luxe-trust-row {
+          display: flex;
+          align-items: baseline;
+          gap: 6px;
           font-size: 11.5px;
           line-height: 1.35;
-          display: flex;
-          align-items: flex-start;
-          gap: 6px;
+          color: #3f3f46;
         }
-        .cpx-fork-path.fork-old {
-          background: #fef2f2;
-          color: #991b1b;
-        }
-        .cpx-fork-path.fork-new {
-          background: #f0fdf4;
-          color: #14532d;
-          font-weight: 600;
-          border: 1px solid #bbf7d0;
-        }
-        .cpx-fork-path.fork-new strong {
-          color: #15803d;
+        .luxe-trust-row strong {
+          color: #09090b;
+          font-weight: 800;
         }
 
-        /* 9. CLOSING PUNCH */
-        .cpx-close-strip {
+        /* 8. CLOSING PUNCH */
+        .luxe-closing {
+          background: #09090b;
+          color: #ffffff;
+          border-radius: 9px;
+          padding: 11px 12px;
           text-align: center;
-          padding: 10px 12px;
-          background: #0f172a;
-          color: #ffffff;
-          border-radius: 10px;
         }
-        .cpx-close-main {
+        .luxe-closing-main {
           font-size: 12.5px;
-          font-weight: 850;
-          letter-spacing: -0.01em;
-          margin-bottom: 2px;
+          font-weight: 800;
           color: #ffffff;
+          margin-bottom: 2px;
+          letter-spacing: -0.01em;
         }
-        .cpx-close-sub {
-          font-size: 11.5px;
-          color: #fdba74;
-          font-weight: 600;
+        .luxe-closing-sub {
+          font-size: 11px;
+          color: #a1a1aa;
           margin: 0;
         }
 
         @media (max-width: 480px) {
-          .cpx-card {
-            padding: 14px 12px;
+          .luxe-card {
+            padding: 15px 13px;
           }
-          .cpx-title {
-            font-size: 17px;
+          .luxe-title {
+            font-size: 18px;
           }
         }
       </style>
 
-      <div class="cpx-card">
-        <!-- 1. HERO HEADER -->
-        <div class="cpx-header">
-          <div class="cpx-pill-top">⚡ Career &amp; Business Accelerator</div>
-          <h3 class="cpx-title">
-            Stop Getting Stuck in Low-Paying Jobs.<br>
-            <span class="cpx-highlight-yellow">Design Entire Projects From Scratch.</span>
+      <div class="luxe-card">
+        <!-- 1. HEADER -->
+        <div class="luxe-header">
+          <span class="luxe-tag">Career &amp; Studio Accelerator</span>
+          <h3 class="luxe-title">
+            Stop Getting Stuck in Low-Paying Jobs.
+            <span class="luxe-title-sub">Learn to Design &amp; Deliver Entire Projects from Scratch.</span>
           </h3>
         </div>
 
-        <!-- 2. REALITY CHECK ALERT -->
-        <div class="cpx-alert">
-          <div class="cpx-alert-tag">🚨 Why Most Designers Stay Underpaid</div>
-          <p class="cpx-alert-text">
-            <strong>Knowing just one tool keeps you trapped in low-paying drafting jobs.</strong> Basic CAD operators and simple renderers compete on price every single day. Clients and top studios don't pay high fees for button clickers — they pay designers who can <em>plan, design, model, render and deliver full turnkey projects</em>.
+        <!-- 2. EDITORIAL PERSPECTIVE -->
+        <div class="luxe-perspective">
+          <p>
+            <strong>Knowing just one tool keeps designers in low-paying drafting wages.</strong> Clients and top architectural studios don't pay premium fees for button-clickers — they pay for designers who can <em>plan, model, render, and execute complete turnkey projects</em>.
           </p>
         </div>
 
-        <!-- 3. PAIN CHECKLIST -->
-        <div class="cpx-pain-wrap">
-          <div class="cpx-pain-heading">Are You Experiencing This?</div>
-          <div class="cpx-pain-list">
-            <div class="cpx-pain-item">
-              <span class="cpx-pain-x">✕</span>
-              <span><strong>Stuck in low-paying jobs:</strong> Trading long hours for entry-level drafting wages</span>
-            </div>
-            <div class="cpx-pain-item">
-              <span class="cpx-pain-x">✕</span>
-              <span><strong>The incomplete skill trap:</strong> Knowing tools individually, but unable to execute an entire project</span>
-            </div>
-            <div class="cpx-pain-item">
-              <span class="cpx-pain-x">✕</span>
-              <span><strong>Fear of starting your own business:</strong> Unsure how to quote, design, and deliver flats or offices end-to-end</span>
-            </div>
-            <div class="cpx-pain-item">
-              <span class="cpx-pain-x">✕</span>
-              <span><strong>Renders that look flat:</strong> Wasting hours tweaking lighting without achieving photorealistic 4K results</span>
-            </div>
-            <div class="cpx-pain-item">
-              <span class="cpx-pain-x">✕</span>
-              <span><strong>Losing out to full-stack designers:</strong> Watching complete-pipeline creators win all the high-paying gigs</span>
-            </div>
+        <!-- 3. INDUSTRY TRAP LIST -->
+        <div class="luxe-section-label">Why Most Designers Remain Underpaid:</div>
+        <div class="luxe-trap-list">
+          <div class="luxe-trap-item">
+            <span class="luxe-dash">—</span>
+            <div><strong>Trapped in basic drafting wages:</strong> Trading long hours for entry-level drafting pay without career leverage or promotion.</div>
+          </div>
+          <div class="luxe-trap-item">
+            <span class="luxe-dash">—</span>
+            <div><strong>The isolated-tool trap:</strong> Knowing software individually, but unable to connect technical planning, 3D modeling, and rendering into one project.</div>
+          </div>
+          <div class="luxe-trap-item">
+            <span class="luxe-dash">—</span>
+            <div><strong>Unsure how to start a business:</strong> Lacking the end-to-end framework to quote, design, and deliver residential flats or commercial offices.</div>
+          </div>
+          <div class="luxe-trap-item">
+            <span class="luxe-dash">—</span>
+            <div><strong>Losing out to full-stack designers:</strong> Who command 3x–5x higher fees because they present complete, photorealistic 4K projects.</div>
           </div>
         </div>
 
-        <!-- 4. THE HARD TRUTH (DARK MANIFESTO BREAK) -->
-        <div class="cpx-manifesto">
-          <span class="cpx-manifesto-badge">💡 The High-Earner Truth</span>
-          <p class="cpx-manifesto-text">
-            People who only operate one software get low salaries.<br>
-            <strong>People who design the ENTIRE project earn dramatically better.</strong>
-            <span class="cpx-manifesto-highlight">
-              When you control Planning, 3D Modeling, 4K Rendering &amp; AI Presentation together, you become completely job-ready and business-ready.
-            </span>
+        <!-- 4. HIGH-EARNER REALITY -->
+        <div class="luxe-obsidian-card">
+          <div class="luxe-obsidian-label">The High-Earner Reality</div>
+          <p class="luxe-obsidian-statement">
+            Designers who master the <strong>entire project pipeline</strong> earn dramatically better.
           </p>
+          <span class="luxe-obsidian-sub">
+            Controlling Planning, 3D Modeling, 4K Rendering &amp; AI Presentation makes you immediately job-ready for leading studios and business-ready to launch your own practice.
+          </span>
         </div>
 
-        <!-- 5. SOLUTION & PIPELINE -->
-        <div class="cpx-pipeline-card">
-          <div class="cpx-pipe-top">✅ End-To-End Project Mastery</div>
-          <div class="cpx-pipe-title">Master The Right Software Stack.<br><strong>Deliver The Entire Project.</strong></div>
-
-          <!-- 5-Step Pipeline -->
-          <div class="cpx-pipe-track">
-            <div class="cpx-step">
-              <span class="cpx-step-num">01</span>
-              <span class="cpx-step-name">PLAN</span>
+        <!-- 5. 5-STEP PIPELINE + SOFTWARE + SCOPE -->
+        <div class="luxe-pipeline-box">
+          <div class="luxe-section-label">The Complete 5-Step Turnkey Pipeline</div>
+          <div class="luxe-track">
+            <div class="luxe-step">
+              <span class="luxe-step-num">01</span>
+              <span class="luxe-step-name">PLAN</span>
             </div>
-            <span class="cpx-step-arrow">→</span>
-            <div class="cpx-step">
-              <span class="cpx-step-num">02</span>
-              <span class="cpx-step-name">DESIGN</span>
+            <span class="luxe-step-arrow">→</span>
+            <div class="luxe-step">
+              <span class="luxe-step-num">02</span>
+              <span class="luxe-step-name">DESIGN</span>
             </div>
-            <span class="cpx-step-arrow">→</span>
-            <div class="cpx-step">
-              <span class="cpx-step-num">03</span>
-              <span class="cpx-step-name">3D MODEL</span>
+            <span class="luxe-step-arrow">→</span>
+            <div class="luxe-step">
+              <span class="luxe-step-num">03</span>
+              <span class="luxe-step-name">3D MODEL</span>
             </div>
-            <span class="cpx-step-arrow">→</span>
-            <div class="cpx-step">
-              <span class="cpx-step-num">04</span>
-              <span class="cpx-step-name">RENDER</span>
+            <span class="luxe-step-arrow">→</span>
+            <div class="luxe-step">
+              <span class="luxe-step-num">04</span>
+              <span class="luxe-step-name">RENDER</span>
             </div>
-            <span class="cpx-step-arrow">→</span>
-            <div class="cpx-step">
-              <span class="cpx-step-num">05</span>
-              <span class="cpx-step-name">PRESENT</span>
+            <span class="luxe-step-arrow">→</span>
+            <div class="luxe-step">
+              <span class="luxe-step-num">05</span>
+              <span class="luxe-step-name">PRESENT</span>
             </div>
           </div>
 
-          <!-- Software Tags -->
-          <div class="cpx-software-tags">
-            <span class="cpx-soft-pill">AutoCAD</span>
-            <span class="cpx-soft-pill">SketchUp Pro</span>
-            <span class="cpx-soft-pill">V-Ray</span>
-            <span class="cpx-soft-pill">D5 Render</span>
-            <span class="cpx-soft-pill">Enscape</span>
-            <span class="cpx-soft-pill cpx-soft-ai">✨ AI Speed Pipeline</span>
+          <!-- Software Stack -->
+          <div class="luxe-software-row">
+            <span class="luxe-soft-tag">AutoCAD</span>
+            <span class="luxe-soft-tag">SketchUp Pro</span>
+            <span class="luxe-soft-tag">V-Ray</span>
+            <span class="luxe-soft-tag">D5 Render</span>
+            <span class="luxe-soft-tag">Enscape</span>
+            <span class="luxe-soft-tag luxe-soft-ai">AI Workflows</span>
           </div>
 
-          <!-- Scope: Design Anything -->
-          <div class="cpx-scope-box">
-            <span class="cpx-scope-tag">📐 Design Anything From Scratch:</span>
-            <div class="cpx-scope-list">
-              <span class="cpx-scope-pill">🏡 Modern Flats &amp; Apartments</span>
-              <span class="cpx-scope-pill">🏢 Corporate Offices &amp; Retail</span>
-              <span class="cpx-scope-pill">🏰 Luxury Villas &amp; Exteriors</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. BARRIER BUSTERS -->
-        <div class="cpx-barriers-row">
-          <div class="cpx-barrier-chip">
-            <span class="cpx-b-icon">🎓</span>
-            <div><strong>Zero Degree Needed:</strong> <span>Every technical layout, shortcut &amp; workflow taught from scratch.</span></div>
-          </div>
-          <div class="cpx-barrier-chip">
-            <span class="cpx-b-icon">💻</span>
-            <div><strong>The Right Software, $0 to Start:</strong> <span>Includes free student &amp; community installation guides.</span></div>
-          </div>
-          <div class="cpx-barrier-chip">
-            <span class="cpx-b-icon">🚀</span>
-            <div><strong>Job &amp; Career Ready in Weeks:</strong> <span>Build a verified 4K portfolio that proves your complete capability.</span></div>
-          </div>
-        </div>
-
-        <!-- 7. WHAT HAPPENS WHEN YOUR SKILL LEVELS UP -->
-        <div class="cpx-results">
-          <div class="cpx-results-title">💰 What Changes When You Own This Skill:</div>
-          <div class="cpx-results-grid">
-            <div class="cpx-res-box">
-              <span class="cpx-check-icon">✔</span>
-              <div class="cpx-res-content">
-                <strong>Escape Low-Paying Jobs</strong>
-                <em>Qualify for high-salary designer roles &amp; lead positions</em>
+          <!-- Scope: Flats, Offices, Luxury Villas -->
+          <div class="luxe-scope-wrap">
+            <span class="luxe-scope-label">Capable of Designing Any Project:</span>
+            <div class="luxe-scope-items">
+              <div class="luxe-scope-item">
+                <span class="luxe-scope-dot">▪</span>
+                <div><strong>Modern Flats &amp; Apartments:</strong> Turnkey 1BHK, 2BHK &amp; 3BHK space planning, joinery &amp; lighting.</div>
               </div>
-            </div>
-            <div class="cpx-res-box">
-              <span class="cpx-check-icon">✔</span>
-              <div class="cpx-res-content">
-                <strong>Establish Your Own Business</strong>
-                <em>Take direct freelance clients &amp; launch your own studio</em>
+              <div class="luxe-scope-item">
+                <span class="luxe-scope-dot">▪</span>
+                <div><strong>Corporate Offices &amp; Commercial:</strong> Workspaces, boardrooms, retail showrooms &amp; client reception areas.</div>
               </div>
-            </div>
-            <div class="cpx-res-box">
-              <span class="cpx-check-icon">✔</span>
-              <div class="cpx-res-content">
-                <strong>Flats, Offices &amp; Luxury Villas</strong>
-                <em>Deliver complete interior planning, 3D &amp; exterior facades</em>
-              </div>
-            </div>
-            <div class="cpx-res-box">
-              <span class="cpx-check-icon">✔</span>
-              <div class="cpx-res-content">
-                <strong>Showstopping 4K Renders</strong>
-                <em>V-Ray, D5 &amp; AI to produce visuals clients approve in 1 go</em>
+              <div class="luxe-scope-item">
+                <span class="luxe-scope-dot">▪</span>
+                <div><strong>Luxury Villas &amp; Exteriors:</strong> Multi-story architecture, exterior facades, landscaping &amp; night illumination.</div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="cpx-ai-banner">
-            ⚡ <strong>Don’t compete with AI.</strong> Learn to use AI + the right design software to deliver what no prompt can: <em>complete, buildable, client-ready projects.</em>
+        <!-- 6. OUTCOMES (2x2 Grid) -->
+        <div class="luxe-section-label">Career &amp; Business Impact:</div>
+        <div class="luxe-outcomes-grid">
+          <div class="luxe-outcome-card">
+            <div class="luxe-outcome-title">
+              <span class="luxe-outcome-check">✓</span>
+              Escape Low-Paying Roles
+            </div>
+            <p class="luxe-outcome-desc">Qualify for senior designer positions and high-salary studio opportunities with proof of full-project execution.</p>
+          </div>
+          <div class="luxe-outcome-card">
+            <div class="luxe-outcome-title">
+              <span class="luxe-outcome-check">✓</span>
+              Establish Your Own Studio
+            </div>
+            <p class="luxe-outcome-desc">Confidently pitch direct clients, quote full turnkey residential &amp; commercial projects, and build your own practice.</p>
+          </div>
+          <div class="luxe-outcome-card">
+            <div class="luxe-outcome-title">
+              <span class="luxe-outcome-check">✓</span>
+              Photorealistic 4K Renders
+            </div>
+            <p class="luxe-outcome-desc">Master V-Ray, D5 Render &amp; AI to produce hyper-realistic materials, shadows and lighting clients approve on first sight.</p>
+          </div>
+          <div class="luxe-outcome-card">
+            <div class="luxe-outcome-title">
+              <span class="luxe-outcome-check">✓</span>
+              Job-Ready 4K Portfolio
+            </div>
+            <p class="luxe-outcome-desc">Graduate with verified, site-accurate portfolio projects that immediately separate you from amateur drafters.</p>
           </div>
         </div>
 
-        <!-- 8. 6-MONTH FORK -->
-        <div class="cpx-fork-wrap">
-          <div class="cpx-fork-title">⏳ 6 Months From Today:</div>
-          <div class="cpx-fork-flow">
-            <div class="cpx-fork-path fork-old">
-              <span>✕</span>
-              <span>Still stuck in low-paying drafting gigs, jumping between random YouTube videos, underpaid.</span>
-            </div>
-            <div class="cpx-fork-path fork-new">
-              <span>🚀</span>
-              <span><strong>Or</strong> holding a complete 5-software skill stack, high-paying career opportunities &amp; your own thriving design practice.</span>
-            </div>
+        <!-- 7. REASSURANCE STRIP -->
+        <div class="luxe-trust-strip">
+          <div class="luxe-trust-row">
+            <strong>Zero Degree Needed:</strong>
+            <span>Every technical shortcut, drafting standard &amp; 3D method taught step-by-step from zero.</span>
+          </div>
+          <div class="luxe-trust-row">
+            <strong>$0 Software Cost to Start:</strong>
+            <span>Includes comprehensive student &amp; community installation walkthroughs.</span>
           </div>
         </div>
 
-        <!-- 9. CLOSING PUNCH -->
-        <div class="cpx-close-strip">
-          <div class="cpx-close-main">Upgrade Your Skill Before The Industry Moves Without You.</div>
-          <div class="cpx-close-sub">Be job-ready, business-ready &amp; capable of designing any flat, office, or villa.</div>
+        <!-- 8. CLOSING STATEMENT -->
+        <div class="luxe-closing">
+          <div class="luxe-closing-main">Master The Entire Pipeline. Build A Career AI Can’t Replace.</div>
+          <p class="luxe-closing-sub">Job-ready. Business-ready. Capable of designing any flat, office, or villa.</p>
         </div>
       </div>
     </div>

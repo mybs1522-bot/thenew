@@ -310,507 +310,620 @@
           }
         }
       </style>
-      <!-- Interior Design Career Pitch Section -->
+      <!-- Interior Design High-Impact Conversion Pitch -->
       <style>
-        .cp-pitch-card {
+        .cpx-card {
           background: #ffffff;
           border: 1.5px solid #e2e8f0;
-          border-radius: 14px;
-          padding: 16px 15px;
-          margin: 6px 0 14px;
-          box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+          border-radius: 16px;
+          padding: 18px 15px;
+          margin: 6px 0 16px;
+          box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
           box-sizing: border-box;
-          color: #1e293b;
+          color: #0f172a;
           text-align: left;
           width: 100%;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+          overflow: hidden;
         }
 
-        .cp-pitch-headline {
-          font-size: clamp(14.5px, 4vw, 17px);
-          font-weight: 850;
-          color: #0f172a;
-          line-height: 1.35;
-          margin: 0 0 12px 0;
-          padding-bottom: 10px;
-          border-bottom: 1px solid #f1f5f9;
+        /* 1. HERO HEADER */
+        .cpx-header {
           text-align: center;
-          letter-spacing: -0.015em;
+          margin-bottom: 14px;
+          padding-bottom: 12px;
+          border-bottom: 1px solid #f1f5f9;
+        }
+        .cpx-pill-top {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          background: #fff7ed;
+          border: 1px solid #fed7aa;
+          color: #c2410c;
+          font-size: 11px;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          padding: 3px 10px;
+          border-radius: 999px;
+          margin-bottom: 6px;
+        }
+        .cpx-title {
+          font-size: clamp(17px, 4.4vw, 21px);
+          font-weight: 900;
+          color: #0f172a;
+          line-height: 1.25;
+          margin: 0;
+          letter-spacing: -0.025em;
+        }
+        .cpx-highlight-yellow {
+          background: linear-gradient(120deg, #fef08a 0%, #fde047 100%);
+          color: #0f172a;
+          padding: 2px 7px;
+          border-radius: 4px;
+          display: inline-block;
+          margin-top: 2px;
+          box-decoration-break: clone;
+          -webkit-box-decoration-break: clone;
         }
 
-        .cp-pitch-hook {
-          background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
-          border: 1px solid #fed7aa;
-          border-radius: 10px;
-          padding: 11px 13px;
-          margin-bottom: 12px;
+        /* 2. REALITY CHECK ALERT */
+        .cpx-alert {
+          background: #fff1f2;
+          border-left: 4px solid #f43f5e;
+          border-radius: 0 10px 10px 0;
+          padding: 10px 12px;
+          margin-bottom: 14px;
         }
-        .cp-pitch-hook-title {
-          font-size: 13.5px;
-          font-weight: 800;
-          color: #9a3412;
-          margin: 0 0 5px 0;
-          display: flex;
+        .cpx-alert-tag {
+          display: inline-flex;
           align-items: center;
-          gap: 6px;
-          line-height: 1.35;
+          gap: 4px;
+          font-size: 11px;
+          font-weight: 850;
+          color: #e11d48;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 4px;
         }
-        .cp-pitch-hook-lead {
-          font-size: 12px;
-          font-weight: 700;
-          color: #c2410c;
-          margin: 0 0 4px 0;
-          line-height: 1.4;
-        }
-        .cp-pitch-hook-desc {
-          font-size: 12px;
+        .cpx-alert-text {
+          font-size: 12.5px;
           line-height: 1.45;
-          color: #431407;
+          color: #4c0519;
           margin: 0;
         }
-
-        .cp-pitch-pain-list {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          margin-bottom: 12px;
+        .cpx-alert-text strong {
+          color: #881337;
         }
-        .cp-pitch-pain-item {
-          display: flex;
-          align-items: flex-start;
-          gap: 7px;
-          background: #fef2f2;
-          border: 1px solid #fee2e2;
-          border-radius: 8px;
-          padding: 7px 9px;
-          font-size: 11.5px;
-          line-height: 1.35;
-          color: #7f1d1d;
-          font-weight: 500;
-        }
-        .cp-pitch-pain-icon {
-          font-size: 11px;
-          flex-shrink: 0;
-          margin-top: 1px;
-          line-height: 1;
-        }
-
-        .cp-pitch-insight {
-          background: #f8fafc;
-          border-left: 3.5px solid #ea580c;
-          border-top: 1px solid #e2e8f0;
-          border-right: 1px solid #e2e8f0;
-          border-bottom: 1px solid #e2e8f0;
-          border-radius: 0 9px 9px 0;
-          padding: 9px 11px;
-          margin-bottom: 12px;
-          font-size: 12px;
-          line-height: 1.42;
-          color: #0f172a;
-        }
-        .cp-pitch-insight strong {
-          color: #ea580c;
-        }
-        .cp-pitch-insight-follow {
-          margin-top: 6px;
-          padding-top: 6px;
-          border-top: 1px dashed #cbd5e1;
-          color: #1e293b;
+        .cpx-alert-text em {
+          color: #be123c;
+          font-style: italic;
           font-weight: 600;
         }
 
-        .cp-pitch-solution {
-          background: #f0fdf4;
-          border: 1.5px solid #bbf7d0;
-          border-radius: 10px;
-          padding: 11px 12px;
-          margin-bottom: 12px;
+        /* 3. PAIN CHECKLIST (NO BOXES, CLEAN SCANNING) */
+        .cpx-pain-wrap {
+          margin-bottom: 14px;
+          padding: 0 2px;
         }
-        .cp-pitch-solution-title {
-          font-size: 13px;
-          font-weight: 800;
-          color: #166534;
-          margin: 0 0 3px 0;
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          line-height: 1.35;
-        }
-        .cp-pitch-solution-sub {
-          font-size: 12.5px;
-          font-weight: 750;
-          color: #15803d;
-          margin: 0 0 5px 0;
-          line-height: 1.35;
-        }
-        .cp-pitch-solution-lead {
-          font-size: 12px;
-          line-height: 1.4;
-          color: #14532d;
-          margin: 0 0 8px 0;
-          font-weight: 500;
-        }
-
-        .cp-pitch-pipeline {
-          background: #0f172a;
-          color: #ffffff;
-          border-radius: 8px;
-          padding: 7px 10px;
+        .cpx-pain-heading {
           font-size: 11px;
           font-weight: 800;
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          gap: 5px;
-          margin: 8px 0;
-          text-align: center;
-          letter-spacing: 0.02em;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 8px;
         }
-        .cp-pitch-pipeline span {
-          color: #fdba74;
-        }
-
-        .cp-pitch-software {
-          font-size: 11.5px;
-          line-height: 1.42;
-          color: #15803d;
-          margin: 0;
-        }
-
-        .cp-pitch-barriers {
-          background: #f8fafc;
-          border: 1.5px solid #e2e8f0;
-          border-radius: 10px;
-          padding: 11px 12px;
-          margin-bottom: 12px;
-        }
-        .cp-pitch-barriers-title {
-          font-size: 12.5px;
-          font-weight: 800;
-          color: #0f172a;
-          margin: 0 0 8px 0;
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          line-height: 1.35;
-        }
-        .cp-pitch-barriers-grid {
+        .cpx-pain-list {
           display: flex;
           flex-direction: column;
-          gap: 6px;
+          gap: 8px;
         }
-        .cp-pitch-barrier-item {
+        .cpx-pain-item {
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          background: #ffffff;
-          border: 1px solid #e2e8f0;
-          border-radius: 8px;
-          padding: 8px 10px;
+          font-size: 12.5px;
+          line-height: 1.38;
+          color: #334155;
         }
-        .cp-pitch-barrier-icon {
-          font-size: 14px;
-          line-height: 1.2;
+        .cpx-pain-x {
+          background: #fee2e2;
+          color: #dc2626;
+          font-weight: 900;
+          font-size: 11px;
+          width: 17px;
+          height: 17px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           flex-shrink: 0;
           margin-top: 1px;
         }
-        .cp-pitch-barrier-content {
-          flex: 1;
-        }
-        .cp-pitch-barrier-heading {
-          font-size: 12px;
-          font-weight: 800;
+        .cpx-pain-item strong {
           color: #0f172a;
-          margin: 0 0 2px 0;
-          line-height: 1.35;
-        }
-        .cp-pitch-barrier-text {
-          font-size: 11.5px;
-          color: #475569;
-          line-height: 1.4;
-          margin: 0;
+          font-weight: 750;
         }
 
-        .cp-pitch-benefits-card {
-          background: #ffffff;
-          border: 1.5px solid #e2e8f0;
-          border-radius: 10px;
-          padding: 11px 12px;
-          margin-bottom: 12px;
+        /* 4. THE HARD TRUTH (DARK MANIFESTO BREAK) */
+        .cpx-manifesto {
+          background: #0f172a;
+          color: #ffffff;
+          border-radius: 12px;
+          padding: 13px 15px;
+          margin-bottom: 14px;
+          position: relative;
+          box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
         }
-        .cp-pitch-benefits-title {
-          font-size: 12.5px;
+        .cpx-manifesto-badge {
+          display: inline-block;
+          background: #ea580c;
+          color: #ffffff;
+          font-size: 10px;
+          font-weight: 850;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          padding: 2px 7px;
+          border-radius: 4px;
+          margin-bottom: 6px;
+        }
+        .cpx-manifesto-text {
+          font-size: 13px;
+          line-height: 1.45;
+          margin: 0;
+          color: #e2e8f0;
+        }
+        .cpx-manifesto-text strong {
+          color: #fdba74;
           font-weight: 800;
-          color: #0f172a;
-          margin: 0 0 4px 0;
+        }
+        .cpx-manifesto-highlight {
+          color: #ffffff;
+          font-weight: 750;
+          display: block;
+          margin-top: 5px;
+          padding-top: 5px;
+          border-top: 1px solid #1e293b;
+        }
+
+        /* 5. SOLUTION & PIPELINE */
+        .cpx-pipeline-card {
+          background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+          border: 1.5px solid #86efac;
+          border-radius: 12px;
+          padding: 13px 14px;
+          margin-bottom: 14px;
+        }
+        .cpx-pipe-top {
           display: flex;
           align-items: center;
           gap: 6px;
+          font-size: 11px;
+          font-weight: 850;
+          color: #15803d;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 4px;
         }
-        .cp-pitch-benefits-sub {
-          font-size: 11.5px;
-          color: #64748b;
-          font-weight: 600;
-          margin: 0 0 8px 0;
+        .cpx-pipe-title {
+          font-size: 14px;
+          font-weight: 850;
+          color: #0f172a;
+          line-height: 1.3;
+          margin: 0 0 10px 0;
         }
-        .cp-pitch-benefits-list {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          margin-bottom: 10px;
-        }
-        .cp-pitch-benefit-item {
+        .cpx-pipe-track {
+          background: #090d16;
+          border-radius: 8px;
+          padding: 9px 8px;
           display: flex;
           align-items: center;
-          gap: 7px;
-          font-size: 11.5px;
-          color: #1e293b;
-          font-weight: 600;
-          line-height: 1.35;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          gap: 2px;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
         }
-        .cp-pitch-benefit-icon {
-          color: #16a34a;
+        .cpx-step {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1px;
+          flex: 1;
+          min-width: 44px;
+          text-align: center;
+        }
+        .cpx-step-num {
+          font-size: 8.5px;
+          font-weight: 850;
+          color: #f97316;
+          letter-spacing: 0.04em;
+        }
+        .cpx-step-name {
+          font-size: 10px;
+          font-weight: 850;
+          color: #ffffff;
+          letter-spacing: 0.03em;
+        }
+        .cpx-step-arrow {
+          color: #64748b;
+          font-size: 11px;
           font-weight: 900;
-          font-size: 12px;
-          flex-shrink: 0;
+          padding: 0 1px;
         }
-        .cp-pitch-synergy-box {
+        .cpx-software-tags {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 5px;
+        }
+        .cpx-soft-pill {
+          background: #ffffff;
+          border: 1px solid #bbf7d0;
+          color: #166534;
+          font-size: 10.5px;
+          font-weight: 750;
+          padding: 2px 7px;
+          border-radius: 5px;
+        }
+        .cpx-soft-pill.cpx-soft-ai {
+          background: #fef08a;
+          border-color: #facc15;
+          color: #854d0e;
+        }
+
+        /* 6. BARRIER BUSTERS (3 COMPACT CHIPS) */
+        .cpx-barriers-row {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          margin-bottom: 14px;
+        }
+        .cpx-barrier-chip {
+          display: flex;
+          align-items: center;
+          gap: 8px;
           background: #f8fafc;
           border: 1px solid #e2e8f0;
           border-radius: 8px;
-          padding: 8px 10px;
-          border-left: 3px solid #0f172a;
-        }
-        .cp-pitch-synergy-callout {
-          font-size: 11.5px;
-          font-weight: 750;
-          color: #0f172a;
-          margin: 0 0 4px 0;
+          padding: 7px 10px;
+          font-size: 12px;
           line-height: 1.35;
-        }
-        .cp-pitch-synergy-desc {
-          font-size: 11.5px;
           color: #334155;
-          margin: 0;
-          line-height: 1.4;
+        }
+        .cpx-b-icon {
+          font-size: 15px;
+          flex-shrink: 0;
+          line-height: 1;
+        }
+        .cpx-barrier-chip strong {
+          color: #0f172a;
+          font-weight: 800;
+        }
+        .cpx-barrier-chip span {
+          color: #64748b;
         }
 
-        .cp-pitch-urgency {
-          border-top: 1px dashed #e2e8f0;
-          padding-top: 10px;
-          margin-bottom: 10px;
+        /* 7. OUTCOMES (2x2 VISUAL GRID) */
+        .cpx-results {
+          margin-bottom: 14px;
         }
-        .cp-pitch-urgency-title {
-          font-size: 12.5px;
-          font-weight: 800;
+        .cpx-results-title {
+          font-size: 12px;
+          font-weight: 850;
           color: #0f172a;
-          margin: 0 0 6px 0;
-          display: flex;
-          align-items: center;
-          gap: 6px;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 8px;
         }
-        .cp-pitch-urgency-box {
+        .cpx-results-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 7px;
+        }
+        @media (max-width: 440px) {
+          .cpx-results-grid {
+            grid-template-columns: 1fr;
+            gap: 6px;
+          }
+        }
+        .cpx-res-box {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 9px;
+          padding: 8px 10px;
+          display: flex;
+          align-items: flex-start;
+          gap: 7px;
+        }
+        .cpx-check-icon {
+          color: #16a34a;
+          font-weight: 900;
+          font-size: 13px;
+          flex-shrink: 0;
+          margin-top: 1px;
+        }
+        .cpx-res-content {
+          font-size: 11.5px;
+          line-height: 1.3;
+          color: #475569;
+        }
+        .cpx-res-content strong {
+          color: #0f172a;
+          font-weight: 800;
+          display: block;
+          font-size: 12px;
+          margin-bottom: 1px;
+        }
+
+        /* AI SYNERGY BANNER */
+        .cpx-ai-banner {
+          background: linear-gradient(135deg, #f8fafc 0%, #fff7ed 100%);
+          border: 1px dashed #fdba74;
+          border-radius: 8px;
+          padding: 8px 11px;
+          margin-top: 8px;
+          font-size: 11.5px;
+          color: #431407;
+          line-height: 1.4;
+        }
+        .cpx-ai-banner strong {
+          color: #ea580c;
+        }
+
+        /* 8. 6-MONTH FORK (SPLIT CARD) */
+        .cpx-fork-wrap {
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 11px;
+          padding: 10px 12px;
+          margin-bottom: 12px;
+        }
+        .cpx-fork-title {
+          font-size: 11px;
+          font-weight: 850;
+          color: #475569;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 7px;
+        }
+        .cpx-fork-flow {
           display: flex;
           flex-direction: column;
-          gap: 5px;
+          gap: 6px;
         }
-        .cp-pitch-urgency-path {
+        .cpx-fork-path {
           border-radius: 7px;
           padding: 6px 9px;
           font-size: 11.5px;
-          line-height: 1.38;
+          line-height: 1.35;
+          display: flex;
+          align-items: flex-start;
+          gap: 6px;
         }
-        .cp-pitch-urgency-path.path-old {
+        .cpx-fork-path.fork-old {
           background: #fef2f2;
-          border: 1px solid #fee2e2;
           color: #991b1b;
         }
-        .cp-pitch-urgency-path.path-new {
+        .cpx-fork-path.fork-new {
           background: #f0fdf4;
-          border: 1px solid #bbf7d0;
-          color: #166534;
+          color: #14532d;
           font-weight: 600;
+          border: 1px solid #bbf7d0;
+        }
+        .cpx-fork-path.fork-new strong {
+          color: #15803d;
         }
 
-        .cp-pitch-closing {
-          background: #f8fafc;
-          border: 1px solid #fed7aa;
-          border-radius: 10px;
-          padding: 10px 12px;
+        /* 9. CLOSING PUNCH */
+        .cpx-close-strip {
           text-align: center;
+          padding: 10px 12px;
+          background: #0f172a;
+          color: #ffffff;
+          border-radius: 10px;
         }
-        .cp-pitch-closing-title {
+        .cpx-close-main {
           font-size: 12.5px;
-          font-weight: 800;
-          color: #0f172a;
-          margin: 0 0 4px 0;
+          font-weight: 850;
+          letter-spacing: -0.01em;
+          margin-bottom: 2px;
+          color: #ffffff;
         }
-        .cp-pitch-closing-sub {
+        .cpx-close-sub {
           font-size: 11.5px;
-          color: #64748b;
+          color: #fdba74;
+          font-weight: 600;
           margin: 0;
-          line-height: 1.4;
         }
 
         @media (max-width: 480px) {
-          .cp-pitch-card {
-            padding: 13px 12px;
+          .cpx-card {
+            padding: 14px 12px;
           }
-          .cp-pitch-headline {
-            font-size: 13.5px;
+          .cpx-title {
+            font-size: 17px;
           }
         }
       </style>
 
-      <div class="cp-pitch-card">
-        <!-- Headline -->
-        <h3 class="cp-pitch-headline">Learn Interior Design. Build a Skill AI Can’t Easily Replace.</h3>
-
-        <!-- Hook -->
-        <div class="cp-pitch-hook">
-          <div class="cp-pitch-hook-title">🚨 Is Your Design Skill Still Not Paying You Enough?</div>
-          <div class="cp-pitch-hook-lead">The industry is changing fast.</div>
-          <p class="cp-pitch-hook-desc">AI is making basic designs, renders and concepts faster than ever. Knowing one software or creating average-looking designs is no longer enough to stand out.</p>
+      <div class="cpx-card">
+        <!-- 1. HERO HEADER -->
+        <div class="cpx-header">
+          <div class="cpx-pill-top">⚡ Complete Design Pipeline</div>
+          <h3 class="cpx-title">
+            Learn Interior Design.<br>
+            <span class="cpx-highlight-yellow">Build a Skill AI Can’t Replace.</span>
+          </h3>
         </div>
 
-        <!-- Pain points -->
-        <div class="cp-pitch-pain-list">
-          <div class="cp-pitch-pain-item">
-            <span class="cp-pitch-pain-icon">❌</span>
-            <span>Struggling to make good income with basic design skills</span>
-          </div>
-          <div class="cp-pitch-pain-item">
-            <span class="cp-pitch-pain-icon">❌</span>
-            <span>Getting paid less because your designs look similar to everyone else</span>
-          </div>
-          <div class="cp-pitch-pain-item">
-            <span class="cp-pitch-pain-icon">❌</span>
-            <span>Losing clients who can now generate basic concepts with AI</span>
-          </div>
-          <div class="cp-pitch-pain-item">
-            <span class="cp-pitch-pain-icon">❌</span>
-            <span>Knowing AutoCAD or SketchUp but still unable to deliver a complete project</span>
-          </div>
-          <div class="cp-pitch-pain-item">
-            <span class="cp-pitch-pain-icon">❌</span>
-            <span>Spending hours creating designs that don't look professional enough to impress clients</span>
-          </div>
-          <div class="cp-pitch-pain-item">
-            <span class="cp-pitch-pain-icon">❌</span>
-            <span>Watching designers with better portfolios attract the clients and fees you want</span>
-          </div>
-        </div>
-
-        <!-- Insight -->
-        <div class="cp-pitch-insight">
-          👉 <strong>The problem isn't that there aren't opportunities.</strong><br>
-          The problem is that basic skills are becoming easier to replace.
-          <div class="cp-pitch-insight-follow">
-            To stay valuable, you need to know how to plan, design, model, render and present — not just operate software.
-          </div>
-        </div>
-
-        <!-- Solution -->
-        <div class="cp-pitch-solution">
-          <div class="cp-pitch-solution-title">✅ Stop Being “Just a Software User.”</div>
-          <div class="cp-pitch-solution-sub">Become the Designer Who Can Deliver the Complete Project.</div>
-          <div class="cp-pitch-solution-lead">Learn the complete workflow:</div>
-
-          <!-- Pipeline -->
-          <div class="cp-pitch-pipeline">
-            PLAN <span>→</span> DESIGN <span>→</span> 3D MODEL <span>→</span> RENDER <span>→</span> PRESENT
-          </div>
-
-          <p class="cp-pitch-software">
-            <strong>Master:</strong> AutoCAD + SketchUp + V-Ray + D5 + Enscape + AI<br>
-            And learn how to combine them to create professional Interior &amp; Exterior projects.
+        <!-- 2. REALITY CHECK ALERT -->
+        <div class="cpx-alert">
+          <div class="cpx-alert-tag">🚨 The Industry Has Shifted</div>
+          <p class="cpx-alert-text">
+            <strong>AI is already replacing basic designers.</strong> Anyone can prompt a generic 3D concept in 30 seconds. Knowing <em>just one software</em> or making flat renders won’t get you hired or paid anymore.
           </p>
         </div>
 
-        <!-- Important Barriers Addressed -->
-        <div class="cp-pitch-barriers">
-          <div class="cp-pitch-barriers-title">🛡️ Built For Real Beginners — Common Questions Answered</div>
-          <div class="cp-pitch-barriers-grid">
-            <div class="cp-pitch-barrier-item">
-              <span class="cp-pitch-barrier-icon">🎓</span>
-              <div class="cp-pitch-barrier-content">
-                <div class="cp-pitch-barrier-heading">No Architecture Degree or Prior 3D Skills Needed</div>
-                <p class="cp-pitch-barrier-text">We start from opening the software for the first time. Every tool, setting, and shortcut is taught step-by-step from complete scratch.</p>
-              </div>
+        <!-- 3. PAIN CHECKLIST -->
+        <div class="cpx-pain-wrap">
+          <div class="cpx-pain-heading">Are You Experiencing This?</div>
+          <div class="cpx-pain-list">
+            <div class="cpx-pain-item">
+              <span class="cpx-pain-x">✕</span>
+              <span><strong>Stuck at low rates</strong> because your renders look like everyone else's</span>
             </div>
-            <div class="cp-pitch-barrier-item">
-              <span class="cp-pitch-barrier-icon">💻</span>
-              <div class="cp-pitch-barrier-content">
-                <div class="cp-pitch-barrier-heading">Zero Expensive Software Licenses to Buy</div>
-                <p class="cp-pitch-barrier-text">Official setup guides included inside to access student, educational, and free trial community versions for SketchUp, V-Ray, D5, and AutoCAD (Windows &amp; Mac).</p>
-              </div>
+            <div class="cpx-pain-item">
+              <span class="cpx-pain-x">✕</span>
+              <span><strong>Losing client gigs</strong> to designers using rapid modern AI pipelines</span>
             </div>
-            <div class="cp-pitch-barrier-item">
-              <span class="cp-pitch-barrier-icon">⚡</span>
-              <div class="cp-pitch-barrier-content">
-                <div class="cp-pitch-barrier-heading">First 4K Photorealistic Render in Under 14 Days</div>
-                <p class="cp-pitch-barrier-text">Skip months of dry textbook theory. Follow our guided project workflow to create a portfolio-ready 3D render in your very first two weeks.</p>
-              </div>
+            <div class="cpx-pain-item">
+              <span class="cpx-pain-x">✕</span>
+              <span><strong>The software trap:</strong> Knowing tools individually, but <em>unable to complete a full project</em></span>
             </div>
-          </div>
-        </div>
-
-        <!-- Value: What Happens When Your Skill Level Goes Up? -->
-        <div class="cp-pitch-benefits-card">
-          <div class="cp-pitch-benefits-title">💰 What Happens When Your Skill Level Goes Up?</div>
-          <div class="cp-pitch-benefits-sub">You can:</div>
-          <div class="cp-pitch-benefits-list">
-            <div class="cp-pitch-benefit-item">
-              <span class="cp-pitch-benefit-icon">✅</span>
-              <span>Create designs that look professional</span>
+            <div class="cpx-pain-item">
+              <span class="cpx-pain-x">✕</span>
+              <span><strong>Hours wasted tweaking</strong> lighting, yet renders still look unconvincing</span>
             </div>
-            <div class="cp-pitch-benefit-item">
-              <span class="cp-pitch-benefit-icon">✅</span>
-              <span>Build a portfolio that gets attention</span>
-            </div>
-            <div class="cp-pitch-benefit-item">
-              <span class="cp-pitch-benefit-icon">✅</span>
-              <span>Present ideas with confidence</span>
-            </div>
-            <div class="cp-pitch-benefit-item">
-              <span class="cp-pitch-benefit-icon">✅</span>
-              <span>Offer complete design services</span>
-            </div>
-            <div class="cp-pitch-benefit-item">
-              <span class="cp-pitch-benefit-icon">✅</span>
-              <span>Take on freelance &amp; client projects</span>
-            </div>
-            <div class="cp-pitch-benefit-item">
-              <span class="cp-pitch-benefit-icon">✅</span>
-              <span>Stop competing only on the lowest price</span>
-            </div>
-          </div>
-
-          <!-- AI Synergy Callout -->
-          <div class="cp-pitch-synergy-box">
-            <div class="cp-pitch-synergy-callout">Don't compete with AI on basic work. Learn to use AI + design skills together.</div>
-            <p class="cp-pitch-synergy-desc">The goal isn't simply to learn more software. It's to become more valuable because you can solve the whole design problem.</p>
-          </div>
-        </div>
-
-        <!-- Urgency -->
-        <div class="cp-pitch-urgency">
-          <div class="cp-pitch-urgency-title">⏳ 6 Months From Now…</div>
-          <div class="cp-pitch-urgency-box">
-            <div class="cp-pitch-urgency-path path-old">
-              You can still be watching random tutorials and wondering <em>“Why am I not getting better clients?”</em>
-            </div>
-            <div class="cp-pitch-urgency-path path-new">
-              Or you can have a complete, practical design skill and a portfolio that proves what you can do.
+            <div class="cpx-pain-item">
+              <span class="cpx-pain-x">✕</span>
+              <span><strong>Watching other designers</strong> with elite portfolios win all the high fees</span>
             </div>
           </div>
         </div>
 
-        <!-- Closing -->
-        <div class="cp-pitch-closing">
-          <div class="cp-pitch-closing-title">🚀 Upgrade Your Skill Before The Industry Upgrades Without You.</div>
-          <p class="cp-pitch-closing-sub">Learn Interior &amp; Exterior Design the complete way.</p>
+        <!-- 4. THE HARD TRUTH (DARK MANIFESTO BREAK) -->
+        <div class="cpx-manifesto">
+          <span class="cpx-manifesto-badge">💡 The Hard Truth</span>
+          <p class="cpx-manifesto-text">
+            The problem isn’t lack of clients.<br>
+            The problem is being <strong>just a software operator.</strong>
+            <span class="cpx-manifesto-highlight">
+              High-earning designers don’t click buttons blindly — they control the entire pipeline from blueprint to 4K presentation.
+            </span>
+          </p>
+        </div>
+
+        <!-- 5. SOLUTION & PIPELINE -->
+        <div class="cpx-pipeline-card">
+          <div class="cpx-pipe-top">✅ Complete Design Mastery</div>
+          <div class="cpx-pipe-title">Stop being just a tool user.<br><strong>Deliver The Entire Project.</strong></div>
+
+          <!-- 5-Step Pipeline -->
+          <div class="cpx-pipe-track">
+            <div class="cpx-step">
+              <span class="cpx-step-num">01</span>
+              <span class="cpx-step-name">PLAN</span>
+            </div>
+            <span class="cpx-step-arrow">→</span>
+            <div class="cpx-step">
+              <span class="cpx-step-num">02</span>
+              <span class="cpx-step-name">DESIGN</span>
+            </div>
+            <span class="cpx-step-arrow">→</span>
+            <div class="cpx-step">
+              <span class="cpx-step-num">03</span>
+              <span class="cpx-step-name">3D MODEL</span>
+            </div>
+            <span class="cpx-step-arrow">→</span>
+            <div class="cpx-step">
+              <span class="cpx-step-num">04</span>
+              <span class="cpx-step-name">RENDER</span>
+            </div>
+            <span class="cpx-step-arrow">→</span>
+            <div class="cpx-step">
+              <span class="cpx-step-num">05</span>
+              <span class="cpx-step-name">PRESENT</span>
+            </div>
+          </div>
+
+          <!-- Software Tags -->
+          <div class="cpx-software-tags">
+            <span class="cpx-soft-pill">AutoCAD</span>
+            <span class="cpx-soft-pill">SketchUp Pro</span>
+            <span class="cpx-soft-pill">V-Ray</span>
+            <span class="cpx-soft-pill">D5 Render</span>
+            <span class="cpx-soft-pill">Enscape</span>
+            <span class="cpx-soft-pill cpx-soft-ai">✨ AI Workflows</span>
+          </div>
+        </div>
+
+        <!-- 6. BARRIER BUSTERS -->
+        <div class="cpx-barriers-row">
+          <div class="cpx-barrier-chip">
+            <span class="cpx-b-icon">🎓</span>
+            <div><strong>Zero Degree Needed:</strong> <span>Every tool &amp; shortcut taught from complete scratch.</span></div>
+          </div>
+          <div class="cpx-barrier-chip">
+            <span class="cpx-b-icon">💻</span>
+            <div><strong>$0 Software Cost to Start:</strong> <span>Includes free student &amp; community setup guides.</span></div>
+          </div>
+          <div class="cpx-barrier-chip">
+            <span class="cpx-b-icon">⚡</span>
+            <div><strong>First 4K Render in 14 Days:</strong> <span>Build a client-ready portfolio piece in 2 weeks.</span></div>
+          </div>
+        </div>
+
+        <!-- 7. WHAT HAPPENS WHEN YOUR SKILL LEVELES UP -->
+        <div class="cpx-results">
+          <div class="cpx-results-title">💰 What Changes When You Own This Skill:</div>
+          <div class="cpx-results-grid">
+            <div class="cpx-res-box">
+              <span class="cpx-check-icon">✔</span>
+              <div class="cpx-res-content">
+                <strong>Stop Price Battles</strong>
+                <em>Charge premium rates &amp; ditch \$50 gigs</em>
+              </div>
+            </div>
+            <div class="cpx-res-box">
+              <span class="cpx-check-icon">✔</span>
+              <div class="cpx-res-content">
+                <strong>Showstopping 4K Renders</strong>
+                <em>Portfolio that attracts paying clients</em>
+              </div>
+            </div>
+            <div class="cpx-res-box">
+              <span class="cpx-check-icon">✔</span>
+              <div class="cpx-res-content">
+                <strong>Full Design Service</strong>
+                <em>From 2D CAD drafting to VR walkthroughs</em>
+              </div>
+            </div>
+            <div class="cpx-res-box">
+              <span class="cpx-check-icon">✔</span>
+              <div class="cpx-res-content">
+                <strong>Harness AI Speed</strong>
+                <em>Ideate 50 client styles in minutes</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="cpx-ai-banner">
+            ⚡ <strong>Don’t compete with AI.</strong> Learn to use AI + design skills together to deliver what no algorithm can: <em>complete, site-accurate projects.</em>
+          </div>
+        </div>
+
+        <!-- 8. 6-MONTH FORK -->
+        <div class="cpx-fork-wrap">
+          <div class="cpx-fork-title">⏳ 6 Months From Today:</div>
+          <div class="cpx-fork-flow">
+            <div class="cpx-fork-path fork-old">
+              <span>✕</span>
+              <span>Still jumping between random YouTube videos, guessing clearances, stuck underpaid.</span>
+            </div>
+            <div class="cpx-fork-path fork-new">
+              <span>🚀</span>
+              <span><strong>Or</strong> holding a complete 5-software skill &amp; a 4K portfolio that proves your worth.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. CLOSING PUNCH -->
+        <div class="cpx-close-strip">
+          <div class="cpx-close-main">Upgrade Your Skill Before The Industry Moves Without You.</div>
+          <div class="cpx-close-sub">Master Interior &amp; Exterior Design the complete way.</div>
         </div>
       </div>
     </div>

@@ -317,45 +317,54 @@
           border: 1.5px solid #e2e8f0;
           border-radius: 14px;
           padding: 16px 15px;
-          margin: 6px 0 12px;
+          margin: 6px 0 14px;
           box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
           box-sizing: border-box;
           color: #1e293b;
           text-align: left;
           width: 100%;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
         }
 
         .cp-pitch-headline {
-          font-size: 14.5px;
-          font-weight: 800;
+          font-size: clamp(14.5px, 4vw, 17px);
+          font-weight: 850;
           color: #0f172a;
           line-height: 1.35;
           margin: 0 0 12px 0;
           padding-bottom: 10px;
           border-bottom: 1px solid #f1f5f9;
           text-align: center;
-          letter-spacing: -0.01em;
+          letter-spacing: -0.015em;
         }
 
         .cp-pitch-hook {
-          background: #fffaf0;
+          background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
           border: 1px solid #fed7aa;
           border-radius: 10px;
-          padding: 11px 12px;
+          padding: 11px 13px;
           margin-bottom: 12px;
         }
         .cp-pitch-hook-title {
-          font-size: 13px;
+          font-size: 13.5px;
           font-weight: 800;
           color: #9a3412;
           margin: 0 0 5px 0;
           display: flex;
           align-items: center;
           gap: 6px;
+          line-height: 1.35;
+        }
+        .cp-pitch-hook-lead {
+          font-size: 12px;
+          font-weight: 700;
+          color: #c2410c;
+          margin: 0 0 4px 0;
+          line-height: 1.4;
         }
         .cp-pitch-hook-desc {
           font-size: 12px;
-          line-height: 1.42;
+          line-height: 1.45;
           color: #431407;
           margin: 0;
         }
@@ -377,30 +386,42 @@
           font-size: 11.5px;
           line-height: 1.35;
           color: #7f1d1d;
+          font-weight: 500;
         }
         .cp-pitch-pain-icon {
           font-size: 11px;
           flex-shrink: 0;
           margin-top: 1px;
+          line-height: 1;
         }
 
         .cp-pitch-insight {
           background: #f8fafc;
-          border-left: 3px solid #ea580c;
-          border-radius: 0 8px 8px 0;
-          padding: 8px 10px;
+          border-left: 3.5px solid #ea580c;
+          border-top: 1px solid #e2e8f0;
+          border-right: 1px solid #e2e8f0;
+          border-bottom: 1px solid #e2e8f0;
+          border-radius: 0 9px 9px 0;
+          padding: 9px 11px;
           margin-bottom: 12px;
           font-size: 12px;
-          line-height: 1.4;
+          line-height: 1.42;
           color: #0f172a;
         }
         .cp-pitch-insight strong {
           color: #ea580c;
         }
+        .cp-pitch-insight-follow {
+          margin-top: 6px;
+          padding-top: 6px;
+          border-top: 1px dashed #cbd5e1;
+          color: #1e293b;
+          font-weight: 600;
+        }
 
         .cp-pitch-solution {
           background: #f0fdf4;
-          border: 1px solid #bbf7d0;
+          border: 1.5px solid #bbf7d0;
           border-radius: 10px;
           padding: 11px 12px;
           margin-bottom: 12px;
@@ -409,16 +430,25 @@
           font-size: 13px;
           font-weight: 800;
           color: #166534;
-          margin: 0 0 6px 0;
+          margin: 0 0 3px 0;
           display: flex;
           align-items: center;
           gap: 6px;
+          line-height: 1.35;
+        }
+        .cp-pitch-solution-sub {
+          font-size: 12.5px;
+          font-weight: 750;
+          color: #15803d;
+          margin: 0 0 5px 0;
+          line-height: 1.35;
         }
         .cp-pitch-solution-lead {
           font-size: 12px;
           line-height: 1.4;
           color: #14532d;
           margin: 0 0 8px 0;
+          font-weight: 500;
         }
 
         .cp-pitch-pipeline {
@@ -443,38 +473,73 @@
 
         .cp-pitch-software {
           font-size: 11.5px;
-          line-height: 1.4;
+          line-height: 1.42;
           color: #15803d;
           margin: 0;
         }
 
-        .cp-pitch-matters {
-          background: #f8fafc;
-          border: 1px solid #e2e8f0;
+        .cp-pitch-benefits-card {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
           border-radius: 10px;
-          padding: 10px 12px;
+          padding: 11px 12px;
           margin-bottom: 12px;
         }
-        .cp-pitch-matters-title {
+        .cp-pitch-benefits-title {
           font-size: 12.5px;
           font-weight: 800;
           color: #0f172a;
-          margin: 0 0 5px 0;
+          margin: 0 0 4px 0;
           display: flex;
           align-items: center;
           gap: 6px;
         }
-        .cp-pitch-matters-text {
+        .cp-pitch-benefits-sub {
+          font-size: 11.5px;
+          color: #64748b;
+          font-weight: 600;
+          margin: 0 0 8px 0;
+        }
+        .cp-pitch-benefits-list {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          margin-bottom: 10px;
+        }
+        .cp-pitch-benefit-item {
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          font-size: 11.5px;
+          color: #1e293b;
+          font-weight: 600;
+          line-height: 1.35;
+        }
+        .cp-pitch-benefit-icon {
+          color: #16a34a;
+          font-weight: 900;
           font-size: 12px;
-          line-height: 1.42;
+          flex-shrink: 0;
+        }
+        .cp-pitch-synergy-box {
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
+          padding: 8px 10px;
+          border-left: 3px solid #0f172a;
+        }
+        .cp-pitch-synergy-callout {
+          font-size: 11.5px;
+          font-weight: 750;
+          color: #0f172a;
+          margin: 0 0 4px 0;
+          line-height: 1.35;
+        }
+        .cp-pitch-synergy-desc {
+          font-size: 11.5px;
           color: #334155;
           margin: 0;
-        }
-        .cp-pitch-matters-highlight {
-          margin-top: 5px;
-          font-size: 12px;
-          font-weight: 700;
-          color: #ea580c;
+          line-height: 1.4;
         }
 
         .cp-pitch-urgency {
@@ -486,22 +551,32 @@
           font-size: 12.5px;
           font-weight: 800;
           color: #0f172a;
-          margin: 0 0 5px 0;
+          margin: 0 0 6px 0;
           display: flex;
           align-items: center;
           gap: 6px;
         }
-        .cp-pitch-urgency-text {
-          font-size: 11.5px;
-          line-height: 1.4;
-          color: #475569;
-          margin: 0 0 5px 0;
+        .cp-pitch-urgency-box {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
         }
-        .cp-pitch-urgency-warn {
+        .cp-pitch-urgency-path {
+          border-radius: 7px;
+          padding: 6px 9px;
           font-size: 11.5px;
-          font-weight: 700;
-          color: #dc2626;
-          margin: 0;
+          line-height: 1.38;
+        }
+        .cp-pitch-urgency-path.path-old {
+          background: #fef2f2;
+          border: 1px solid #fee2e2;
+          color: #991b1b;
+        }
+        .cp-pitch-urgency-path.path-new {
+          background: #f0fdf4;
+          border: 1px solid #bbf7d0;
+          color: #166534;
+          font-weight: 600;
         }
 
         .cp-pitch-closing {
@@ -523,13 +598,6 @@
           margin: 0;
           line-height: 1.4;
         }
-        .cp-pitch-closing-bold {
-          font-size: 12px;
-          font-weight: 800;
-          color: #ea580c;
-          display: block;
-          margin-top: 2px;
-        }
 
         @media (max-width: 480px) {
           .cp-pitch-card {
@@ -543,88 +611,124 @@
 
       <div class="cp-pitch-card">
         <!-- Headline -->
-        <h3 class="cp-pitch-headline">Learn Interior Design. Build a Career. Start Earning From Your Skill.</h3>
+        <h3 class="cp-pitch-headline">Learn Interior Design. Build a Skill AI Can’t Easily Replace.</h3>
 
         <!-- Hook -->
         <div class="cp-pitch-hook">
-          <div class="cp-pitch-hook-title">🚨 Still Watching Random Tutorials to Learn Interior Design?</div>
-          <p class="cp-pitch-hook-desc">Every month you delay learning the right skills, you’re potentially losing <strong>time, opportunities and income.</strong></p>
+          <div class="cp-pitch-hook-title">🚨 Is Your Design Skill Still Not Paying You Enough?</div>
+          <div class="cp-pitch-hook-lead">The industry is changing fast.</div>
+          <p class="cp-pitch-hook-desc">AI is making basic designs, renders and concepts faster than ever. Knowing one software or creating average-looking designs is no longer enough to stand out.</p>
         </div>
 
         <!-- Pain points -->
         <div class="cp-pitch-pain-list">
           <div class="cp-pitch-pain-item">
             <span class="cp-pitch-pain-icon">❌</span>
-            <span>Spending months jumping between random YouTube tutorials</span>
+            <span>Struggling to make good income with basic design skills</span>
           </div>
           <div class="cp-pitch-pain-item">
             <span class="cp-pitch-pain-icon">❌</span>
-            <span>Paying others to create designs you could learn to make yourself</span>
+            <span>Getting paid less because your designs look similar to everyone else</span>
           </div>
           <div class="cp-pitch-pain-item">
             <span class="cp-pitch-pain-icon">❌</span>
-            <span>Missing client opportunities because you don’t have the right skills</span>
+            <span>Losing clients who can now generate basic concepts with AI</span>
           </div>
           <div class="cp-pitch-pain-item">
             <span class="cp-pitch-pain-icon">❌</span>
-            <span>Knowing software individually but not knowing how to complete a real project</span>
+            <span>Knowing AutoCAD or SketchUp but still unable to deliver a complete project</span>
           </div>
           <div class="cp-pitch-pain-item">
             <span class="cp-pitch-pain-icon">❌</span>
-            <span>Staying stuck in the same career while others are building valuable design skills</span>
+            <span>Spending hours creating designs that don't look professional enough to impress clients</span>
+          </div>
+          <div class="cp-pitch-pain-item">
+            <span class="cp-pitch-pain-icon">❌</span>
+            <span>Watching designers with better portfolios attract the clients and fees you want</span>
           </div>
         </div>
 
         <!-- Insight -->
         <div class="cp-pitch-insight">
-          👉 <strong>The problem isn’t that you can’t learn Interior Design.</strong><br>
-          The problem is learning it without a proper roadmap.
+          👉 <strong>The problem isn't that there aren't opportunities.</strong><br>
+          The problem is that basic skills are becoming easier to replace.
+          <div class="cp-pitch-insight-follow">
+            To stay valuable, you need to know how to plan, design, model, render and present — not just operate software.
+          </div>
         </div>
 
         <!-- Solution -->
         <div class="cp-pitch-solution">
-          <div class="cp-pitch-solution-title">✅ Stop Wasting Time. Learn the Complete Design Process.</div>
-          <div class="cp-pitch-solution-lead">
-            This isn’t just another software course.<br>
-            It’s a <strong>Practical, Step-by-Step Interior Design Training</strong> that teaches you:
-          </div>
+          <div class="cp-pitch-solution-title">✅ Stop Being “Just a Software User.”</div>
+          <div class="cp-pitch-solution-sub">Become the Designer Who Can Deliver the Complete Project.</div>
+          <div class="cp-pitch-solution-lead">Learn the complete workflow:</div>
 
           <!-- Pipeline -->
           <div class="cp-pitch-pipeline">
-            Plan <span>→</span> Design <span>→</span> 3D Model <span>→</span> Render <span>→</span> Present
+            PLAN <span>→</span> DESIGN <span>→</span> 3D MODEL <span>→</span> RENDER <span>→</span> PRESENT
           </div>
 
           <p class="cp-pitch-software">
-            Learn <strong>AutoCAD, SketchUp, V-Ray, D5, Enscape &amp; AI workflows</strong> and understand how they come together to create real interior projects.
+            <strong>Master:</strong> AutoCAD + SketchUp + V-Ray + D5 + Enscape + AI<br>
+            And learn how to combine them to create professional Interior &amp; Exterior projects.
           </p>
         </div>
 
-        <!-- Why This Skill Matters -->
-        <div class="cp-pitch-matters">
-          <div class="cp-pitch-matters-title">💰 WHY THIS SKILL MATTERS</div>
-          <p class="cp-pitch-matters-text">
-            A professional design skill can help you <strong>freelance, work with clients, build a portfolio or grow your career in interior design.</strong>
-          </p>
-          <div class="cp-pitch-matters-highlight">
-            You’re not just learning software. You’re building a skill you can use to create opportunities.
+        <!-- Value: What Happens When Your Skill Level Goes Up? -->
+        <div class="cp-pitch-benefits-card">
+          <div class="cp-pitch-benefits-title">💰 What Happens When Your Skill Level Goes Up?</div>
+          <div class="cp-pitch-benefits-sub">You can:</div>
+          <div class="cp-pitch-benefits-list">
+            <div class="cp-pitch-benefit-item">
+              <span class="cp-pitch-benefit-icon">✅</span>
+              <span>Create designs that look professional</span>
+            </div>
+            <div class="cp-pitch-benefit-item">
+              <span class="cp-pitch-benefit-icon">✅</span>
+              <span>Build a portfolio that gets attention</span>
+            </div>
+            <div class="cp-pitch-benefit-item">
+              <span class="cp-pitch-benefit-icon">✅</span>
+              <span>Present ideas with confidence</span>
+            </div>
+            <div class="cp-pitch-benefit-item">
+              <span class="cp-pitch-benefit-icon">✅</span>
+              <span>Offer complete design services</span>
+            </div>
+            <div class="cp-pitch-benefit-item">
+              <span class="cp-pitch-benefit-icon">✅</span>
+              <span>Take on freelance &amp; client projects</span>
+            </div>
+            <div class="cp-pitch-benefit-item">
+              <span class="cp-pitch-benefit-icon">✅</span>
+              <span>Stop competing only on the lowest price</span>
+            </div>
+          </div>
+
+          <!-- AI Synergy Callout -->
+          <div class="cp-pitch-synergy-box">
+            <div class="cp-pitch-synergy-callout">Don't compete with AI on basic work. Learn to use AI + design skills together.</div>
+            <p class="cp-pitch-synergy-desc">The goal isn't simply to learn more software. It's to become more valuable because you can solve the whole design problem.</p>
           </div>
         </div>
 
         <!-- Urgency -->
         <div class="cp-pitch-urgency">
-          <div class="cp-pitch-urgency-title">⏳ Why Start Now?</div>
-          <p class="cp-pitch-urgency-text">
-            Another 6 months of random tutorials won’t give you a career.<br>
-            <strong>6 months of focused learning and practice can change what you’re capable of doing.</strong>
-          </p>
-          <p class="cp-pitch-urgency-warn">👉 Don’t waste more time learning the wrong way.</p>
+          <div class="cp-pitch-urgency-title">⏳ 6 Months From Now…</div>
+          <div class="cp-pitch-urgency-box">
+            <div class="cp-pitch-urgency-path path-old">
+              You can still be watching random tutorials and wondering <em>“Why am I not getting better clients?”</em>
+            </div>
+            <div class="cp-pitch-urgency-path path-new">
+              Or you can have a complete, practical design skill and a portfolio that proves what you can do.
+            </div>
+          </div>
         </div>
 
         <!-- Closing -->
         <div class="cp-pitch-closing">
-          <div class="cp-pitch-closing-title">🚀 Your Career. Your Skill. Your Decision.</div>
-          <p class="cp-pitch-closing-sub">Keep watching random tutorials…</p>
-          <span class="cp-pitch-closing-bold">or start learning Interior Design properly.</span>
+          <div class="cp-pitch-closing-title">🚀 Upgrade Your Skill Before The Industry Upgrades Without You.</div>
+          <p class="cp-pitch-closing-sub">Learn Interior &amp; Exterior Design the complete way.</p>
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@
 
         <div class="product__atc-row">
             <input class="quantity--input__input" value="1" data-qty-input type="hidden" name="quantity">
-            {% render 'add-to-cart-button', type: 'secondary', price: product.price, text: 'Buy Now', is_buy_now: true %}
+            {% render 'add-to-cart-button', type: 'secondary', price: product.price, text: 'Get All Courses', is_buy_now: true %}
         </div>
         <div class="checkout--dynamic">
             {{ form | payment_button }}

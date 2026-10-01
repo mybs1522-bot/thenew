@@ -42,13 +42,13 @@
 
     <!-- Right: High-Converting Direct-to-Checkout Buy Now Action Button -->
     <div class="arch-sticky-bar__action">
-      <button type="button" id="archStickyBuyBtn" class="arch-sticky-btn" onclick="executeStickyBuyNow(this)" aria-label="Buy Now directly to checkout">
+      <button type="button" id="archStickyBuyBtn" class="arch-sticky-btn" onclick="executeStickyBuyNow(this)" aria-label="Get All Courses directly to checkout">
         <svg class="arch-sticky-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <path d="M16 10a4 4 0 0 1-8 0"></path>
         </svg>
-        <span class="arch-sticky-btn__text">Buy Now</span>
+        <span class="arch-sticky-btn__text">Get All Courses</span>
         <svg class="arch-sticky-btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
@@ -327,18 +327,19 @@ body.has-arch-sticky-bar {
   }
   .arch-sticky-bar__action {
     flex: 0 0 auto;
-    min-width: 145px;
+    min-width: 155px;
   }
   .arch-sticky-btn {
     width: 100%;
-    min-width: 145px;
-    padding: 12px 18px;
-    font-size: 15.5px;
+    min-width: 155px;
+    padding: 11px 16px;
+    font-size: 14.5px;
     font-weight: 800;
     min-height: 46px;
     gap: 6px;
     letter-spacing: 0.01em;
     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.32);
+    white-space: nowrap;
   }
   .arch-sticky-btn__icon {
     width: 16px;
@@ -347,6 +348,33 @@ body.has-arch-sticky-bar {
   .arch-sticky-btn__arrow {
     width: 14px;
     height: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .arch-sticky-bar__inner {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+  .arch-sticky-bar__action {
+    min-width: 136px;
+  }
+  .arch-sticky-btn {
+    min-width: 136px;
+    padding: 10px 10px;
+    font-size: 13px;
+    gap: 4px;
+  }
+  .arch-sticky-btn__icon {
+    width: 14px;
+    height: 14px;
+  }
+  .arch-sticky-btn__arrow {
+    width: 12px;
+    height: 12px;
+  }
+  .arch-sticky-bar__price {
+    font-size: 20px !important;
   }
 }
 

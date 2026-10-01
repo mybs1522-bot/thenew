@@ -6,7 +6,7 @@
 {%- assign icon = button | append: 'Icon' -%}
 {%- assign icon = settings[icon] -%}
 {% if is_buy_now %}
-    {% assign text = 'Buy Now' %}
+    {% assign text = text | default: 'Get All Courses' %}
 {% elsif price == 0 and settings.freeShipping  %}
     {% assign text = settings.freeShippingText %}
 {% else %}

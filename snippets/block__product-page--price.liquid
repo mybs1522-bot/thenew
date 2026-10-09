@@ -22,538 +22,908 @@
     {% assign s_type = settings.saleType | default: 'percent' %}
 
     {% if product.handle == '5-courses-interior-exterior-design-ai' %}
-    <div class="arch-luxe-pitch">
+    <div class="course-pdr-editorial-block">
       <style>
-        .arch-luxe-pitch {
-          margin: 10px 0 18px 0;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+        .course-pdr-editorial-block {
+          margin: 6px 0 18px 0;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           box-sizing: border-box;
           width: 100%;
-          text-align: left;
-          color: #09090b;
+          text-align: center;
         }
-        .sticky--container .arch-luxe-pitch {
+        @media (max-width: 768px) {
+          .course-pdr-editorial-block {
+            margin: 0 0 14px 0 !important;
+            padding-top: 0 !important;
+          }
+        }
+        .sticky--container .course-pdr-editorial-block {
           display: none !important;
         }
-
-        .luxe-card {
-          background: #ffffff;
-          border: 1.5px solid #e4e4e7;
-          border-radius: 16px;
-          padding: 20px 18px;
-          box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-          box-sizing: border-box;
+        .course-pdr-headline-wrap {
+          margin-bottom: 14px;
+          text-align: center;
+        }
+        @media (max-width: 768px) {
+          .course-pdr-headline-wrap {
+            margin-top: 0 !important;
+            margin-bottom: 10px !important;
+          }
+        }
+        .course-pdr-eyebrow {
+          display: block;
+          font-family: 'Space Grotesk', 'Inter', sans-serif;
+          font-size: 13.5px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: #475569;
+          margin-bottom: 3px;
+          text-align: center;
+        }
+        .course-pdr-title {
+          font-size: clamp(23px, 5.2vw, 31px);
+          font-weight: 900;
+          color: #0f172a;
+          line-height: 1.15;
+          letter-spacing: -0.03em;
+          margin: 0 0 4px 0;
+          text-align: center;
+        }
+        .course-pdr-subtitle {
+          font-size: clamp(16px, 3.8vw, 19px);
+          font-weight: 700;
+          color: #ea580c;
+          line-height: 1.3;
+          letter-spacing: -0.015em;
+          text-align: center;
+        }
+        .course-pdr-pillar-card {
+          background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+          border: 1px solid #fed7aa;
+          border-radius: 12px;
+          padding: 12px 16px;
+          margin-bottom: 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+        }
+        @media (max-width: 768px) {
+          .course-pdr-pillar-card {
+            padding: 10px 14px !important;
+            margin-bottom: 10px !important;
+          }
+        }
+        .course-pdr-pill-label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          flex-wrap: wrap;
+          text-align: center;
           width: 100%;
         }
-
-        /* YELLOW TEXT HIGHLIGHTER EFFECT */
-        .luxe-hl {
-          background: #fef08a;
-          color: #09090b;
-          padding: 2px 6px;
-          border-radius: 4px;
+        .pdr-badge {
+          background: #ea580c;
+          color: #ffffff;
+          font-size: 11px;
           font-weight: 800;
-          display: inline;
+          padding: 3px 8px;
+          border-radius: 6px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+        .pdr-formula {
+          font-size: 13.5px;
+          font-weight: 700;
+          color: #9a3412;
+          letter-spacing: -0.01em;
+        }
+        .course-pdr-all-in-one {
+          font-size: 13px;
+          color: #334155;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          font-weight: 500;
+          text-align: center;
+          width: 100%;
+        }
+        .pdr-check {
+          color: #059669;
+          font-weight: 900;
+          font-size: 14px;
+        }
+        .course-pdr-quote-box {
+          background: #f8fafc;
+          border-top: 3px solid #0f172a;
+          border-bottom: 1px solid #e2e8f0;
+          border-left: 1px solid #e2e8f0;
+          border-right: 1px solid #e2e8f0;
+          border-radius: 12px;
+          padding: 12px 18px;
+          margin-bottom: 12px;
+          position: relative;
+          text-align: center;
+        }
+        @media (max-width: 768px) {
+          .course-pdr-quote-box {
+            padding: 10px 14px !important;
+            margin-bottom: 10px !important;
+          }
+        }
+        .course-pdr-quote-icon {
+          font-family: Georgia, serif;
+          font-size: 26px;
+          line-height: 1;
+          color: #94a3b8;
+          display: block;
+          margin: 0 auto 2px auto;
+          text-align: center;
+          opacity: 0.6;
+        }
+        .course-pdr-quote-text {
+          font-family: Georgia, 'Playfair Display', serif;
+          font-style: italic;
+          font-size: 14px;
+          color: #1e293b;
+          line-height: 1.5;
+          margin: 0;
+          text-align: center;
+        }
+        .course-pdr-speed-card {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 14px;
+          padding: 14px 16px;
+          margin-bottom: 16px;
+          text-align: center;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+        }
+        @media (max-width: 768px) {
+          .course-pdr-speed-card {
+            padding: 12px 14px !important;
+            margin-bottom: 12px !important;
+          }
+        }
+        .course-pdr-curiosity {
+          font-size: 12px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          color: #64748b;
+          margin-bottom: 4px;
+          text-align: center;
+        }
+        .course-pdr-faster-heading {
+          font-size: clamp(19px, 4.5vw, 24px);
+          font-weight: 900;
+          color: #0f172a;
+          line-height: 1.2;
+          letter-spacing: -0.02em;
+          margin-bottom: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          flex-wrap: wrap;
+          text-align: center;
+          width: 100%;
+        }
+        .faster-highlight {
+          color: #ea580c;
+          text-decoration: underline;
+          text-decoration-color: #fdba74;
+          text-underline-offset: 4px;
+        }
+        .faster-rocket {
+          display: inline-block;
+          font-size: 20px;
+        }
+        .course-pdr-desc {
+          font-size: 13.5px;
+          color: #334155;
+          line-height: 1.55;
+          margin: 0;
+          text-align: center;
+        }
+        .highlight-soft {
+          color: #0f172a;
+          font-weight: 600;
+        }
+        .course-pdr-points-list {
+          display: flex;
+          flex-direction: column;
+          gap: 9px;
+          margin-top: 14px;
+          padding-top: 12px;
+          border-top: 1px dashed #cbd5e1;
+          text-align: left;
+        }
+        .course-pdr-point-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 13px;
+          color: #1e293b;
+          font-weight: 600;
+          line-height: 1.35;
+        }
+        .course-pdr-point-icon {
+          flex-shrink: 0;
+          width: 18px;
+          height: 18px;
+        }
+        .course-pdr-achieve-card {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 14px;
+          padding: 14px 16px;
+          margin-bottom: 14px;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+          text-align: left;
+        }
+        .course-pdr-achieve-title {
+          font-size: 16.5px;
+          font-weight: 900;
+          color: #0f172a;
+          margin: 0 0 12px 0;
+          text-align: center;
+          line-height: 1.3;
+        }
+        .course-pdr-punchline {
+          background: #0f172a !important;
+          color: #ffffff !important;
+          border-radius: 8px !important;
+          padding: 10px 14px !important;
+          font-size: 12.5px !important;
+          font-weight: 800 !important;
+          letter-spacing: 0.02em !important;
+          display: flex !important;
+          flex-wrap: wrap !important;
+          align-items: center !important;
+          justify-content: center !important;
+          gap: 6px !important;
+          text-align: center !important;
+          line-height: 1.4 !important;
+        }
+        .course-pdr-punchline span {
+          color: #ffffff !important;
+          -webkit-text-fill-color: #ffffff !important;
+          font-weight: 800 !important;
+        }
+        .course-pdr-punchline span:not(:last-child)::after {
+          content: "·" !important;
+          margin-left: 6px !important;
+          color: #ea580c !important;
+          -webkit-text-fill-color: #ea580c !important;
+          font-weight: 900 !important;
+        }
+        @media (max-width: 640px) {
+          .course-pdr-punchline {
+            font-size: 11px;
+            padding: 8px 10px;
+          }
+        }
+      </style>
+      <!-- Interior Design High-Impact Conversion Pitch -->
+      <style>
+        .cpx-card {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 16px;
+          padding: 18px 15px;
+          margin: 6px 0 16px;
+          box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+          box-sizing: border-box;
+          color: #0f172a;
+          text-align: left;
+          width: 100%;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+          overflow: hidden;
+        }
+
+        /* 1. HERO HEADER */
+        .cpx-header {
+          text-align: center;
+          margin-bottom: 14px;
+          padding-bottom: 12px;
+          border-bottom: 1px solid #f1f5f9;
+        }
+        .cpx-pill-top {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          background: #fff7ed;
+          border: 1px solid #fed7aa;
+          color: #c2410c;
+          font-size: 11px;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          padding: 3px 10px;
+          border-radius: 999px;
+          margin-bottom: 6px;
+        }
+        .cpx-title {
+          font-size: clamp(17px, 4.4vw, 21px);
+          font-weight: 900;
+          color: #0f172a;
+          line-height: 1.25;
+          margin: 0;
+          letter-spacing: -0.025em;
+        }
+        .cpx-highlight-yellow {
+          background: linear-gradient(120deg, #fef08a 0%, #fde047 100%);
+          color: #0f172a;
+          padding: 2px 7px;
+          border-radius: 4px;
+          display: inline-block;
+          margin-top: 2px;
           box-decoration-break: clone;
           -webkit-box-decoration-break: clone;
         }
 
-        /* 1. HEADER */
-        .luxe-header {
+        /* 2. REALITY CHECK ALERT */
+        .cpx-alert {
+          background: #fff1f2;
+          border-left: 4px solid #f43f5e;
+          border-radius: 0 10px 10px 0;
+          padding: 10px 12px;
           margin-bottom: 14px;
-          padding-bottom: 14px;
-          border-bottom: 1px solid #f4f4f5;
         }
-        .luxe-tag {
-          display: inline-block;
-          font-size: 10.5px;
-          font-weight: 850;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: #991b1b;
-          background: #fef2f2;
-          border: 1px solid #fecaca;
-          padding: 3px 9px;
-          border-radius: 9999px;
-          margin-bottom: 8px;
-        }
-        .luxe-title {
-          font-size: clamp(20px, 4.8vw, 24px);
-          font-weight: 900;
-          color: #09090b;
-          line-height: 1.25;
-          letter-spacing: -0.03em;
-          margin: 0;
-        }
-        .luxe-title-sub {
-          display: block;
-          font-size: clamp(14.5px, 3.6vw, 16.5px);
-          font-weight: 700;
-          color: #3f3f46;
-          margin-top: 5px;
-          letter-spacing: -0.015em;
-          line-height: 1.4;
-        }
-
-        /* 2. EDITORIAL PERSPECTIVE (Direct Confrontation) */
-        .luxe-perspective {
-          background: #fafafa;
-          border-left: 3px solid #09090b;
-          border-radius: 0 8px 8px 0;
-          padding: 12px 14px;
-          margin-bottom: 16px;
-        }
-        .luxe-perspective p {
-          font-size: 13px;
-          line-height: 1.5;
-          color: #18181b;
-          margin: 0;
-        }
-        .luxe-perspective p + p {
-          margin-top: 8px;
-        }
-
-        /* SECTION LABEL */
-        .luxe-section-label {
+        .cpx-alert-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
           font-size: 11px;
           font-weight: 850;
-          letter-spacing: 0.06em;
+          color: #e11d48;
           text-transform: uppercase;
-          color: #71717a;
-          margin-bottom: 9px;
+          letter-spacing: 0.05em;
+          margin-bottom: 4px;
+        }
+        .cpx-alert-text {
+          font-size: 12.5px;
+          line-height: 1.45;
+          color: #4c0519;
+          margin: 0;
+        }
+        .cpx-alert-text strong {
+          color: #881337;
+        }
+        .cpx-alert-text em {
+          color: #be123c;
+          font-style: italic;
+          font-weight: 600;
         }
 
-        /* 3. PAIN POINTS LIST */
-        .luxe-trap-list {
+        /* 3. PAIN CHECKLIST (NO BOXES, CLEAN SCANNING) */
+        .cpx-pain-wrap {
+          margin-bottom: 14px;
+          padding: 0 2px;
+        }
+        .cpx-pain-heading {
+          font-size: 11px;
+          font-weight: 800;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 8px;
+        }
+        .cpx-pain-list {
           display: flex;
           flex-direction: column;
-          gap: 9px;
-          margin-bottom: 16px;
-          padding: 0;
-          list-style: none;
+          gap: 8px;
         }
-        .luxe-trap-item {
+        .cpx-pain-item {
           display: flex;
           align-items: flex-start;
-          gap: 9px;
+          gap: 8px;
           font-size: 12.5px;
-          line-height: 1.42;
-          color: #27272a;
+          line-height: 1.38;
+          color: #334155;
         }
-        .luxe-dash {
+        .cpx-pain-x {
+          background: #fee2e2;
           color: #dc2626;
           font-weight: 900;
-          font-size: 12px;
-          line-height: 1.4;
+          font-size: 11px;
+          width: 17px;
+          height: 17px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           flex-shrink: 0;
+          margin-top: 1px;
         }
-        .luxe-trap-item strong {
-          color: #09090b;
-          font-weight: 800;
+        .cpx-pain-item strong {
+          color: #0f172a;
+          font-weight: 750;
         }
 
-        /* 4. HIGH-EARNER REALITY (Commanding Dark Card) */
-        .luxe-obsidian-card {
-          background: #09090b;
+        /* 4. THE HARD TRUTH (DARK MANIFESTO BREAK) */
+        .cpx-manifesto {
+          background: #0f172a;
           color: #ffffff;
           border-radius: 12px;
-          padding: 14px 16px;
-          margin-bottom: 16px;
+          padding: 13px 15px;
+          margin-bottom: 14px;
+          position: relative;
+          box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
         }
-        .luxe-obsidian-label {
+        .cpx-manifesto-badge {
+          display: inline-block;
+          background: #ea580c;
+          color: #ffffff;
           font-size: 10px;
           font-weight: 850;
-          letter-spacing: 0.1em;
           text-transform: uppercase;
-          color: #fef08a;
-          margin-bottom: 5px;
+          letter-spacing: 0.08em;
+          padding: 2px 7px;
+          border-radius: 4px;
+          margin-bottom: 6px;
         }
-        .luxe-obsidian-statement {
-          font-size: 14px;
+        .cpx-manifesto-text {
+          font-size: 13px;
           line-height: 1.45;
-          color: #ffffff;
           margin: 0;
+          color: #e2e8f0;
+        }
+        .cpx-manifesto-text strong {
+          color: #fdba74;
           font-weight: 800;
         }
-        .luxe-obsidian-sub {
+        .cpx-manifesto-highlight {
+          color: #ffffff;
+          font-weight: 750;
           display: block;
-          margin-top: 8px;
-          padding-top: 8px;
-          border-top: 1px solid #27272a;
-          font-size: 12.5px;
-          color: #d4d4d8;
-          line-height: 1.45;
+          margin-top: 5px;
+          padding-top: 5px;
+          border-top: 1px solid #1e293b;
         }
 
-        /* 5. 5-STEP PIPELINE TRACK */
-        .luxe-pipeline-box {
-          background: #fafafa;
-          border: 1px solid #e4e4e7;
+        /* 5. SOLUTION & PIPELINE */
+        .cpx-pipeline-card {
+          background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+          border: 1.5px solid #86efac;
           border-radius: 12px;
-          padding: 13px 13px;
-          margin-bottom: 16px;
+          padding: 13px 14px;
+          margin-bottom: 14px;
         }
-        .luxe-track {
-          background: #09090b;
+        .cpx-pipe-top {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 11px;
+          font-weight: 850;
+          color: #15803d;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 4px;
+        }
+        .cpx-pipe-title {
+          font-size: 14px;
+          font-weight: 850;
+          color: #0f172a;
+          line-height: 1.3;
+          margin: 0 0 10px 0;
+        }
+        .cpx-pipe-track {
+          background: #090d16;
           border-radius: 8px;
-          padding: 9px 6px;
+          padding: 9px 8px;
           display: flex;
           align-items: center;
           justify-content: space-between;
+          margin-bottom: 10px;
           gap: 2px;
-          margin-bottom: 11px;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
         }
-        .luxe-step {
+        .cpx-step {
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 1px;
           flex: 1;
+          min-width: 44px;
           text-align: center;
         }
-        .luxe-step-num {
-          font-size: 8px;
-          font-weight: 800;
-          color: #fef08a;
+        .cpx-step-num {
+          font-size: 8.5px;
+          font-weight: 850;
+          color: #f97316;
           letter-spacing: 0.04em;
         }
-        .luxe-step-name {
-          font-size: 9.5px;
+        .cpx-step-name {
+          font-size: 10px;
           font-weight: 850;
           color: #ffffff;
-          letter-spacing: 0.04em;
+          letter-spacing: 0.03em;
         }
-        .luxe-step-arrow {
-          color: #52525b;
-          font-size: 10px;
+        .cpx-step-arrow {
+          color: #64748b;
+          font-size: 11px;
           font-weight: 900;
+          padding: 0 1px;
         }
-
-        /* Software Stack Pills */
-        .luxe-software-row {
+        .cpx-software-tags {
           display: flex;
           flex-wrap: wrap;
-          gap: 5px;
-          margin-bottom: 12px;
-        }
-        .luxe-soft-tag {
-          background: #ffffff;
-          border: 1px solid #d4d4d8;
-          color: #18181b;
-          font-size: 11px;
-          font-weight: 750;
-          padding: 2.5px 8px;
-          border-radius: 5px;
-        }
-        .luxe-soft-tag.luxe-soft-ai {
-          border-color: #18181b;
-          background: #18181b;
-          color: #fef08a;
-        }
-
-        /* Scope: Flats, Offices, Villas */
-        .luxe-scope-wrap {
-          border-top: 1px solid #e4e4e7;
-          padding-top: 10px;
-        }
-        .luxe-scope-label {
-          font-size: 10px;
-          font-weight: 850;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-          color: #09090b;
-          margin-bottom: 6px;
-          display: block;
-        }
-        .luxe-scope-items {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-        }
-        .luxe-scope-item {
-          display: flex;
-          align-items: baseline;
-          gap: 6px;
-          font-size: 12px;
-          line-height: 1.4;
-          color: #3f3f46;
-        }
-        .luxe-scope-dot {
-          color: #16a34a;
-          font-size: 12px;
-          font-weight: 900;
-          flex-shrink: 0;
-        }
-        .luxe-scope-item strong {
-          color: #09090b;
-          font-weight: 800;
-        }
-
-        /* 6. OUTCOMES (2x2 Grid) */
-        .luxe-outcomes-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 7px;
-          margin-bottom: 16px;
-        }
-        @media (max-width: 480px) {
-          .luxe-outcomes-grid {
-            grid-template-columns: 1fr;
-            gap: 6px;
-          }
-        }
-        .luxe-outcome-card {
-          background: #ffffff;
-          border: 1px solid #e4e4e7;
-          border-radius: 9px;
-          padding: 10px 11px;
-        }
-        .luxe-outcome-title {
-          font-size: 12.5px;
-          font-weight: 850;
-          color: #09090b;
-          margin-bottom: 2px;
-          display: flex;
           align-items: center;
           gap: 5px;
         }
-        .luxe-outcome-check {
-          color: #16a34a;
-          font-weight: 900;
-          font-size: 12px;
+        .cpx-soft-pill {
+          background: #ffffff;
+          border: 1px solid #bbf7d0;
+          color: #166534;
+          font-size: 10.5px;
+          font-weight: 750;
+          padding: 2px 7px;
+          border-radius: 5px;
         }
-        .luxe-outcome-desc {
-          font-size: 11.5px;
-          line-height: 1.35;
-          color: #52525b;
-          margin: 0;
+        .cpx-soft-pill.cpx-soft-ai {
+          background: #fef08a;
+          border-color: #facc15;
+          color: #854d0e;
         }
 
-        /* 7. REASSURANCE STRIP */
-        .luxe-trust-strip {
-          background: #fafafa;
-          border: 1px solid #e4e4e7;
-          border-radius: 9px;
-          padding: 9px 12px;
+        /* 6. BARRIER BUSTERS (3 COMPACT CHIPS) */
+        .cpx-barriers-row {
           display: flex;
           flex-direction: column;
           gap: 6px;
           margin-bottom: 14px;
         }
-        .luxe-trust-row {
+        .cpx-barrier-chip {
           display: flex;
-          align-items: baseline;
-          gap: 6px;
+          align-items: center;
+          gap: 8px;
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
+          padding: 7px 10px;
           font-size: 12px;
           line-height: 1.35;
-          color: #3f3f46;
+          color: #334155;
         }
-        .luxe-trust-row strong {
-          color: #09090b;
-          font-weight: 850;
+        .cpx-b-icon {
+          font-size: 15px;
+          flex-shrink: 0;
+          line-height: 1;
+        }
+        .cpx-barrier-chip strong {
+          color: #0f172a;
+          font-weight: 800;
+        }
+        .cpx-barrier-chip span {
+          color: #64748b;
         }
 
-        /* 8. CLOSING PUNCH */
-        .luxe-closing {
-          background: #09090b;
-          color: #ffffff;
-          border-radius: 9px;
-          padding: 12px 14px;
-          text-align: center;
+        /* 7. OUTCOMES (2x2 VISUAL GRID) */
+        .cpx-results {
+          margin-bottom: 14px;
         }
-        .luxe-closing-main {
-          font-size: 13px;
+        .cpx-results-title {
+          font-size: 12px;
           font-weight: 850;
-          color: #ffffff;
-          margin-bottom: 3px;
-          letter-spacing: -0.01em;
+          color: #0f172a;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 8px;
         }
-        .luxe-closing-sub {
+        .cpx-results-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 7px;
+        }
+        @media (max-width: 440px) {
+          .cpx-results-grid {
+            grid-template-columns: 1fr;
+            gap: 6px;
+          }
+        }
+        .cpx-res-box {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 9px;
+          padding: 8px 10px;
+          display: flex;
+          align-items: flex-start;
+          gap: 7px;
+        }
+        .cpx-check-icon {
+          color: #16a34a;
+          font-weight: 900;
+          font-size: 13px;
+          flex-shrink: 0;
+          margin-top: 1px;
+        }
+        .cpx-res-content {
           font-size: 11.5px;
-          color: #d4d4d8;
+          line-height: 1.3;
+          color: #475569;
+        }
+        .cpx-res-content strong {
+          color: #0f172a;
+          font-weight: 800;
+          display: block;
+          font-size: 12px;
+          margin-bottom: 1px;
+        }
+
+        /* AI SYNERGY BANNER */
+        .cpx-ai-banner {
+          background: linear-gradient(135deg, #f8fafc 0%, #fff7ed 100%);
+          border: 1px dashed #fdba74;
+          border-radius: 8px;
+          padding: 8px 11px;
+          margin-top: 8px;
+          font-size: 11.5px;
+          color: #431407;
+          line-height: 1.4;
+        }
+        .cpx-ai-banner strong {
+          color: #ea580c;
+        }
+
+        /* 8. 6-MONTH FORK (SPLIT CARD) */
+        .cpx-fork-wrap {
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 11px;
+          padding: 10px 12px;
+          margin-bottom: 12px;
+        }
+        .cpx-fork-title {
+          font-size: 11px;
+          font-weight: 850;
+          color: #475569;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 7px;
+        }
+        .cpx-fork-flow {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+        .cpx-fork-path {
+          border-radius: 7px;
+          padding: 6px 9px;
+          font-size: 11.5px;
+          line-height: 1.35;
+          display: flex;
+          align-items: flex-start;
+          gap: 6px;
+        }
+        .cpx-fork-path.fork-old {
+          background: #fef2f2;
+          color: #991b1b;
+        }
+        .cpx-fork-path.fork-new {
+          background: #f0fdf4;
+          color: #14532d;
+          font-weight: 600;
+          border: 1px solid #bbf7d0;
+        }
+        .cpx-fork-path.fork-new strong {
+          color: #15803d;
+        }
+
+        /* 9. CLOSING PUNCH */
+        .cpx-close-strip {
+          text-align: center;
+          padding: 10px 12px;
+          background: #0f172a;
+          color: #ffffff;
+          border-radius: 10px;
+        }
+        .cpx-close-main {
+          font-size: 12.5px;
+          font-weight: 850;
+          letter-spacing: -0.01em;
+          margin-bottom: 2px;
+          color: #ffffff;
+        }
+        .cpx-close-sub {
+          font-size: 11.5px;
+          color: #fdba74;
+          font-weight: 600;
           margin: 0;
         }
 
         @media (max-width: 480px) {
-          .luxe-card {
-            padding: 15px 13px;
+          .cpx-card {
+            padding: 14px 12px;
           }
-          .luxe-title {
-            font-size: 18.5px;
+          .cpx-title {
+            font-size: 17px;
           }
         }
       </style>
 
-      <div class="luxe-card">
-        <!-- 1. HEADER -->
-        <div class="luxe-header">
-          <span class="luxe-tag">🚨 THE BRUTAL REALITY</span>
-          <h3 class="luxe-title">
-            Are You Still Stuck In Low-Paying Design Jobs?
-            <span class="luxe-title-sub">
-              Here is why <span class="luxe-hl">most designers stay underpaid</span> — and how top earners make 5x more.
-            </span>
+      <div class="cpx-card">
+        <!-- 1. HERO HEADER -->
+        <div class="cpx-header">
+          <div class="cpx-pill-top">⚡ Complete Design Pipeline</div>
+          <h3 class="cpx-title">
+            Learn Interior Design.<br>
+            <span class="cpx-highlight-yellow">Build a Skill AI Can’t Replace.</span>
           </h3>
         </div>
 
-        <!-- 2. DIRECT TALK PERSPECTIVE -->
-        <div class="luxe-perspective">
-          <p>
-            Let's be completely honest: <strong>knowing just AutoCAD or basic 3D won't make you good money.</strong> Anyone can draw basic lines or make flat models today.
-          </p>
-          <p>
-            Clients and firms don't pay big fees for button-clickers. They pay premium money when you <span class="luxe-hl">hand them the ENTIRE project</span> — from the 2D layout all the way to a photorealistic 3D render that sells the dream before it's even built.
+        <!-- 2. REALITY CHECK ALERT -->
+        <div class="cpx-alert">
+          <div class="cpx-alert-tag">🚨 The Industry Has Shifted</div>
+          <p class="cpx-alert-text">
+            <strong>AI is already replacing basic designers.</strong> Anyone can prompt a generic 3D concept in 30 seconds. Knowing <em>just one software</em> or making flat renders won’t get you hired or paid anymore.
           </p>
         </div>
 
         <!-- 3. PAIN CHECKLIST -->
-        <div class="luxe-section-label">Be Honest — Is This Happening To You?</div>
-        <div class="luxe-trap-list">
-          <div class="luxe-trap-item">
-            <span class="luxe-dash">✕</span>
-            <div><strong>Working 10-hour days for entry-level pay:</strong> Grinding on repetitive drafting while senior designers take home the big checks.</div>
-          </div>
-          <div class="luxe-trap-item">
-            <span class="luxe-dash">✕</span>
-            <div><strong>Stuck knowing tools in pieces:</strong> You know a bit of AutoCAD or SketchUp, but you <span class="luxe-hl">freeze when a client asks for a complete project</span>.</div>
-          </div>
-          <div class="luxe-trap-item">
-            <span class="luxe-dash">✕</span>
-            <div><strong>Scared to start your own business:</strong> You want direct freelance clients or your own studio, but don't know how to quote and execute flats or offices end-to-end.</div>
-          </div>
-          <div class="luxe-trap-item">
-            <span class="luxe-dash">✕</span>
-            <div><strong>Losing out to full-stack designers:</strong> Watching others win the highest-paying clients simply because their 3D renders look like real photos.</div>
+        <div class="cpx-pain-wrap">
+          <div class="cpx-pain-heading">Are You Experiencing This?</div>
+          <div class="cpx-pain-list">
+            <div class="cpx-pain-item">
+              <span class="cpx-pain-x">✕</span>
+              <span><strong>Stuck at low rates</strong> because your renders look like everyone else's</span>
+            </div>
+            <div class="cpx-pain-item">
+              <span class="cpx-pain-x">✕</span>
+              <span><strong>Losing client gigs</strong> to designers using rapid modern AI pipelines</span>
+            </div>
+            <div class="cpx-pain-item">
+              <span class="cpx-pain-x">✕</span>
+              <span><strong>The software trap:</strong> Knowing tools individually, but <em>unable to complete a full project</em></span>
+            </div>
+            <div class="cpx-pain-item">
+              <span class="cpx-pain-x">✕</span>
+              <span><strong>Hours wasted tweaking</strong> lighting, yet renders still look unconvincing</span>
+            </div>
+            <div class="cpx-pain-item">
+              <span class="cpx-pain-x">✕</span>
+              <span><strong>Watching other designers</strong> with elite portfolios win all the high fees</span>
+            </div>
           </div>
         </div>
 
-        <!-- 4. HIGH-EARNER REALITY (DARK CONTRAST) -->
-        <div class="luxe-obsidian-card">
-          <div class="luxe-obsidian-label">💡 The High-Earner Secret</div>
-          <p class="luxe-obsidian-statement">
-            The designers making real money don't just "use software."<br>
-            They control the entire project from scratch.
+        <!-- 4. THE HARD TRUTH (DARK MANIFESTO BREAK) -->
+        <div class="cpx-manifesto">
+          <span class="cpx-manifesto-badge">💡 The Hard Truth</span>
+          <p class="cpx-manifesto-text">
+            The problem isn’t lack of clients.<br>
+            The problem is being <strong>just a software operator.</strong>
+            <span class="cpx-manifesto-highlight">
+              High-earning designers don’t click buttons blindly — they control the entire pipeline from blueprint to 4K presentation.
+            </span>
           </p>
-          <span class="luxe-obsidian-sub">
-            When you can take an empty space, plan the layout, build the 3D model, and produce stunning 4K renders — <span style="color: #fef08a; font-weight: 800;">YOU name your price.</span>
-          </span>
         </div>
 
-        <!-- 5. 5-STEP PIPELINE + SOFTWARE + SCOPE -->
-        <div class="luxe-pipeline-box">
-          <div class="luxe-section-label">The 5-Step Process You Will Master:</div>
-          <div class="luxe-track">
-            <div class="luxe-step">
-              <span class="luxe-step-num">STEP 1</span>
-              <span class="luxe-step-name">PLAN</span>
+        <!-- 5. SOLUTION & PIPELINE -->
+        <div class="cpx-pipeline-card">
+          <div class="cpx-pipe-top">✅ Complete Design Mastery</div>
+          <div class="cpx-pipe-title">Stop being just a tool user.<br><strong>Deliver The Entire Project.</strong></div>
+
+          <!-- 5-Step Pipeline -->
+          <div class="cpx-pipe-track">
+            <div class="cpx-step">
+              <span class="cpx-step-num">01</span>
+              <span class="cpx-step-name">PLAN</span>
             </div>
-            <span class="luxe-step-arrow">→</span>
-            <div class="luxe-step">
-              <span class="luxe-step-num">STEP 2</span>
-              <span class="luxe-step-name">DESIGN</span>
+            <span class="cpx-step-arrow">→</span>
+            <div class="cpx-step">
+              <span class="cpx-step-num">02</span>
+              <span class="cpx-step-name">DESIGN</span>
             </div>
-            <span class="luxe-step-arrow">→</span>
-            <div class="luxe-step">
-              <span class="luxe-step-num">STEP 3</span>
-              <span class="luxe-step-name">3D MODEL</span>
+            <span class="cpx-step-arrow">→</span>
+            <div class="cpx-step">
+              <span class="cpx-step-num">03</span>
+              <span class="cpx-step-name">3D MODEL</span>
             </div>
-            <span class="luxe-step-arrow">→</span>
-            <div class="luxe-step">
-              <span class="luxe-step-num">STEP 4</span>
-              <span class="luxe-step-name">RENDER</span>
+            <span class="cpx-step-arrow">→</span>
+            <div class="cpx-step">
+              <span class="cpx-step-num">04</span>
+              <span class="cpx-step-name">RENDER</span>
             </div>
-            <span class="luxe-step-arrow">→</span>
-            <div class="luxe-step">
-              <span class="luxe-step-num">STEP 5</span>
-              <span class="luxe-step-name">PRESENT</span>
+            <span class="cpx-step-arrow">→</span>
+            <div class="cpx-step">
+              <span class="cpx-step-num">05</span>
+              <span class="cpx-step-name">PRESENT</span>
             </div>
           </div>
 
-          <!-- Software Stack -->
-          <div class="luxe-software-row">
-            <span class="luxe-soft-tag">AutoCAD</span>
-            <span class="luxe-soft-tag">SketchUp Pro</span>
-            <span class="luxe-soft-tag">V-Ray</span>
-            <span class="luxe-soft-tag">D5 Render</span>
-            <span class="luxe-soft-tag">Enscape</span>
-            <span class="luxe-soft-tag luxe-soft-ai">✨ AI Speed Tools</span>
+          <!-- Software Tags -->
+          <div class="cpx-software-tags">
+            <span class="cpx-soft-pill">AutoCAD</span>
+            <span class="cpx-soft-pill">SketchUp Pro</span>
+            <span class="cpx-soft-pill">V-Ray</span>
+            <span class="cpx-soft-pill">D5 Render</span>
+            <span class="cpx-soft-pill">Enscape</span>
+            <span class="cpx-soft-pill cpx-soft-ai">✨ AI Workflows</span>
           </div>
+        </div>
 
-          <!-- Scope: Flats, Offices, Luxury Villas -->
-          <div class="luxe-scope-wrap">
-            <span class="luxe-scope-label">What You Will Be Able To Design:</span>
-            <div class="luxe-scope-items">
-              <div class="luxe-scope-item">
-                <span class="luxe-scope-dot">✔</span>
-                <div><strong>Modern Flats &amp; Apartments:</strong> 1BHK, 2BHK, 3BHK full interior layouts, modular kitchens &amp; false ceilings.</div>
+        <!-- 6. BARRIER BUSTERS -->
+        <div class="cpx-barriers-row">
+          <div class="cpx-barrier-chip">
+            <span class="cpx-b-icon">🎓</span>
+            <div><strong>Zero Degree Needed:</strong> <span>Every tool &amp; shortcut taught from complete scratch.</span></div>
+          </div>
+          <div class="cpx-barrier-chip">
+            <span class="cpx-b-icon">💻</span>
+            <div><strong>$0 Software Cost to Start:</strong> <span>Includes free student &amp; community setup guides.</span></div>
+          </div>
+          <div class="cpx-barrier-chip">
+            <span class="cpx-b-icon">⚡</span>
+            <div><strong>First 4K Render in 14 Days:</strong> <span>Build a client-ready portfolio piece in 2 weeks.</span></div>
+          </div>
+        </div>
+
+        <!-- 7. WHAT HAPPENS WHEN YOUR SKILL LEVELES UP -->
+        <div class="cpx-results">
+          <div class="cpx-results-title">💰 What Changes When You Own This Skill:</div>
+          <div class="cpx-results-grid">
+            <div class="cpx-res-box">
+              <span class="cpx-check-icon">✔</span>
+              <div class="cpx-res-content">
+                <strong>Stop Price Battles</strong>
+                <em>Charge premium rates &amp; ditch \$50 gigs</em>
               </div>
-              <div class="luxe-scope-item">
-                <span class="luxe-scope-dot">✔</span>
-                <div><strong>Offices &amp; Commercial:</strong> Corporate workspaces, conference rooms, cafes, showrooms &amp; retail stores.</div>
+            </div>
+            <div class="cpx-res-box">
+              <span class="cpx-check-icon">✔</span>
+              <div class="cpx-res-content">
+                <strong>Showstopping 4K Renders</strong>
+                <em>Portfolio that attracts paying clients</em>
               </div>
-              <div class="luxe-scope-item">
-                <span class="luxe-scope-dot">✔</span>
-                <div><strong>Luxury Villas &amp; Exteriors:</strong> Multi-story house elevations, modern exterior facades &amp; realistic night lighting.</div>
+            </div>
+            <div class="cpx-res-box">
+              <span class="cpx-check-icon">✔</span>
+              <div class="cpx-res-content">
+                <strong>Full Design Service</strong>
+                <em>From 2D CAD drafting to VR walkthroughs</em>
+              </div>
+            </div>
+            <div class="cpx-res-box">
+              <span class="cpx-check-icon">✔</span>
+              <div class="cpx-res-content">
+                <strong>Harness AI Speed</strong>
+                <em>Ideate 50 client styles in minutes</em>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 6. OUTCOMES (2x2 Grid) -->
-        <div class="luxe-section-label">What Changes In Your Career &amp; Income:</div>
-        <div class="luxe-outcomes-grid">
-          <div class="luxe-outcome-card">
-            <div class="luxe-outcome-title">
-              <span class="luxe-outcome-check">💰</span>
-              Ditch Low-Paying Jobs
-            </div>
-            <p class="luxe-outcome-desc">Qualify for high-salary designer positions in top studios. Stop begging for entry-level wages.</p>
-          </div>
-          <div class="luxe-outcome-card">
-            <div class="luxe-outcome-title">
-              <span class="luxe-outcome-check">🚀</span>
-              Start Your Own Studio
-            </div>
-            <p class="luxe-outcome-desc">Take on direct clients with 100% confidence. Pitch, design, and quote turnkey projects on your own terms.</p>
-          </div>
-          <div class="luxe-outcome-card">
-            <div class="luxe-outcome-title">
-              <span class="luxe-outcome-check">📸</span>
-              Photo-Quality 4K Renders
-            </div>
-            <p class="luxe-outcome-desc">Master V-Ray, D5 Render &amp; AI so your renders look like real photos and clients approve on the very first view.</p>
-          </div>
-          <div class="luxe-outcome-card">
-            <div class="luxe-outcome-title">
-              <span class="luxe-outcome-check">📁</span>
-              Job &amp; Career Ready Portfolio
-            </div>
-            <p class="luxe-outcome-desc">Walk into any interview or client meeting with a solid portfolio proving you can execute full real-world projects.</p>
+          <div class="cpx-ai-banner">
+            ⚡ <strong>Don’t compete with AI.</strong> Learn to use AI + design skills together to deliver what no algorithm can: <em>complete, site-accurate projects.</em>
           </div>
         </div>
 
-        <!-- 7. REASSURANCE STRIP -->
-        <div class="luxe-trust-strip">
-          <div class="luxe-trust-row">
-            <strong>🎓 No Degree Needed:</strong>
-            <span>Every tool, drafting standard &amp; 3D technique is taught from absolute zero.</span>
-          </div>
-          <div class="luxe-trust-row">
-            <strong>💻 $0 Software Cost to Start:</strong>
-            <span>We include full step-by-step guides for free student &amp; community setups.</span>
-          </div>
-          <div class="luxe-trust-row">
-            <strong>⚡ Fast Results:</strong>
-            <span>Create your first client-ready 3D render in just 14 days.</span>
+        <!-- 8. 6-MONTH FORK -->
+        <div class="cpx-fork-wrap">
+          <div class="cpx-fork-title">⏳ 6 Months From Today:</div>
+          <div class="cpx-fork-flow">
+            <div class="cpx-fork-path fork-old">
+              <span>✕</span>
+              <span>Still jumping between random YouTube videos, guessing clearances, stuck underpaid.</span>
+            </div>
+            <div class="cpx-fork-path fork-new">
+              <span>🚀</span>
+              <span><strong>Or</strong> holding a complete 5-software skill &amp; a 4K portfolio that proves your worth.</span>
+            </div>
           </div>
         </div>
 
-        <!-- 8. PROVOKING CLOSING PUNCH -->
-        <div class="luxe-closing">
-          <div class="luxe-closing-main">Stop Waiting. Stop Getting Underpaid.</div>
-          <p class="luxe-closing-sub">
-            Every month you delay is another month of <span style="color: #fef08a; font-weight: 800;">lost income and missed clients.</span> Learn the complete skill now.
-          </p>
+        <!-- 9. CLOSING PUNCH -->
+        <div class="cpx-close-strip">
+          <div class="cpx-close-main">Upgrade Your Skill Before The Industry Moves Without You.</div>
+          <div class="cpx-close-sub">Master Interior &amp; Exterior Design the complete way.</div>
         </div>
       </div>
     </div>

@@ -284,6 +284,74 @@
           font-weight: 850;
         }
 
+        /* BONUS: 10,000+ MODELS & SOFTWARE */
+        .cpx-bonus-card {
+          background: #fffbeb;
+          border: 1.5px solid #fde68a;
+          border-radius: 12px;
+          padding: 13px 14px;
+          margin-bottom: 14px;
+        }
+        .cpx-bonus-badge {
+          display: inline-block;
+          font-size: 10.5px;
+          font-weight: 850;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          color: #92400e;
+          background: #fef3c7;
+          border: 1px solid #fcd34d;
+          padding: 2.5px 8px;
+          border-radius: 999px;
+          margin-bottom: 6px;
+        }
+        .cpx-bonus-title {
+          font-size: 15.5px;
+          font-weight: 900;
+          color: #78350f;
+          margin-bottom: 6px;
+          line-height: 1.3;
+        }
+        .cpx-bonus-text {
+          font-size: 12.5px;
+          line-height: 1.45;
+          color: #451a03;
+          margin: 0;
+        }
+        .cpx-bonus-text strong {
+          color: #0f172a;
+          font-weight: 850;
+        }
+
+        /* COMMUNITY IMAGE CARD */
+        .cpx-community-card {
+          background: #ffffff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 12px;
+          overflow: hidden;
+          margin-bottom: 14px;
+          box-shadow: 0 2px 8px -1px rgba(15, 23, 42, 0.05);
+        }
+        .cpx-community-img {
+          width: 100%;
+          height: auto;
+          display: block;
+          object-fit: cover;
+        }
+        .cpx-community-label {
+          padding: 8px 12px;
+          background: #f8fafc;
+          border-top: 1px solid #f1f5f9;
+          font-size: 11.5px;
+          color: #475569;
+          text-align: center;
+          line-height: 1.4;
+        }
+        .cpx-community-label strong {
+          color: #0f172a;
+          font-weight: 800;
+        }
+
         /* 4. BARRIER BUSTERS (3 COMPACT CHIPS) */
         .cpx-barriers-row {
           display: flex;
@@ -525,6 +593,32 @@
           <!-- Next 7 Days -->
           <div class="cpx-next-box">
             <strong>🏆 Next 7 Days:</strong> We teach you how to take complete projects and complete them end-to-end like a pro designer.
+          </div>
+        </div>
+
+        <!-- BONUS: 10,000+ MODELS & SOFTWARE -->
+        <div class="cpx-bonus-card">
+          <div class="cpx-bonus-badge">🎁 SPECIAL INCLUDED BONUS</div>
+          <div class="cpx-bonus-title">
+            Bonus: <span class="cpx-highlight-yellow">10,000+ Models &amp; Software</span>
+          </div>
+          <p class="cpx-bonus-text">
+            Skip months of modeling from scratch. Get instant access to <strong>10,000+ ready-to-drag 3D assets</strong> (furniture, lighting, textures, decor &amp; facades) plus complete step-by-step <strong>software installation &amp; setup guides</strong> included free.
+          </p>
+        </div>
+
+        <!-- COMMUNITY SOCIAL PROOF IMAGE -->
+        <div class="cpx-community-card">
+          <img 
+            src="{{ 'community-learners-grid.png' | asset_url }}" 
+            alt="Interior &amp; Exterior Design Course Community" 
+            class="cpx-community-img"
+            loading="lazy"
+            width="1024"
+            height="222"
+          >
+          <div class="cpx-community-label">
+            <span>👥 <strong>Active Learner Community:</strong> Students, creators &amp; beginners mastering 3D design together.</span>
           </div>
         </div>
 
